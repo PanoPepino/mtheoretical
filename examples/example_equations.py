@@ -1,8 +1,10 @@
-from manim import *
+import os
 import sys
-sys.path.append("/Users/pano/CloudDocs/Coding/Manim_Stuff/New_Changes")
-from src import *
-from color_scheme import *
+sys.path.insert(0, os.path.abspath("..")) #To import the documentation from the mtheoretical directory
+
+from manim import *
+from mtheoretical import *
+
 
 class Example_Eq_Metric(Scene):
     def construct(self):

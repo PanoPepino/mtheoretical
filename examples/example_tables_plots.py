@@ -1,6 +1,10 @@
+import os
+import sys
+sys.path.insert(0, os.path.abspath("..")) #To import the documentation from the mtheoretical directory
+
 from manim import *
-from src import *
-from color_scheme import *
+from mtheoretical import *
+
 
 class Example_Table_Summary_Bubble_and_Scales(Scene):
     def construct(self):
