@@ -12,10 +12,13 @@ ABOUT THIS REPOSITORY
 
 - Elaborate on the Readme.txt
 - Add simple description to the main page of the documentation about the aim and target of the libraries.
-- Think way to let people choose between two or more templates
 - Include old animations:
     - Diagrams
     - Pulling strings and bending branes.
 - Code new animations:
     - (Non)-Normalisable modes and the bubble expanding.
     - Smooth transition between global and Poincaré coordinates for the bubble.
+- General Python code to write:
+    - Code to let you choose between different templates in the libraries.
+    - Code to extract refs in the form of a dictionary {hep.th: '[names, hep.number]'}
+    - Code to extract all the equations of a .tex file in the form of a dictionary {eq_label: 'equation'}

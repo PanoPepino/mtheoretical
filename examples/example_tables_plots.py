@@ -1,9 +1,10 @@
 import os
 import sys
-sys.path.insert(0, os.path.abspath("..")) #To import the documentation from the mtheoretical directory
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from manim import *
-from mtheoretical import *
+from mtheoretical.tables_and_plots import *
+from mtheoretical.templates import *
 
 
 class Example_Table_Summary_Bubble_and_Scales(Scene):

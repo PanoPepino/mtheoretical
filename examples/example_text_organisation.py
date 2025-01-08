@@ -1,9 +1,11 @@
 import os
 import sys
-sys.path.insert(0, os.path.abspath("..")) #To import the documentation from the mtheoretical directory
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from manim import *
-from mtheoretical import *
+from mtheoretical.text_and_organisation import *
+from mtheoretical.equations import *
+from mtheoretical.templates import *
 
 
 class Title_Slide(Scene):

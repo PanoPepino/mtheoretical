@@ -2,8 +2,12 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath("..")) #To import the documentation from the mtheoretical directory
-from mtheoretical import *
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) #To import the documentation from the mtheoretical directory
+from mtheoretical.text_and_organisation import *
+from mtheoretical.equations import *
+from mtheoretical.tables_and_plots import *
+from mtheoretical.objects import *
+from manim import *
 from .options import *
 
 #Defining the background color of the video. Check how to define a background_color for presentations
