@@ -2,29 +2,13 @@ from manim import *
 from .text_general import *
 
 class BlB(Text_General, Group):
-    """Class to create a bulleted list surrounded by a box if chosen.
+    """Class to create a bulleted list.
 
-    Parameters: (See Text_general Class)
-    -----------
-    
-    - list_input (list of strings): Each of the points to describe.
-    - text_size (float, optional): Defaults to 25.
-    - text_color (ParsableManimColor, optional): Defaults to BLACK.
-    - decorator_presence (str, optional): box/no. Defaults to box. If no, does not return the surrounding box.
-    - decorator_color (ParsableManimColor, optional): Defaults to BLACK.
-    - decorator_stroke_width (float, optional): Defaults to 2.
-    - corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.
-    - corner_rad_direction (list, optional): which corners get rounded. Defaults to [1, 1, 1, 1].
-    - fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.
-    - tightness (float, optional): How tight the box around the title is. Defaults to 0.5.
-    - stroke_opa (float, optional): Defaults to 1.
-    - dot_scale (float, optional): Defaults to 2.
+    .. note::
 
-    Methods:
-    --------
+        You can find an example in Text_General class.
 
-    - next_point: It animates the bullet point in an iterative way. It keeps black the n-th point and greys out the rest. 
-
+    - **Methods**::
     """
     
     def __init__(self,
@@ -48,6 +32,13 @@ class BlB(Text_General, Group):
     def next_point(self,
                     rf: float= linear,
                     rt: float= 1)-> Succession:
+        """Method to iterate over each of the points of the bullets points. For each iteration, makes the n-th bullet point completely black and greys out the rest.
+
+        Args:
+            - rf (float, optional): rate_function of the animation. Defaults to linear.
+            - rt (float, optional): run_time of the animation. Defaults to 1.
+
+        """
         
             
         if self.count== 0:

@@ -4,22 +4,11 @@ from .text_general import *
 class Ref(Text_General, VGroup):
     """Class to create citations of References. It has a dictionary built in.
 
-    Parameters: (See Text_General Class)
-    -----------
+    .. note::
+        Each reference will require its own definition, as one can play with the boxes and flip them to close the design and so on.
 
-    - ref_number (str): the hepth number of the article to refer to.
-    - text_size (float, optional): Defaults to 25.
-    - text_color (ParsableManimColor, optional): Defaults to BLACK.
-    - decorator_presence (str, optional): box/no. Defaults to box. If no, does not return the surrounding box.
-    - decorator_color (ParsableManimColor, optional): Defaults to BLACK.
-    - decorator_stroke_width (float, optional): Defaults to 2.
-    - corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.
-    - corner_rad_direction (list, optional): which corners get rounded. Defaults to [1, 1, 1, 1].
-    - fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.
-    - tightness (float, optional): How tight the box around the title is. Defaults to 0.5.
-    - stroke_opa (float, optional): Defaults to 1.
-    - dot_scale (float, optional): Defaults to 2.
-    
+    .. attention::
+        This Class should be transformed into a more general class capable of reading .bib files and extract dictionaries of references.
     """
     def __init__(self,
                  ref_number,

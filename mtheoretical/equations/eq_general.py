@@ -23,7 +23,7 @@ class Eq_General(VGroup):
                  decorator_color: ParsableManimColor= BLACK,
                  decorator_stroke_width: float= 2,
                  corner_rad: float= 0.3,
-                 corner_rad_direction: list= [1,1,1,1],
+                 corner_rad_direction: list= [1, 1, 1, 1],
                  fill_opa: float= 0.1,
                  tightness: float= 0.2,
                  **kwargs):

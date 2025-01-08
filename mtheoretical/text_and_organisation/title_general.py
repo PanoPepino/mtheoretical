@@ -1,21 +1,26 @@
 from manim import *
 
 class Title_General(VGroup):
-    """Class to load all inputs for the subsequent classes of titles (main and sections). In this way the template because homogenous.
+    """Class to load all inputs for the subsequent classes of titles (main and sections).
     
-    Parameters: 
-    ----------
-
-    - text_size (float, optional): Defaults to 25.
-    - text_color (ParsableManimColor, optional): Defaults to BLACK.
-    - decorator_presence (str, optional): box/box_long_left/box_long_right/back_frame/no. Defaults to box surrounding the text. Box_long_XX means a box that stretches to the chosen side of the screen. Back_frame means a long rectangle without borders and corners outside the screen. If no, does not return the surrounding box.
-    - decorator_color (ParsableManimColor, optional): Defaults to BLACK.
-    - decorator_stroke_width (float, optional): Defaults to 2.
-    - corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.
-    - corner_rad_direction (list, optional): which corners get rounded. Defaults to [1, 1, 1, 1].
-    - fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.
-    - tightness (float, optional): How tight the box around the title is. Defaults to 0.5.
-    - stroke_opa (float, optional): Defaults to 1.
+    - **Parameters**::
+   
+        - text_size (float, optional): Defaults to 25.
+        - text_color (ParsableManimColor, optional): Defaults to BLACK.
+        - decorator_presence (str, optional): This has several options (Defaults to box)
+            - "box": A simple surrounding rectangle around the title.
+            - "box_long_left"/"box_long_right": A surrounding rectangle that stretches
+              to the chosen corner.
+            - "back_frame": A whole back frame behind the text, spanning from side to side.
+            - "no": Nothing. Plain text. 
+        - decorator_color (ParsableManimColor, optional): Defaults to BLACK.
+        - decorator_stroke_width (float, optional): Defaults to 2.
+        - corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.
+        - corner_rad_direction (list, optional): which corners of the surrounding rectangle
+        get rounded. Defaults to [1, 1, 1, 1].
+        - fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.
+        - tightness (float, optional): How tight the box around the title is. Defaults to 0.5.
+        - stroke_opa (float, optional): Opacity of the strokes. Defaults to 1.
     
     """ 
      

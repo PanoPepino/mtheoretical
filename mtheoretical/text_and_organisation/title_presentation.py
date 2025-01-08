@@ -32,7 +32,7 @@ class Title_Presentation(Title_General, VGroup):
         
         #text
         tit= Tex(title, font_size= 2*self.text_size, color= self.text_color)
-        nam= Tex(author, font_size= 1.4*self.text_size, color= self.text_color)
+        nam= Tex(author, font_size= 1.5*self.text_size, color= self.text_color)
         uni= Tex(university, font_size= self.text_size, color= self.text_color)
         self.text_group= VGroup(tit, nam, uni).arrange(DOWN, buff= 0.4)
         self.text_group.scale_to_fit_width(config.frame_width-2)

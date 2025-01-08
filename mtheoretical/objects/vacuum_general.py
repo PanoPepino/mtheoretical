@@ -1,7 +1,7 @@
 from manim import *
 
 class Vacuum_General(VGroup):
-    """This is a mock-up class to load all inputs for vacua and associated objects.
+    """Hola, Amigos@@
 
     Parameters:
     -----------

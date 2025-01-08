@@ -8,7 +8,12 @@ from mtheoretical.equations import *
 from mtheoretical.tables_and_plots import *
 from mtheoretical.objects import *
 from manim import *
-from .options import *
+from .template_1 import *
+
+""".. note::
+        Here I add some test info.
+    """
+
 
 #Defining the background color of the video. Check how to define a background_color for presentations
 
