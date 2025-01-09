@@ -2,31 +2,9 @@ from manim import *
 from .title_general import *
 
 class Title_Section(Title_General, VGroup):
-    """Class to create title for sections. 
+    """Class to create title for sections. Note that the title is already defined in the UL corner.
 
-    Parameters: (See Organisation_General Class)
-    ----------
-
-    - title ("str")
-    - text_size (float, optional): Defaults to 25.
-    - text_color (ParsableManimColor, optional): Defaults to BLACK.
-    - decorator_presence (str, optional): box/box_long_XX/back_frame/no. Defaults to box. Box_long_XX returns a long box stretching to the chosen corner. Back_frame means a long rectangle without borders and corners outside the screen (stroke= 0). If no, does not return the surrounding box.
-    - decorator_color (ParsableManimColor, optional): Defaults to BLACK.
-    - decorator_stroke_width (float, optional): Defaults to 2.
-    - corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.
-    - corner_rad_direction (list, optional): which corners get rounded. Defaults to [1, 1, 1, 1].
-    - fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.
-    - tightness (float, optional): How tight the box around the title is. Defaults to 0.5.
-    - stroke_opa (float, optional): Defaults to 1.
-    - dot_scale (float, optional): Defaults to 2.
-
-    Note that the title is already defined in the UL corner.
-
-    Methods:
-    --------
-
-    - show_title: Specially designed for the long_box, it fades in the title from the chosen direction.
-
+    - **Methods**::
 
     """ 
     
@@ -72,15 +50,25 @@ class Title_Section(Title_General, VGroup):
             self.add(self.tit)
 
     
-    def show_title(self)-> AnimationGroup:
+    def show_title(self,
+                   rt: float= 1,
+                   rf: float= linear)-> AnimationGroup:
+        """Simple animation to show the title of the slide. Depending of the decorator choice, the animation will be different.
+
+
+        Args:
+            - rf (float, optional): rate_function of the animation. Defaults to linear.
+            - rt (float, optional): run_time of the animation. Defaults to 1.
+        
+        """
         
         if self.decorator_presence== "box_long_right":
-            return FadeIn(self.t_sec, shift= 5*RIGHT)
+            return FadeIn(self.t_sec, shift= 5*RIGHT, run_time= rt, rate_function= rate_functions.linear)
         
         if self.decorator_presence== "box_long_left":
-            return FadeIn(self.t_sec, shift= 5*LEFT)
+            return FadeIn(self.t_sec, shift= 5*LEFT, run_time= rt, rate_function= rate_functions.linear)
         
         else:
-            return Create(self.t_sec)
+            return Create(self.t_sec, run_time= rt, rate_function= rate_functions.linear)
 
     

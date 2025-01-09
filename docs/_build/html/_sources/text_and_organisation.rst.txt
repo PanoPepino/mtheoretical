@@ -1,18 +1,18 @@
 text\_and\_organisation
 ===============================
 
-title\_general
----------------------------------------------
-
-.. automodule:: text_and_organisation.title_general
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 text\_general
 --------------------------------------------
 
 .. automodule:: text_and_organisation.text_general
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+title\_general
+---------------------------------------------
+
+.. automodule:: text_and_organisation.title_general
    :members:
    :undoc-members:
    :show-inheritance:
@@ -48,5 +48,4 @@ title\_section
    :members:
    :undoc-members:
    :show-inheritance:
-
 

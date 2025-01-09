@@ -3,8 +3,8 @@ import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from manim import *
-from mtheoretical.tables_and_plots import *
-from mtheoretical.templates import *
+from mtheoretical.src.tables_and_plots import *
+from mtheoretical.src.templates import *
 
 
 class Example_Table_Summary_Bubble_and_Scales(Scene):

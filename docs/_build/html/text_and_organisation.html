@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="templates" href="templates.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="equations" href="equations.html" /><link rel="prev" title="mtheoretical" href="modules.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>text_and_organisation - mtheoretical 2.0 documentation</title>
@@ -201,11 +201,11 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">mtheoretical</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of mtheoretical</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="equations.html">equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="objects.html">objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tables_and_plots.html">tables_and_plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="templates.html">templates</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">text_and_organisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="equations.html">equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables_and_plots.html">tables_and_plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="objects.html">objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="templates.html">templates package</a></li>
 </ul>
 </li>
 </ul>
@@ -250,43 +250,6 @@
         <article role="main" id="furo-main-content">
           <section id="text-and-organisation">
 <h1>text_and_organisation<a class="headerlink" href="#text-and-organisation" title="Link to this heading">¶</a></h1>
-<section id="module-text_and_organisation.title_general">
-<span id="title-general"></span><h2>title_general<a class="headerlink" href="#module-text_and_organisation.title_general" title="Link to this heading">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="text_and_organisation.title_general.Title_General">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Title_General</span></span><a class="reference internal" href="_modules/text_and_organisation/title_general.html#Title_General"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_and_organisation.title_general.Title_General" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
-<p>Class to load all inputs for the subsequent classes of titles (main and sections).</p>
-<ul>
-<li><p><strong>Parameters</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">text_size</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">25.</span>
-<span class="o">-</span> <span class="n">text_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">BLACK</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">decorator_presence</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">This</span> <span class="n">has</span> <span class="n">several</span> <span class="n">options</span> <span class="p">(</span><span class="n">Defaults</span> <span class="n">to</span> <span class="n">box</span><span class="p">)</span>
-    <span class="o">-</span> <span class="s2">&quot;box&quot;</span><span class="p">:</span> <span class="n">A</span> <span class="n">simple</span> <span class="n">surrounding</span> <span class="n">rectangle</span> <span class="n">around</span> <span class="n">the</span> <span class="n">title</span><span class="o">.</span>
-    <span class="o">-</span> <span class="s2">&quot;box_long_left&quot;</span><span class="o">/</span><span class="s2">&quot;box_long_right&quot;</span><span class="p">:</span> <span class="n">A</span> <span class="n">surrounding</span> <span class="n">rectangle</span> <span class="n">that</span> <span class="n">stretches</span>
-      <span class="n">to</span> <span class="n">the</span> <span class="n">chosen</span> <span class="n">corner</span><span class="o">.</span>
-    <span class="o">-</span> <span class="s2">&quot;back_frame&quot;</span><span class="p">:</span> <span class="n">A</span> <span class="n">whole</span> <span class="n">back</span> <span class="n">frame</span> <span class="n">behind</span> <span class="n">the</span> <span class="n">text</span><span class="p">,</span> <span class="n">spanning</span> <span class="kn">from</span> <span class="nn">side</span> <span class="n">to</span> <span class="n">side</span><span class="o">.</span>
-    <span class="o">-</span> <span class="s2">&quot;no&quot;</span><span class="p">:</span> <span class="n">Nothing</span><span class="o">.</span> <span class="n">Plain</span> <span class="n">text</span><span class="o">.</span> 
-<span class="o">-</span> <span class="n">decorator_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">BLACK</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">decorator_stroke_width</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">2.</span>
-<span class="o">-</span> <span class="n">corner_rad</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Corner</span> <span class="n">radious</span> <span class="n">of</span> <span class="n">surrounding</span> <span class="n">box</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.3</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">corner_rad_direction</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">which</span> <span class="n">corners</span> <span class="n">of</span> <span class="n">the</span> <span class="n">surrounding</span> <span class="n">rectangle</span>
-<span class="n">get</span> <span class="n">rounded</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">fill_opa</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Fill</span> <span class="n">opacity</span> <span class="n">of</span> <span class="n">the</span> <span class="n">surrounding</span> <span class="n">box</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.1</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">tightness</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">How</span> <span class="n">tight</span> <span class="n">the</span> <span class="n">box</span> <span class="n">around</span> <span class="n">the</span> <span class="n">title</span> <span class="ow">is</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.5</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">stroke_opa</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Opacity</span> <span class="n">of</span> <span class="n">the</span> <span class="n">strokes</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">1.</span>
-</pre></div>
-</div>
-</li>
-</ul>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="text_and_organisation.title_general.Title_General.animation_overrides">
-<span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#text_and_organisation.title_general.Title_General.animation_overrides" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</section>
 <section id="module-text_and_organisation.text_general">
 <span id="text-general"></span><h2>text_general<a class="headerlink" href="#module-text_and_organisation.text_general" title="Link to this heading">¶</a></h2>
 <dl class="py class">
@@ -335,6 +298,43 @@
 <dl class="py attribute">
 <dt class="sig sig-object py" id="text_and_organisation.text_general.Text_General.animation_overrides">
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#text_and_organisation.text_general.Text_General.animation_overrides" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-text_and_organisation.title_general">
+<span id="title-general"></span><h2>title_general<a class="headerlink" href="#module-text_and_organisation.title_general" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="text_and_organisation.title_general.Title_General">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Title_General</span></span><a class="reference internal" href="_modules/text_and_organisation/title_general.html#Title_General"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_and_organisation.title_general.Title_General" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
+<p>Class to load all inputs for the subsequent classes of titles (main and sections).</p>
+<ul>
+<li><p><strong>Parameters</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">text_size</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">25.</span>
+<span class="o">-</span> <span class="n">text_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">BLACK</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">decorator_presence</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">This</span> <span class="n">has</span> <span class="n">several</span> <span class="n">options</span> <span class="p">(</span><span class="n">Defaults</span> <span class="n">to</span> <span class="n">box</span><span class="p">)</span>
+    <span class="o">-</span> <span class="s2">&quot;box&quot;</span><span class="p">:</span> <span class="n">A</span> <span class="n">simple</span> <span class="n">surrounding</span> <span class="n">rectangle</span> <span class="n">around</span> <span class="n">the</span> <span class="n">title</span><span class="o">.</span>
+    <span class="o">-</span> <span class="s2">&quot;box_long_left&quot;</span><span class="o">/</span><span class="s2">&quot;box_long_right&quot;</span><span class="p">:</span> <span class="n">A</span> <span class="n">surrounding</span> <span class="n">rectangle</span> <span class="n">that</span> <span class="n">stretches</span>
+      <span class="n">to</span> <span class="n">the</span> <span class="n">chosen</span> <span class="n">corner</span><span class="o">.</span>
+    <span class="o">-</span> <span class="s2">&quot;back_frame&quot;</span><span class="p">:</span> <span class="n">A</span> <span class="n">whole</span> <span class="n">back</span> <span class="n">frame</span> <span class="n">behind</span> <span class="n">the</span> <span class="n">text</span><span class="p">,</span> <span class="n">spanning</span> <span class="kn">from</span> <span class="nn">side</span> <span class="n">to</span> <span class="n">side</span><span class="o">.</span>
+    <span class="o">-</span> <span class="s2">&quot;no&quot;</span><span class="p">:</span> <span class="n">Nothing</span><span class="o">.</span> <span class="n">Plain</span> <span class="n">text</span><span class="o">.</span> 
+<span class="o">-</span> <span class="n">decorator_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">BLACK</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">decorator_stroke_width</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">2.</span>
+<span class="o">-</span> <span class="n">corner_rad</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Corner</span> <span class="n">radious</span> <span class="n">of</span> <span class="n">surrounding</span> <span class="n">box</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.3</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">corner_rad_direction</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">which</span> <span class="n">corners</span> <span class="n">of</span> <span class="n">the</span> <span class="n">surrounding</span> <span class="n">rectangle</span>
+<span class="n">get</span> <span class="n">rounded</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">fill_opa</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Fill</span> <span class="n">opacity</span> <span class="n">of</span> <span class="n">the</span> <span class="n">surrounding</span> <span class="n">box</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.1</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">tightness</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">How</span> <span class="n">tight</span> <span class="n">the</span> <span class="n">box</span> <span class="n">around</span> <span class="n">the</span> <span class="n">title</span> <span class="ow">is</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.5</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">stroke_opa</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Opacity</span> <span class="n">of</span> <span class="n">the</span> <span class="n">strokes</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">1.</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="text_and_organisation.title_general.Title_General.animation_overrides">
+<span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#text_and_organisation.title_general.Title_General.animation_overrides" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -404,28 +404,33 @@
 <dt class="sig sig-object py" id="text_and_organisation.title_presentation.Title_Presentation">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Title_Presentation</span></span><a class="reference internal" href="_modules/text_and_organisation/title_presentation.html#Title_Presentation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_and_organisation.title_presentation.Title_Presentation" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#text_and_organisation.title_general.Title_General" title="text_and_organisation.title_general.Title_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Title_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
-<p>Class to generate titles for presentations. Generates a group with the title and a box surrounding.</p>
-<section id="parameters-see-title-general-class">
-<h3>Parameters: (See Title_General class)<a class="headerlink" href="#parameters-see-title-general-class" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>title (“str”)</p></li>
-<li><p>university (“str”)</p></li>
-<li><p>author (“str”)</p></li>
-<li><p>size (float, optional): Defaults to 50.</p></li>
-<li><p>color_text (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>presence_decorator (str, optional): box/box_long_left/box_long_right/back_frame/no. Defaults to box. box_long_direction creates a box that stretches to the chosen direction corner of the slide. Back_frame means a long rectangle without borders and corners outside the screen (stroke= 0). If no, does not return the surrounding box.</p></li>
-<li><p>color_decorator (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>self.corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.</p></li>
-<li><p>fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.</p></li>
-<li><p>tightness (float, optional): How tight the box around the title is. Defaults to 0.5.</p></li>
-<li><p>decorator_stroke_width (float, optional): Defaults to 2.</p></li>
+<p>Class to generate titles for presentations. Generates a group with the title and a background decorator.</p>
+<ul>
+<li><p><strong>Parameters</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">title</span> <span class="p">(</span><span class="s2">&quot;str&quot;</span><span class="p">):</span> <span class="n">Title</span> <span class="n">of</span> <span class="n">your</span> <span class="n">talk</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">affiliation</span> <span class="p">(</span><span class="s2">&quot;str&quot;</span><span class="p">):</span> <span class="n">Your</span> <span class="n">university</span> <span class="ow">or</span> <span class="n">institution</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">author</span> <span class="p">(</span><span class="s2">&quot;str&quot;</span><span class="p">):</span> <span class="n">How</span> <span class="n">has</span> <span class="n">crafted</span> <span class="n">the</span> <span class="n">slides</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p>An <strong>Example</strong> of this is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manim</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">mtheoretical</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">Title_Slide</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Title_Presentation</span><span class="p">(</span><span class="n">title</span><span class="o">=</span> <span class="s2">&quot;An Useless Title to Show&quot;</span><span class="p">,</span> 
+                                    <span class="n">affiliation</span><span class="o">=</span> <span class="s2">&quot;Your Mama University&quot;</span><span class="p">,</span> 
+                                    <span class="n">author</span><span class="o">=</span> <span class="s2">&quot;A Dashing Monkey&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="text_and_organisation.title_presentation.Title_Presentation.animation_overrides">
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#text_and_organisation.title_presentation.Title_Presentation.animation_overrides" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -435,29 +440,9 @@
 <dt class="sig sig-object py" id="text_and_organisation.title_section.Title_Section">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Title_Section</span></span><a class="reference internal" href="_modules/text_and_organisation/title_section.html#Title_Section"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_and_organisation.title_section.Title_Section" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#text_and_organisation.title_general.Title_General" title="text_and_organisation.title_general.Title_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Title_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
-<p>Class to create title for sections.</p>
-<section id="parameters-see-organisation-general-class">
-<h3>Parameters: (See Organisation_General Class)<a class="headerlink" href="#parameters-see-organisation-general-class" title="Link to this heading">¶</a></h3>
+<p>Class to create title for sections. Note that the title is already defined in the UL corner.</p>
 <ul class="simple">
-<li><p>title (“str”)</p></li>
-<li><p>text_size (float, optional): Defaults to 25.</p></li>
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_presence (str, optional): box/box_long_XX/back_frame/no. Defaults to box. Box_long_XX returns a long box stretching to the chosen corner. Back_frame means a long rectangle without borders and corners outside the screen (stroke= 0). If no, does not return the surrounding box.</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_width (float, optional): Defaults to 2.</p></li>
-<li><p>corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional): which corners get rounded. Defaults to [1, 1, 1, 1].</p></li>
-<li><p>fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.</p></li>
-<li><p>tightness (float, optional): How tight the box around the title is. Defaults to 0.5.</p></li>
-<li><p>stroke_opa (float, optional): Defaults to 1.</p></li>
-<li><p>dot_scale (float, optional): Defaults to 2.</p></li>
-</ul>
-<p>Note that the title is already defined in the UL corner.</p>
-</section>
-<section id="methods">
-<h3>Methods:<a class="headerlink" href="#methods" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>show_title: Specially designed for the long_box, it fades in the title from the chosen direction.</p></li>
+<li><p><strong>Methods</strong>:</p></li>
 </ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="text_and_organisation.title_section.Title_Section.animation_overrides">
@@ -466,10 +451,17 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="text_and_organisation.title_section.Title_Section.show_title">
-<span class="sig-name descname"><span class="pre">show_title</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AnimationGroup</span></span></span><a class="reference internal" href="_modules/text_and_organisation/title_section.html#Title_Section.show_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_and_organisation.title_section.Title_Section.show_title" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">show_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AnimationGroup</span></span></span><a class="reference internal" href="_modules/text_and_organisation/title_section.html#Title_Section.show_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_and_organisation.title_section.Title_Section.show_title" title="Link to this definition">¶</a></dt>
+<dd><p>Simple animation to show the title of the slide. Depending of the decorator choice, the animation will be different.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>rf (float, optional): rate_function of the animation. Defaults to linear.</p></li>
+<li><p>rt (float, optional): run_time of the animation. Defaults to 1.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -480,15 +472,23 @@
       <footer>
         
         <div class="related-pages">
-          
-          <a class="prev-page" href="templates.html">
+          <a class="next-page" href="equations.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">equations</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="modules.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">templates</div>
+                <div class="title">mtheoretical</div>
                 
               </div>
             </a>
@@ -523,8 +523,8 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">text_and_organisation</a><ul>
-<li><a class="reference internal" href="#module-text_and_organisation.title_general">title_general</a></li>
 <li><a class="reference internal" href="#module-text_and_organisation.text_general">text_general</a></li>
+<li><a class="reference internal" href="#module-text_and_organisation.title_general">title_general</a></li>
 <li><a class="reference internal" href="#module-text_and_organisation.bulleted_list_box">bulleted_list_box</a></li>
 <li><a class="reference internal" href="#module-text_and_organisation.refs">refs</a></li>
 <li><a class="reference internal" href="#module-text_and_organisation.title_presentation">title_presentation</a></li>

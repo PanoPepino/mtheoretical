@@ -1,7 +1,7 @@
 tables\_and\_plots
 ==========================
 
-Here you will find all plots and tables contained in these libraries.
+
 
 plot\_general
 ---------------------------------------
@@ -75,4 +75,3 @@ table\_summary
    :undoc-members:
    :show-inheritance:
 
- 

@@ -3,28 +3,30 @@ from manim import *
 from .title_general import *
 
 class Title_Presentation(Title_General, VGroup):
-    """Class to generate titles for presentations. Generates a group with the title and a box surrounding.
+    """Class to generate titles for presentations. Generates a group with the title and a background decorator.
 
-    Parameters: (See Title_General class)
-    ----------
+    - **Parameters**::
+   
+            - title ("str"): Title of your talk.
+            - affiliation ("str"): Your university or institution.
+            - author ("str"): How has crafted the slides.
 
-    - title ("str")
-    - university ("str")
-    - author ("str")
-    - size (float, optional): Defaults to 50.
-    - color_text (ParsableManimColor, optional): Defaults to BLACK.
-    - presence_decorator (str, optional): box/box_long_left/box_long_right/back_frame/no. Defaults to box. box_long_direction creates a box that stretches to the chosen direction corner of the slide. Back_frame means a long rectangle without borders and corners outside the screen (stroke= 0). If no, does not return the surrounding box.
-    - color_decorator (ParsableManimColor, optional): Defaults to BLACK.
-    - self.corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.
-    - fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.
-    - tightness (float, optional): How tight the box around the title is. Defaults to 0.5.
-    - decorator_stroke_width (float, optional): Defaults to 2.
-        
+    - An **Example** of this is::
+
+        from manim import *
+        from mtheoretical import *
+
+        class Title_Slide(Scene):
+            def construct(self):
+                self.add(Title_Presentation(title= "An Useless Title to Show", 
+                                            affiliation= "Your Mama University", 
+                                            author= "A Dashing Monkey"))
+    
     """ 
      
     def __init__(self,
                  title, 
-                 university,
+                 affiliation,
                  author, 
                  **kwargs)-> VGroup:
         
@@ -33,7 +35,7 @@ class Title_Presentation(Title_General, VGroup):
         #text
         tit= Tex(title, font_size= 2*self.text_size, color= self.text_color)
         nam= Tex(author, font_size= 1.5*self.text_size, color= self.text_color)
-        uni= Tex(university, font_size= self.text_size, color= self.text_color)
+        uni= Tex(affiliation, font_size= self.text_size, color= self.text_color)
         self.text_group= VGroup(tit, nam, uni).arrange(DOWN, buff= 0.4)
         self.text_group.scale_to_fit_width(config.frame_width-2)
         

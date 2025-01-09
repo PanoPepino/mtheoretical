@@ -9,7 +9,7 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath("../mtheoretical"))
+sys.path.insert(0, os.path.abspath("../mtheoretical/src"))
 
 project = 'mtheoretical'
 copyright = '2025, Pano'
@@ -21,8 +21,10 @@ extensions = [
     'sphinx.ext.viewcode',
 ]
 add_module_names = False
+add_submodule_names = False
+add_package_names = False
 toc_object_entries = False
-python_use_unqualified_type_names = True
+python_use_unqualified_type_names = False
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -37,7 +39,7 @@ autodoc_default_options = {
     'members': True,
     'member-order': 'bysource',
     'special-members': '__init__',
-    'undoc-members': True,
+    'undoc-members': False,
     'exclude-members': '__init__'
 }
 
@@ -46,7 +48,7 @@ autodoc_typehints_format = 'short'
 autodoc_class_signature = 'separated'
 
 # Additional configurations
-autoclass_content = 'class'
+autoclass_content = 'both'
 
 def hide_init_params(cls): # This removes __init__ parameters of classes.
     cls.__init__.__sphinx_signature__ = "()"
@@ -56,5 +58,6 @@ def hide_init_params(cls): # This removes __init__ parameters of classes.
 class YourClass:
     def __init__(self, param1, param2):
         pass
+
 
 

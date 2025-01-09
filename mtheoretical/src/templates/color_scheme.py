@@ -3,10 +3,10 @@ import os
 import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) #To import the documentation from the mtheoretical directory
-from mtheoretical.text_and_organisation import *
-from mtheoretical.equations import *
-from mtheoretical.tables_and_plots import *
-from mtheoretical.objects import *
+from mtheoretical.src.text_and_organisation import *
+from mtheoretical.src.equations import *
+from mtheoretical.src.tables_and_plots import *
+from mtheoretical.src.objects import *
 from manim import *
 from .template_1 import *
 

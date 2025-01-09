@@ -9,7 +9,6 @@ eq\_general
    :undoc-members:
    :show-inheritance:
 
-
 eq\_actions
 ----------------------------
 
@@ -50,14 +49,6 @@ eq\_gc
    :undoc-members:
    :show-inheritance:
 
-eq\_general
-----------------------------
-
-.. automodule:: equations.eq_general
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 eq\_junc
 -------------------------
 
@@ -89,5 +80,4 @@ eq\_scales\_db
    :members:
    :undoc-members:
    :show-inheritance:
-
 

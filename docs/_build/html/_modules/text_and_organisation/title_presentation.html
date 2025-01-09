@@ -200,11 +200,11 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">mtheoretical</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of mtheoretical</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../equations.html">equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../objects.html">objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equations.html">equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../objects.html">objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates package</a></li>
 </ul>
 </li>
 </ul>
@@ -249,28 +249,30 @@
 <div class="viewcode-block" id="Title_Presentation">
 <a class="viewcode-back" href="../../text_and_organisation.html#text_and_organisation.title_presentation.Title_Presentation">[docs]</a>
 <span class="k">class</span> <span class="nc">Title_Presentation</span><span class="p">(</span><span class="n">Title_General</span><span class="p">,</span> <span class="n">VGroup</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to generate titles for presentations. Generates a group with the title and a box surrounding.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to generate titles for presentations. Generates a group with the title and a background decorator.</span>
 
-<span class="sd">    Parameters: (See Title_General class)</span>
-<span class="sd">    ----------</span>
+<span class="sd">    - **Parameters**::</span>
+<span class="sd">   </span>
+<span class="sd">            - title (&quot;str&quot;): Title of your talk.</span>
+<span class="sd">            - affiliation (&quot;str&quot;): Your university or institution.</span>
+<span class="sd">            - author (&quot;str&quot;): How has crafted the slides.</span>
 
-<span class="sd">    - title (&quot;str&quot;)</span>
-<span class="sd">    - university (&quot;str&quot;)</span>
-<span class="sd">    - author (&quot;str&quot;)</span>
-<span class="sd">    - size (float, optional): Defaults to 50.</span>
-<span class="sd">    - color_text (ParsableManimColor, optional): Defaults to BLACK.</span>
-<span class="sd">    - presence_decorator (str, optional): box/box_long_left/box_long_right/back_frame/no. Defaults to box. box_long_direction creates a box that stretches to the chosen direction corner of the slide. Back_frame means a long rectangle without borders and corners outside the screen (stroke= 0). If no, does not return the surrounding box.</span>
-<span class="sd">    - color_decorator (ParsableManimColor, optional): Defaults to BLACK.</span>
-<span class="sd">    - self.corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.</span>
-<span class="sd">    - fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.</span>
-<span class="sd">    - tightness (float, optional): How tight the box around the title is. Defaults to 0.5.</span>
-<span class="sd">    - decorator_stroke_width (float, optional): Defaults to 2.</span>
-<span class="sd">        </span>
+<span class="sd">    - An **Example** of this is::</span>
+
+<span class="sd">        from manim import *</span>
+<span class="sd">        from mtheoretical import *</span>
+
+<span class="sd">        class Title_Slide(Scene):</span>
+<span class="sd">            def construct(self):</span>
+<span class="sd">                self.add(Title_Presentation(title= &quot;An Useless Title to Show&quot;, </span>
+<span class="sd">                                            affiliation= &quot;Your Mama University&quot;, </span>
+<span class="sd">                                            author= &quot;A Dashing Monkey&quot;))</span>
+<span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span> 
      
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">title</span><span class="p">,</span> 
-                 <span class="n">university</span><span class="p">,</span>
+                 <span class="n">affiliation</span><span class="p">,</span>
                  <span class="n">author</span><span class="p">,</span> 
                  <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">-&gt;</span> <span class="n">VGroup</span><span class="p">:</span>
         
@@ -279,7 +281,7 @@
         <span class="c1">#text</span>
         <span class="n">tit</span><span class="o">=</span> <span class="n">Tex</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_color</span><span class="p">)</span>
         <span class="n">nam</span><span class="o">=</span> <span class="n">Tex</span><span class="p">(</span><span class="n">author</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span> <span class="mf">1.5</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_color</span><span class="p">)</span>
-        <span class="n">uni</span><span class="o">=</span> <span class="n">Tex</span><span class="p">(</span><span class="n">university</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_color</span><span class="p">)</span>
+        <span class="n">uni</span><span class="o">=</span> <span class="n">Tex</span><span class="p">(</span><span class="n">affiliation</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text_color</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">text_group</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="n">tit</span><span class="p">,</span> <span class="n">nam</span><span class="p">,</span> <span class="n">uni</span><span class="p">)</span><span class="o">.</span><span class="n">arrange</span><span class="p">(</span><span class="n">DOWN</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">text_group</span><span class="o">.</span><span class="n">scale_to_fit_width</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">frame_width</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
         

@@ -3,9 +3,9 @@ import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from manim import *
-from mtheoretical.text_and_organisation import *
-from mtheoretical.equations import *
-from mtheoretical.templates import *
+from mtheoretical.src.text_and_organisation import *
+from mtheoretical.src.equations import *
+from mtheoretical.src.templates import *
 
 
 class Title_Slide(Scene):
