@@ -9,7 +9,7 @@ class Title_Presentation(Title_General, VGroup):
    
             - title ("str"): Title of your talk.
             - affiliation ("str"): Your university or institution.
-            - author ("str"): How has crafted the slides.
+            - author ("str"): Who has crafted the slides.
 
     - An **Example** of this is::
 

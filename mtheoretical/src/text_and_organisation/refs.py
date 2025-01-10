@@ -2,7 +2,7 @@ from manim import *
 from .text_general import *
 
 class Ref(Text_General, VGroup):
-    """Class to create citations of References. It has a dictionary built in.
+    """Class to create citations of References. It has a dictionary built in. You can check it in [source].
 
     .. note::
         Each reference will require its own definition, as one can play with the boxes and flip them to close the design and so on.
