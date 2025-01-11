@@ -2,26 +2,23 @@ from manim import *
 from .plot_general import *
 
 class Plot_Lambda_Tension(Plot_General, VGroup):
-    """This class represents the tension of the nucleated brane with respect to the different values of the AdS scales inside and outside.
+    """This class represents the tension of the nucleated brane with respect to the different values of the AdS scales inside and outside. See Plot_General Class.
 
-    Parameters (See Plot_General Class)
-    ----------
-   
-    - func_main_color (ParsableManimColor, optional): Defaults to GREEN.
-    - func_2_color (ParsableManimColor, optional): Defaults to RED.
-    - func_3_color (ParsableManimColor, optional): Defaults to BLUE.
-    - text_color (ParsableManimColor, optional): Defaults to BLACK.
-    - axis_opacity (float, optional): Defaults to 1.
-    - axis_stroke (float, optional): Defaults to 2.
-    - decorator_presence (str, optional): Defaults to "box".
-    - decorator_color (ParsableManimColor, optional): Defaults to BLACK.
-    - decorator_stroke_w: (float, optional). Defaults to 1.
-    - corner_rad (float, optional): Defaults to 0.3.
-    - corner_rad_direction (list, optional): Defaults to [1,1,1,1].
-    - fill_opa (float, optional): Defaults to 0.1.
-    - stroke_w (float, optional): Defaults to 1.
-    - stroke_opa (float, optional): Defaults to 0.1.
-    - tightness (float, optional): Defaults to 0.2.
+    .. note::
+
+        The 0-th element correspond to the axis and labels.
+
+    - **Example**::
+
+        from manim import *
+        from mtheoretical import *
+
+        class Example_Plot_Tension(Scene):
+            def construct(self):
+                p_tension= Plot_Lambda_Tension()
+                p_tension.scale(0.3, about_point= p_tension.ax_tension_DB.get_origin()).to_corner(LEFT)
+                self.play(FadeIn(p_tension[0]))
+                self.play(p_tension.create_function())
 
     """
 
@@ -83,17 +80,16 @@ class Plot_Lambda_Tension(Plot_General, VGroup):
     
     
     def create_function(self,
-                              rt: float= 4,
-                              rf: float= linear)-> Succession:
-        """Write the function for the tension of the brane as a function of the AdS scale.
-
+                        rt: float= 1,
+                        rf: float= linear)-> Succession:
+        """
         Args:
-            rt (float, optional): Defaults to 2.
-            rf (float, optional): Defaults to linear.
+            - rt (float, optional): Defaults to 1.
+            - rf (float, optional): Defaults to linear.
 
         Returns:
-            Succession: 
+            Succession: Write the function for the tension of the brane as a function of the AdS scale.
         """
         
         return Succession(
-            *[Write(piece) for piece in self.to_draw])
+            *[Write(piece, run_time= rt, rate_func= rf) for piece in self.to_draw])

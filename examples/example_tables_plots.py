@@ -35,17 +35,17 @@ class Example_Plot_Q(Scene):
         
 class Example_Plot_Induced_Potential(Scene):
     def construct(self):
-        caca= Plot_Induced_Potential()
-        caca.scale(0.3, about_point= caca.ax_4D_cosmos.get_origin()).to_corner(LEFT)
-        self.add(caca[0])
-        self.play(caca.show_potential())
-        self.play(caca.show_jc())
-        self.play(caca.nucleate_brane())
+        plot_pot= Plot_Induced_Potential()
+        plot_pot.scale(0.3, about_point= plot_pot.ax_4D_cosmos.get_origin()).to_corner(LEFT)
+        self.add(plot_pot[0])
+        self.play(plot_pot.show_potential())
+        self.play(plot_pot.show_jc())
+        self.play(plot_pot.nucleate_brane())
         self.wait()
-        self.play(caca.accelerate())
-        self.play(caca.bounce())
-        self.play(caca.add_cc_and_expand())
-        self.play(FadeOut(caca))
+        self.play(plot_pot.accelerate())
+        self.play(plot_pot.bounce())
+        self.play(plot_pot.add_cc_and_expand())
+        self.play(FadeOut(plot_pot))
         self.play(Wait())
 
 class Example_Plot_Tension(Scene):

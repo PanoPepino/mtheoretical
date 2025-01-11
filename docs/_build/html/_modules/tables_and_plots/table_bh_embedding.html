@@ -199,12 +199,12 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">mtheoretical</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of mtheoretical</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../equations.html">equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../objects.html">objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates</a></li>
 </ul>
 </li>
 </ul>
@@ -249,30 +249,35 @@
 <div class="viewcode-block" id="Table_Bh_Embedding">
 <a class="viewcode-back" href="../../tables_and_plots.html#tables_and_plots.table_bh_embedding.Table_Bh_Embedding">[docs]</a>
 <span class="k">class</span> <span class="nc">Table_Bh_Embedding</span><span class="p">(</span><span class="n">Table_General</span><span class="p">,</span> <span class="n">Group</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to represent a table of the coordinates of the embedding of the dark bubble. It can display the whole table (type= together) or divided (type= split). It has three methods (animations).</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to represent a table of the coordinates of the embedding of the dark bubble. See Table_General Class. It can display the whole table (type= together) or divided (type= split). It has three methods (animations).</span>
 
-<span class="sd">    Parameters: (See Table_General Class)</span>
-<span class="sd">    -----------</span>
-<span class="sd">        </span>
-<span class="sd">    - text_color (ParsableManimColor, optional): Defaults to BLACK.</span>
-<span class="sd">    - hlight_1_color (ParsableManimColor, optional): _description_. Defaults to RED.</span>
-<span class="sd">    - hlight_2_color (ParsableManimColor, optional): _description_. Defaults to BLUE.</span>
-<span class="sd">    - hlight_3_color (ParsableManimColor, optional): _description_. Defaults to PURPLE.</span>
-<span class="sd">    - corner_rad (float, optional): _description_. Defaults to 0.3.</span>
-<span class="sd">    - corner_rad_direction (list, optional). To modify which vertex bend and not.Defaults to [1, 1, 1, 1].</span>
-<span class="sd">    - decorator_color (ParsableManimColor, optional): _description_. Defaults to BLACK.</span>
-<span class="sd">    - decorator_stroke_w (float, optiona): Defaults to 1.</span>
-<span class="sd">    - stroke_w (float, optional): _description_. Defaults to 7.</span>
-<span class="sd">    - stroke_opa (float, optional): Defaults to 1,</span>
-<span class="sd">    - fill_opa (float, optional): _description_. Defaults to 0.05.</span>
+<span class="sd">    - **Parameters**::</span>
+
+<span class="sd">        - type: (str, optional): There are two types:</span>
+<span class="sd">            - &quot;together&quot;, this will display all 9 spatial directions in</span>
+<span class="sd">            the same row.</span>
+<span class="sd">            - &quot;split&quot;: It will display compact and non-compact dimesions </span>
+<span class="sd">            in two different tables.</span>
+
+<span class="sd">    - **Example**::</span>
+
+<span class="sd">        from manim import*</span>
+<span class="sd">        from mtheoretical import *</span>
+
+<span class="sd">        class Example_Table_Bh_Embedding(Scene):</span>
+<span class="sd">            def construct(self):</span>
+<span class="sd">                together= Table_Bh_Embedding(type= &quot;together&quot;)</span>
+<span class="sd">                together.scale_to_fit_width(config.frame_width-1).shift(UP)</span>
+<span class="sd">                split= Table_Bh_Embedding(type= &quot;split&quot;, chosen_position= RIGHT)</span>
+<span class="sd">                split.scale_to_fit_width(config.frame_width-1).next_to(together, DOWN, buff= 0.2)</span>
+<span class="sd">                self.add(together, split)</span>
+<span class="sd">                self.play(AnimationGroup(together.move_all(), </span>
+<span class="sd">                                        split.move_non_compact(), </span>
+<span class="sd">                                        split.move_compact()))</span>
 <span class="sd">        </span>
 <span class="sd">            </span>
-<span class="sd">    Methods</span>
-<span class="sd">    -------</span>
-<span class="sd">    - move_non_compact: It moves the brane through the throat direction.</span>
-<span class="sd">    - move_compact: It moves the brane through the compact directions.</span>
-<span class="sd">    - move_all: It moves the brane through all dimensions in the whole table.</span>
-
+<span class="sd">    - **Methods**:</span>
+<span class="sd">   </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
@@ -389,11 +394,13 @@
     <span class="k">def</span> <span class="nf">move_non_compact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                          <span class="n">rt</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
                          <span class="n">rf</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="n">rate_functions</span><span class="o">.</span><span class="n">linear</span><span class="p">)</span><span class="o">-&gt;</span> <span class="n">Animation</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;To move the brane through the AdS throat.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            rt (float, optional): _description_. Defaults to 3.</span>
-<span class="sd">            rf (float, optional): _description_. Defaults to rate_functions.linear.</span>
+<span class="sd">            - rt (float, optional): Defaults to 3.</span>
+<span class="sd">            - rf (float, optional): Defaults to rate_functions.linear.</span>
+
+<span class="sd">        Returns: Animation to move the brane through the AdS throat.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         
@@ -405,11 +412,13 @@
     <span class="k">def</span> <span class="nf">move_compact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                      <span class="n">rt</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
                      <span class="n">rf</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="n">rate_functions</span><span class="o">.</span><span class="n">linear</span><span class="p">)</span><span class="o">-&gt;</span> <span class="n">AnimationGroup</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;To move the brane through the compact dimensions.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            rt (float, optional): _description_. Defaults to 3.</span>
-<span class="sd">            rf (float, optional): _description_. Defaults to rate_functions.linear.</span>
+<span class="sd">            - rt (float, optional): Defaults to 3.</span>
+<span class="sd">            - rf (float, optional): Defaults to rate_functions.linear.</span>
+
+<span class="sd">        Returns: To move the brane through the compact dimensions.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         
         <span class="k">return</span> <span class="n">AnimationGroup</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">MoveAlongPath</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compact_dim</span><span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">compact_dim</span><span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">rate_functions</span><span class="o">=</span> <span class="n">rf</span><span class="p">,</span> <span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)])</span></div>
@@ -420,11 +429,13 @@
     <span class="k">def</span> <span class="nf">move_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">rt</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
                  <span class="n">rf</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="n">rate_functions</span><span class="o">.</span><span class="n">linear</span><span class="p">)</span><span class="o">-&gt;</span> <span class="n">AnimationGroup</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;To move the brane through all coordinates.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            rt (float, optional): _description_. Defaults to 3.</span>
-<span class="sd">            rf (float, optional): _description_. Defaults to rate_functions.linear.</span>
+<span class="sd">            - rt (float, optional): Defaults to 3.</span>
+<span class="sd">            - rf (float, optional): Defaults to rate_functions.linear.</span>
+
+<span class="sd">        Returns: To move the brane through all coordinates.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         

@@ -199,12 +199,12 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">mtheoretical</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of mtheoretical</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../equations.html">equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../objects.html">objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates</a></li>
 </ul>
 </li>
 </ul>
@@ -242,40 +242,32 @@
         </div>
         <article role="main" id="furo-main-content">
           <h1>Source code for tables_and_plots.plot_instanton</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">textwrap</span> <span class="kn">import</span> <span class="n">fill</span>
-<span class="kn">from</span> <span class="nn">manim</span> <span class="kn">import</span> <span class="o">*</span>
+<span></span><span class="kn">from</span> <span class="nn">manim</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">.plot_general</span> <span class="kn">import</span> <span class="n">Plot_General</span>
 
 <div class="viewcode-block" id="Plot_Instanton">
 <a class="viewcode-back" href="../../tables_and_plots.html#tables_and_plots.plot_instanton.Plot_Instanton">[docs]</a>
 <span class="k">class</span> <span class="nc">Plot_Instanton</span><span class="p">(</span><span class="n">Plot_General</span><span class="p">,</span> <span class="n">Group</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This is a class to represent an instanton potential with a false and true minima. </span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This is a class to represent an instanton potential with a false and true minima. See Plot_General Class.</span>
+
+<span class="sd">    .. note::</span>
+
+<span class="sd">        Note that the axis and labels of these are the 0-th element of the group when you call it.</span>
+<span class="sd">  </span>
+<span class="sd">    - **Example**::</span>
+
+<span class="sd">        from manim import *</span>
+<span class="sd">        from mtheoretical import *</span>
+
+<span class="sd">        class Example_Plot_Instanton(Scene):</span>
+<span class="sd">            def construct(self):</span>
+<span class="sd">                p_ins= Plot_Instanton().to_corner(DL)</span>
+<span class="sd">                self.add(p_ins[0])</span>
+<span class="sd">                self.play(p_ins.fade_in_field_position())</span>
+<span class="sd">                self.play(p_ins.decay())</span>
 <span class="sd">    </span>
-<span class="sd">    Parameters (See Plot_General Class)</span>
-<span class="sd">    ----------</span>
-<span class="sd">   </span>
-<span class="sd">    - func_main_color (ParsableManimColor, optional): Defaults to GREEN.</span>
-<span class="sd">    - func_2_color (ParsableManimColor, optional): Defaults to RED.</span>
-<span class="sd">    - func_3_color (ParsableManimColor, optional): Defaults to BLUE.</span>
-<span class="sd">    - text_color (ParsableManimColor, optional): Defaults to BLACK.</span>
-<span class="sd">    - axis_opacity (float, optional): Defaults to 1.</span>
-<span class="sd">    - axis_stroke (float, optional): Defaults to 2.</span>
-<span class="sd">    - decorator_presence (str, optional): Defaults to &quot;box&quot;.</span>
-<span class="sd">    - decorator_color (ParsableManimColor, optional): Defaults to BLACK.</span>
-<span class="sd">    - decorator_stroke_w: (float, optional). Defaults to 1.</span>
-<span class="sd">    - corner_rad (float, optional): Defaults to 0.3.</span>
-<span class="sd">    - corner_rad_direction (list, optional): Defaults to [1,1,1,1].</span>
-<span class="sd">    - fill_opa (float, optional): Defaults to 0.1.</span>
-<span class="sd">    - stroke_w (float, optional): Defaults to 1.</span>
-<span class="sd">    - stroke_opa (float, optional): Defaults to 0.1.</span>
-<span class="sd">    - tightness (float, optional): Defaults to 0.2.</span>
-<span class="sd">    </span>
-<span class="sd">    Methods</span>
-<span class="sd">    -------</span>
-<span class="sd">    </span>
-<span class="sd">    - fade_in_field_position (rt= 0.5, rf= linear)</span>
-<span class="sd">    - decay (rt= 0.5, rf= linear)</span>
-<span class="sd">     </span>
+<span class="sd">    - **Methods**:</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     
     <span class="c1"># Scale any graph with respect to the center scale(3, about_point=graph.ax_ins.c2p(0, 0, 0)</span>
@@ -315,8 +307,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">field_position</span><span class="o">=</span> <span class="n">Dot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decorator_color</span><span class="p">,</span> <span class="n">stroke_width</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stroke_w</span><span class="p">,</span> <span class="n">fill_opacity</span><span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tracker_ins</span><span class="o">=</span> <span class="n">ValueTracker</span><span class="p">(</span><span class="o">-</span><span class="mf">0.845649</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">field_position</span><span class="o">.</span><span class="n">add_updater</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax_ins</span><span class="o">.</span><span class="n">c2p</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tracker_ins</span><span class="o">.</span><span class="n">get_value</span><span class="p">(),</span><span class="mi">0</span><span class="p">)))</span>
-        
-        
+              
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">decorator_presence</span><span class="o">==</span> <span class="s2">&quot;box&quot;</span><span class="p">:</span>
             <span class="n">box</span><span class="o">=</span> <span class="n">SurroundingRectangle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax_ins</span><span class="p">,</span> <span class="n">corner_radius</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">corner_rad</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decorator_color</span><span class="p">,</span> <span class="n">fill_opacity</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fill_opa</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tightness</span><span class="p">,</span> <span class="n">stroke_width</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decorator_stroke_w</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">initial_show</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax_ins</span><span class="p">,</span> <span class="n">lab_ax_ins</span><span class="p">,</span> <span class="n">pot_ins</span><span class="p">,</span> <span class="n">minima_labels</span><span class="p">,</span> <span class="n">box</span><span class="p">)</span>
@@ -334,8 +325,8 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            rt (float, optional): Defaults to 0.5.</span>
-<span class="sd">            rf (float, optional): Defaults to linear.</span>
+<span class="sd">            - rt (float, optional): Defaults to 0.5.</span>
+<span class="sd">            - rf (float, optional): Defaults to linear.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Animation: Fades the field position in.</span>
@@ -348,14 +339,14 @@
     <span class="k">def</span> <span class="nf">decay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
               <span class="n">rt</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
               <span class="n">rf</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="n">linear</span><span class="p">)</span><span class="o">-&gt;</span> <span class="n">Animation</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;_summary_</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            rt (float, optional): Defaults to 0.5.</span>
-<span class="sd">            rf (float, optional): Defaults to linear.</span>
+<span class="sd">            - rt (float, optional): Defaults to 0.5.</span>
+<span class="sd">            - rf (float, optional): Defaults to linear.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            Animation: Describes the decay process in the potential.</span>
+<span class="sd">            Animation: Describes the tunneling process in the potential.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tracker_ins</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">)</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="mf">0.7</span><span class="p">)</span></div>

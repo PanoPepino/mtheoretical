@@ -2,23 +2,8 @@ from manim import *
 from .table_general import *
 
 class Table_Summary_Induce(Table_General, VGroup):
-    """ Class to display a table with all relations between 4D and higher dimension fields and the papers where they are discussed.
+    """ Class to display a table with all relations between 4D and higher dimension fields and the papers where they are discussed. See Table_General Class.
 
-    Parameters: (See Table_General)
-    -----------
-
-    - text_color (ParsableManimColor, optional): Defaults to BLACK.
-    - hlight_1_color (ParsableManimColor, optional): _description_. Defaults to RED.
-    - hlight_2_color (ParsableManimColor, optional): _description_. Defaults to BLUE.
-    - hlight_3_color (ParsableManimColor, optional): _description_. Defaults to PURPLE.
-    - corner_rad (float, optional): _description_. Defaults to 0.3.
-    - corner_rad_direction (list, optional). To modify which vertex bend and not.Defaults to [1, 1, 1, 1].
-    - decorator_color (ParsableManimColor, optional): _description_. Defaults to BLACK.
-    - decorator_stroke_w (float, optiona): Defaults to 1.
-    - stroke_w (float, optional): _description_. Defaults to 7.
-    - stroke_opa (float, optional): Defaults to 1,
-    - fill_opa (float, optional): _description_. Defaults to 0.05.
-        
     """
     
     def __init__(self, **kwargs):

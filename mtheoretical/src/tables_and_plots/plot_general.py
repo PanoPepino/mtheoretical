@@ -1,8 +1,7 @@
 from manim import *
 
 class Plot_General(Group):
-    """This class is a mock class to control the apareance of all other plots through the inheritance property.
-
+    """This class is a general class to control the apareance of all other plots through the inheritance property.
 
     - **Parameters**::
    
@@ -12,27 +11,21 @@ class Plot_General(Group):
             - text_color (ParsableManimColor, optional): Defaults to BLACK.
             - axis_opacity (float, optional): Defaults to 1.
             - axis_stroke (float, optional): Defaults to 2.
-            - decorator_presence (str, optional): Defaults to "box".
+            - decorator_presence (str, optional): Several options:
+                - "box": A simple surrounding rectangle around the title.
+                - "no": Nothing. Plain text. 
             - decorator_color (ParsableManimColor, optional): Defaults to BLACK.
             - decorator_stroke_w: (float, optional). Defaults to 1.
             - corner_rad (float, optional): Defaults to 0.3.
-            - corner_rad_direction (list, optional): Defaults to [1,1,1,1].
+            - corner_rad_direction (list, optional): Defaults to [1, 1, 1, 1].
             - fill_opa (float, optional): Defaults to 0.1.
             - stroke_w (float, optional): Defaults to 1.
             - stroke_opa (float, optional): Defaults to 0.1.
             - tightness (float, optional): Defaults to 0.2.
 
-    - **Example**::
+    .. note::
 
-            from manim import *
-            from mtheoretical import *
-
-            class SquareExample(Scene):
-                def construct(self):
-                    square_1 = Square(side_length=2.0).shift(DOWN)
-                    square_2 = Square(side_length=1.0).next_to(square_1,direction=UP)
-                    square_3 = Square(side_length=0.5).next_to(square_2, direction=UP)
-                    self.add(square_1, square_2, square_3)
+        Scale any graph with respect to the center scale(3, about_point=graph.ax_ins.c2p(0, 0, 0))
 
     """ 
     def __init__(self,

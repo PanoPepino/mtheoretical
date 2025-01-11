@@ -6,7 +6,7 @@
 mtheoretical documentation
 ==========================
 
-This webpage contains the documentation for mtheoretical, a library based in Manim and Manim-Slides, with the main focus of providing a straightforward to craft presentations.
+This webpage contains the documentation for mtheoretical, a (personal) library based in `Manim <https://docs.manim.community/en/stable/>`_ and `Manim-Slides <https://manim-slides.eertmans.be/latest/>`_, with the main focus of providing a straightforward way to craft presentations. Close to the totality of the contents of this library contains objects, its animations and equations related to `String Cosmology Presentations <https://panopepino.github.io/web_page/main_page/slides.html>`_. But the underlying idea is to offer a collection of elements to easily craft new slides with all previous creations gathered in the same libraries. 
 
 These are divided into several sub-packages as:
    - **text_and_organisation**, which contains things like titles, bulleted lists and references. 
@@ -29,3 +29,7 @@ The main idea is to generalise the sub-packages for **refs** and **equations**, 
 
    .. 
       Whenever you add a new class or sub-package, it seems that one has to rewite the corresponding .rst file to add that info.
+
+.. note::
+
+   Thank you to Uwezi, Abulafia, Jeertmans and the Manim Discord for all the help provided during these years. This humble library would not be possible without them.   

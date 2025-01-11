@@ -2,31 +2,25 @@ from manim import *
 from .plot_general import *
 
 class Plot_Quantum(Plot_General, VGroup):
-    """This class returns the simplest quantum cosmology potential to discuss the two different boundary conditions of this framework.
+    """This class returns the simplest quantum cosmology potential to discuss the two different boundary conditions of this framework. See Plot_General Class.
 
-    Parameters (See Plot_General Class)
-    ----------
-   
-    - func_main_color (ParsableManimColor, optional): Defaults to GREEN.
-    - func_2_color (ParsableManimColor, optional): Defaults to RED.
-    - func_3_color (ParsableManimColor, optional): Defaults to BLUE.
-    - text_color (ParsableManimColor, optional): Defaults to BLACK.
-    - axis_opacity (float, optional): Defaults to 1.
-    - axis_stroke (float, optional): Defaults to 2.
-    - decorator_presence (str, optional): Defaults to "box".
-    - decorator_color (ParsableManimColor, optional): Defaults to BLACK.
-    - decorator_stroke_w: (float, optional). Defaults to 1.
-    - corner_rad (float, optional): Defaults to 0.3.
-    - corner_rad_direction (list, optional): Defaults to [1,1,1,1].
-    - fill_opa (float, optional): Defaults to 0.1.
-    - stroke_w (float, optional): Defaults to 1.
-    - stroke_opa (float, optional): Defaults to 0.1.
-    - tightness (float, optional): Defaults to 0.2.
+    .. note::
 
-    Methods
-    ---------
+        The axis and potential are the 0-th element of the class.
 
-    - create_wave_functions: (It shows both wave functions to H-Hawk and Vilenkin wave functions)
+    - **Example**::
+
+        from manim import *
+        from mtheoretical import *
+
+        class Example_Plot_Q(Scene):
+            def construct(self):
+                gq= Plot_Quantum().scale(0.4).to_corner(DL)
+                self.add(gq[0])
+                self.play(gq.create_wave_functions())
+        
+
+   - **Methods**::
     
     """
     def __init__(self,
@@ -89,18 +83,18 @@ class Plot_Quantum(Plot_General, VGroup):
     def create_wave_functions(self,
                               rt: float= 2,
                               rf: float= linear)-> Succession:
-        """Write both wavefunctions for the discussion and its legend.
+        """
 
         Args:
-            rt (float, optional): Defaults to 2.
-            rf (float, optional): Defaults to linear.
+            - rt (float, optional): Defaults to 2.
+            - rf (float, optional): Defaults to linear.
 
         Returns:
-            Succession: 
+            Succession: Write both wavefunctions for the discussion and its legend.
         """
         
         return Succession(
-            *[Write(piece) for piece in self.to_draw])
+            *[Write(piece, run_time = rt, rate_func= rf) for piece in self.to_draw])
 
         
         

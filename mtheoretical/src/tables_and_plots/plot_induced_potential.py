@@ -4,34 +4,31 @@ from scipy.optimize import fsolve
 
 class Plot_Induced_Potential(Plot_General, Group):
     """This is a class to represent a 4D cosmo potential for the nucleated brane from the 10D.
+    see Plot_General Class for more information. 
 
-    Parameters (see Plot_General Class)
-    ----------
-   
-    - func_main_color (ParsableManimColor, optional): Defaults to GREEN.
-    - func_2_color (ParsableManimColor, optional): Defaults to RED.
-    - func_3_color (ParsableManimColor, optional): Defaults to BLUE.
-    - text_color (ParsableManimColor, optional): Defaults to BLACK.
-    - axis_opacity (float, optional): Defaults to 1.
-    - axis_stroke (float, optional): Defaults to 2.
-    - decorator_presence (str, optional): Defaults to "box".
-    - decorator_color (ParsableManimColor, optional): Defaults to BLACK.
-    - decorator_stroke_w: (float, optional). Defaults to 1.
-    - corner_rad (float, optional): Defaults to 0.3.
-    - corner_rad_direction (list, optional): Defaults to [1,1,1,1].
-    - fill_opa (float, optional): Defaults to 0.1.
-    - stroke_w (float, optional): Defaults to 1.
-    - stroke_opa (float, optional): Defaults to 0.1.
-    - tightness (float, optional): Defaults to 0.2.
+    .. note::
+
+        Note that the axis and labels of these are the 0-th element of the group when you call it.
+
+    - **Example**::
+
+        class Example_Plot_Induced_Potential(Scene):
+            def construct(self):
+                plot_pot= Plot_Induced_Potential()
+                plot_pot.scale(0.3, about_point= plot_pot.ax_4D_cosmos.get_origin())
+                plot_pot.to_corner(LEFT)
+                self.add(plot_pot[0])
+                self.play(plot_pot.show_potential())
+                self.play(plot_pot.show_jc())
+                self.play(plot_pot.nucleate_brane())
+                self.wait()
+                self.play(plot_pot.accelerate())
+                self.play(plot_pot.bounce())
+                self.play(plot_pot.add_cc_and_expand())
+                self.play(FadeOut(plot_pot))
+                self.play(Wait())
     
-    Methods
-    -------
-    - show_jc: Modifies the barrier of the angular momentum.
-    - restore_jc: Return the angular momentum to initial example value.
-    - nucleate_brane: Moves the point to the nucleation point.
-    - accelerate: Moves the point along the acceleration phase.
-    - bounce: Moves the point back.
-    - add_cc_and_expand: Adds a little bit of cosmological constant and expand.
+    - **Methods**::
     
     """
     
@@ -45,7 +42,6 @@ class Plot_Induced_Potential(Plot_General, Group):
         #Tracker and values
         aH= 1.2
         ah= 1
-        
         
         #Axes and labels
         self.ax_4D_cosmos= NumberPlane(
@@ -90,10 +86,10 @@ class Plot_Induced_Potential(Plot_General, Group):
         if self.decorator_presence== "box":
             box= SurroundingRectangle(self.ax_4D_cosmos, corner_radius= self.corner_rad, color= self.decorator_color, fill_opacity= self.fill_opa, buff= self.tightness + 0.2, stroke_width= self.decorator_stroke_w)
             self.initial_show= VGroup(self.ax_4D_cosmos,self.lab_ax_4D_cosmos, box)
-            self.add(self.initial_show, self.lab_ax_4D_cosmos, self.pot_4D_cosmos_og, self.pot_4D_cosmos_jc_change, self.pot_4D_cosmos_with_cc, self.position)
+            self.add(self.initial_show, self.pot_4D_cosmos_og, self.pot_4D_cosmos_jc_change, self.pot_4D_cosmos_with_cc, self.position)
         
         else:
-            self.add(self.ax_4D_cosmos, self.lab_ax_4D_cosmos, self.pot_4D_cosmos_og, self.pot_4D_cosmos_jc_change, self.pot_4D_cosmos_with_cc)
+            self.add(self.ax_4D_cosmos, self.lab_ax_4D_cosmos, self.pot_4D_cosmos_og, self.pot_4D_cosmos_jc_change, self.pot_4D_cosmos_with_cc, self.position)
             
     def show_potential(self,
                   rt: float= 2,
@@ -101,11 +97,11 @@ class Plot_Induced_Potential(Plot_General, Group):
         """
 
         Args:
-            rt (float, optional): Defaults to 2.
-            rf (float, optional): Defaults to linear.
+            - rt (float, optional): Defaults to 2.
+            - rf (float, optional): Defaults to linear.
 
         Returns:
-            Animation: Shows the original potential.
+            Animation: Writes the original potential.
         """
         
         return Write(self.pot_4D_cosmos_og, run_time= rt, rate_func= rf) 
@@ -116,8 +112,8 @@ class Plot_Induced_Potential(Plot_General, Group):
         """
 
         Args:
-            rt (float, optional): Defaults to 2.
-            rf (float, optional): Defaults to linear.
+            - rt (float, optional): Defaults to 2.
+            - rf (float, optional): Defaults to linear.
 
         Returns:
             Animation: Shows the potential with extra barrier of the angular momentum.
@@ -133,8 +129,8 @@ class Plot_Induced_Potential(Plot_General, Group):
         """
 
         Args:
-            rt (float, optional): Defaults to 0.5.
-            rf (float, optional): Defaults to linear.
+            - rt (float, optional): Defaults to 0.5.
+            - rf (float, optional): Defaults to linear.
 
         Returns:
             Animation: Moves the position in the potential to the outer horizon.
@@ -149,8 +145,8 @@ class Plot_Induced_Potential(Plot_General, Group):
         """
 
         Args:
-            rt (float, optional): Defaults to 0.5.
-            rf (float, optional): Defaults to linear.
+            - rt (float, optional): Defaults to 0.5.
+            - rf (float, optional): Defaults to linear.
 
         Returns:
             Animation: Takes the brane to the minimum of the potential.
@@ -163,8 +159,8 @@ class Plot_Induced_Potential(Plot_General, Group):
         """
 
         Args:
-            rt (float, optional): Defaults to 4.
-            rf (float, optional): Defaults to linear.
+            - rt (float, optional): Defaults to 4.
+            - rf (float, optional): Defaults to linear.
 
         Returns:
             Succession: Makes the system bounce in the potential.
@@ -180,8 +176,8 @@ class Plot_Induced_Potential(Plot_General, Group):
         """
 
         Args:
-            rt (float, optional): Defaults to 6.
-            rf (float, optional): Defaults to linear.
+            - rt (float, optional): Defaults to 6.
+            - rf (float, optional): Defaults to linear.
 
         Returns:
             Succession: Shows the modified potential to add the presence of the cosmological constant and then expand the bubble forever.

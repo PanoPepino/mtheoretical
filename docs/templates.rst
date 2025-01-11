@@ -1,10 +1,7 @@
-templates package
+templates
 =================
 
-Submodules
-----------
-
-templates.color\_scheme module
+color\_scheme
 ------------------------------
 
 .. automodule:: templates.color_scheme
@@ -12,7 +9,7 @@ templates.color\_scheme module
    :undoc-members:
    :show-inheritance:
 
-templates.template\_1 module
+template\_1
 ----------------------------
 
 .. automodule:: templates.template_1
@@ -20,7 +17,7 @@ templates.template\_1 module
    :undoc-members:
    :show-inheritance:
 
-templates.template\_2 module
+template\_2
 ----------------------------
 
 .. automodule:: templates.template_2
@@ -28,10 +25,4 @@ templates.template\_2 module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
 
-.. automodule:: templates
-   :members:
-   :undoc-members:
-   :show-inheritance:

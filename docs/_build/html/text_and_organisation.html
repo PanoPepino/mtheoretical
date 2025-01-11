@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="equations" href="equations.html" /><link rel="prev" title="mtheoretical" href="modules.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="equations" href="equations.html" /><link rel="prev" title="src" href="modules.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>text_and_organisation - mtheoretical 2.0 documentation</title>
@@ -200,12 +200,12 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">mtheoretical</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of mtheoretical</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">src</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">text_and_organisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="equations.html">equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tables_and_plots.html">tables_and_plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="objects.html">objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="templates.html">templates package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tables_and_plots.html">tables_and_plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="templates.html">templates</a></li>
 </ul>
 </li>
 </ul>
@@ -340,6 +340,64 @@
 </dd></dl>
 
 </section>
+<section id="module-text_and_organisation.blb">
+<span id="blb"></span><h2>blb<a class="headerlink" href="#module-text_and_organisation.blb" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="text_and_organisation.blb.BlB">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BlB</span></span><a class="reference internal" href="_modules/text_and_organisation/blb.html#BlB"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_and_organisation.blb.BlB" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#text_and_organisation.text_general.Text_General" title="text_and_organisation.text_general.Text_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Text_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></p>
+<p>Class to create a bulleted list.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can find an example in Text_General class.</p>
+</div>
+<ul class="simple">
+<li><p><strong>Methods</strong>:</p></li>
+</ul>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="text_and_organisation.blb.BlB.animation_overrides">
+<span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#text_and_organisation.blb.BlB.animation_overrides" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="text_and_organisation.blb.BlB.next_point">
+<span class="sig-name descname"><span class="pre">next_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Succession</span></span></span><a class="reference internal" href="_modules/text_and_organisation/blb.html#BlB.next_point"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_and_organisation.blb.BlB.next_point" title="Link to this definition">¶</a></dt>
+<dd><p>Method to iterate over each of the points of the bullets points. For each iteration, makes the n-th bullet point completely black and greys out the rest.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>rf (float, optional): rate_function of the animation. Defaults to linear.</p></li>
+<li><p>rt (float, optional): run_time of the animation. Defaults to 1.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-text_and_organisation.refs">
+<span id="refs"></span><h2>refs<a class="headerlink" href="#module-text_and_organisation.refs" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="text_and_organisation.refs.Ref">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Ref</span></span><a class="reference internal" href="_modules/text_and_organisation/refs.html#Ref"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_and_organisation.refs.Ref" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#text_and_organisation.text_general.Text_General" title="text_and_organisation.text_general.Text_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Text_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
+<p>Class to create citations of References. It has a dictionary built in. You can check it in [source].</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Each reference will require its own definition, as one can play with the boxes and flip them to close the design and so on. See an example in Text_General Class.</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This Class should be transformed into a more general class capable of reading .bib files and extract dictionaries of references.</p>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="text_and_organisation.refs.Ref.animation_overrides">
+<span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#text_and_organisation.refs.Ref.animation_overrides" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
 <section id="module-text_and_organisation.title_presentation">
 <span id="title-presentation"></span><h2>title_presentation<a class="headerlink" href="#module-text_and_organisation.title_presentation" title="Link to this heading">¶</a></h2>
 <dl class="py class">
@@ -407,64 +465,6 @@
 </dd></dl>
 
 </section>
-<section id="module-text_and_organisation.blb">
-<span id="blb"></span><h2>blb<a class="headerlink" href="#module-text_and_organisation.blb" title="Link to this heading">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="text_and_organisation.blb.BlB">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BlB</span></span><a class="reference internal" href="_modules/text_and_organisation/blb.html#BlB"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_and_organisation.blb.BlB" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#text_and_organisation.text_general.Text_General" title="text_and_organisation.text_general.Text_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Text_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></p>
-<p>Class to create a bulleted list.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can find an example in Text_General class.</p>
-</div>
-<ul class="simple">
-<li><p><strong>Methods</strong>:</p></li>
-</ul>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="text_and_organisation.blb.BlB.animation_overrides">
-<span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#text_and_organisation.blb.BlB.animation_overrides" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="text_and_organisation.blb.BlB.next_point">
-<span class="sig-name descname"><span class="pre">next_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Succession</span></span></span><a class="reference internal" href="_modules/text_and_organisation/blb.html#BlB.next_point"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_and_organisation.blb.BlB.next_point" title="Link to this definition">¶</a></dt>
-<dd><p>Method to iterate over each of the points of the bullets points. For each iteration, makes the n-th bullet point completely black and greys out the rest.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rf (float, optional): rate_function of the animation. Defaults to linear.</p></li>
-<li><p>rt (float, optional): run_time of the animation. Defaults to 1.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-<section id="module-text_and_organisation.refs">
-<span id="refs"></span><h2>refs<a class="headerlink" href="#module-text_and_organisation.refs" title="Link to this heading">¶</a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="text_and_organisation.refs.Ref">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Ref</span></span><a class="reference internal" href="_modules/text_and_organisation/refs.html#Ref"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#text_and_organisation.refs.Ref" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#text_and_organisation.text_general.Text_General" title="text_and_organisation.text_general.Text_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Text_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
-<p>Class to create citations of References. It has a dictionary built in. You can check it in [source].</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Each reference will require its own definition, as one can play with the boxes and flip them to close the design and so on.</p>
-</div>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>This Class should be transformed into a more general class capable of reading .bib files and extract dictionaries of references.</p>
-</div>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="text_and_organisation.refs.Ref.animation_overrides">
-<span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#text_and_organisation.refs.Ref.animation_overrides" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</section>
 </section>
 
         </article>
@@ -488,7 +488,7 @@
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">mtheoretical</div>
+                <div class="title">src</div>
                 
               </div>
             </a>
@@ -525,10 +525,10 @@
 <li><a class="reference internal" href="#">text_and_organisation</a><ul>
 <li><a class="reference internal" href="#module-text_and_organisation.text_general">text_general</a></li>
 <li><a class="reference internal" href="#module-text_and_organisation.title_general">title_general</a></li>
-<li><a class="reference internal" href="#module-text_and_organisation.title_presentation">title_presentation</a></li>
-<li><a class="reference internal" href="#module-text_and_organisation.title_section">title_section</a></li>
 <li><a class="reference internal" href="#module-text_and_organisation.blb">blb</a></li>
 <li><a class="reference internal" href="#module-text_and_organisation.refs">refs</a></li>
+<li><a class="reference internal" href="#module-text_and_organisation.title_presentation">title_presentation</a></li>
+<li><a class="reference internal" href="#module-text_and_organisation.title_section">title_section</a></li>
 </ul>
 </li>
 </ul>

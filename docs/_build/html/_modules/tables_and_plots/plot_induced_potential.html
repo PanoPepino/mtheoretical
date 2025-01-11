@@ -199,12 +199,12 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">mtheoretical</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of mtheoretical</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../equations.html">equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../objects.html">objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates</a></li>
 </ul>
 </li>
 </ul>
@@ -250,34 +250,31 @@
 <a class="viewcode-back" href="../../tables_and_plots.html#tables_and_plots.plot_induced_potential.Plot_Induced_Potential">[docs]</a>
 <span class="k">class</span> <span class="nc">Plot_Induced_Potential</span><span class="p">(</span><span class="n">Plot_General</span><span class="p">,</span> <span class="n">Group</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This is a class to represent a 4D cosmo potential for the nucleated brane from the 10D.</span>
+<span class="sd">    see Plot_General Class for more information. </span>
 
-<span class="sd">    Parameters (see Plot_General Class)</span>
-<span class="sd">    ----------</span>
-<span class="sd">   </span>
-<span class="sd">    - func_main_color (ParsableManimColor, optional): Defaults to GREEN.</span>
-<span class="sd">    - func_2_color (ParsableManimColor, optional): Defaults to RED.</span>
-<span class="sd">    - func_3_color (ParsableManimColor, optional): Defaults to BLUE.</span>
-<span class="sd">    - text_color (ParsableManimColor, optional): Defaults to BLACK.</span>
-<span class="sd">    - axis_opacity (float, optional): Defaults to 1.</span>
-<span class="sd">    - axis_stroke (float, optional): Defaults to 2.</span>
-<span class="sd">    - decorator_presence (str, optional): Defaults to &quot;box&quot;.</span>
-<span class="sd">    - decorator_color (ParsableManimColor, optional): Defaults to BLACK.</span>
-<span class="sd">    - decorator_stroke_w: (float, optional). Defaults to 1.</span>
-<span class="sd">    - corner_rad (float, optional): Defaults to 0.3.</span>
-<span class="sd">    - corner_rad_direction (list, optional): Defaults to [1,1,1,1].</span>
-<span class="sd">    - fill_opa (float, optional): Defaults to 0.1.</span>
-<span class="sd">    - stroke_w (float, optional): Defaults to 1.</span>
-<span class="sd">    - stroke_opa (float, optional): Defaults to 0.1.</span>
-<span class="sd">    - tightness (float, optional): Defaults to 0.2.</span>
+<span class="sd">    .. note::</span>
+
+<span class="sd">        Note that the axis and labels of these are the 0-th element of the group when you call it.</span>
+
+<span class="sd">    - **Example**::</span>
+
+<span class="sd">        class Example_Plot_Induced_Potential(Scene):</span>
+<span class="sd">            def construct(self):</span>
+<span class="sd">                plot_pot= Plot_Induced_Potential()</span>
+<span class="sd">                plot_pot.scale(0.3, about_point= plot_pot.ax_4D_cosmos.get_origin())</span>
+<span class="sd">                plot_pot.to_corner(LEFT)</span>
+<span class="sd">                self.add(plot_pot[0])</span>
+<span class="sd">                self.play(plot_pot.show_potential())</span>
+<span class="sd">                self.play(plot_pot.show_jc())</span>
+<span class="sd">                self.play(plot_pot.nucleate_brane())</span>
+<span class="sd">                self.wait()</span>
+<span class="sd">                self.play(plot_pot.accelerate())</span>
+<span class="sd">                self.play(plot_pot.bounce())</span>
+<span class="sd">                self.play(plot_pot.add_cc_and_expand())</span>
+<span class="sd">                self.play(FadeOut(plot_pot))</span>
+<span class="sd">                self.play(Wait())</span>
 <span class="sd">    </span>
-<span class="sd">    Methods</span>
-<span class="sd">    -------</span>
-<span class="sd">    - show_jc: Modifies the barrier of the angular momentum.</span>
-<span class="sd">    - restore_jc: Return the angular momentum to initial example value.</span>
-<span class="sd">    - nucleate_brane: Moves the point to the nucleation point.</span>
-<span class="sd">    - accelerate: Moves the point along the acceleration phase.</span>
-<span class="sd">    - bounce: Moves the point back.</span>
-<span class="sd">    - add_cc_and_expand: Adds a little bit of cosmological constant and expand.</span>
+<span class="sd">    - **Methods**::</span>
 <span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
@@ -291,7 +288,6 @@
         <span class="c1">#Tracker and values</span>
         <span class="n">aH</span><span class="o">=</span> <span class="mf">1.2</span>
         <span class="n">ah</span><span class="o">=</span> <span class="mi">1</span>
-        
         
         <span class="c1">#Axes and labels</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ax_4D_cosmos</span><span class="o">=</span> <span class="n">NumberPlane</span><span class="p">(</span>
@@ -336,10 +332,10 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">decorator_presence</span><span class="o">==</span> <span class="s2">&quot;box&quot;</span><span class="p">:</span>
             <span class="n">box</span><span class="o">=</span> <span class="n">SurroundingRectangle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax_4D_cosmos</span><span class="p">,</span> <span class="n">corner_radius</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">corner_rad</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decorator_color</span><span class="p">,</span> <span class="n">fill_opacity</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fill_opa</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tightness</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">stroke_width</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decorator_stroke_w</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">initial_show</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax_4D_cosmos</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">lab_ax_4D_cosmos</span><span class="p">,</span> <span class="n">box</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">initial_show</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lab_ax_4D_cosmos</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pot_4D_cosmos_og</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pot_4D_cosmos_jc_change</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pot_4D_cosmos_with_cc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">initial_show</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pot_4D_cosmos_og</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pot_4D_cosmos_jc_change</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pot_4D_cosmos_with_cc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
         
         <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax_4D_cosmos</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lab_ax_4D_cosmos</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pot_4D_cosmos_og</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pot_4D_cosmos_jc_change</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pot_4D_cosmos_with_cc</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ax_4D_cosmos</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lab_ax_4D_cosmos</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pot_4D_cosmos_og</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pot_4D_cosmos_jc_change</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pot_4D_cosmos_with_cc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
             
 <div class="viewcode-block" id="Plot_Induced_Potential.show_potential">
 <a class="viewcode-back" href="../../tables_and_plots.html#tables_and_plots.plot_induced_potential.Plot_Induced_Potential.show_potential">[docs]</a>
@@ -349,11 +345,11 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            rt (float, optional): Defaults to 2.</span>
-<span class="sd">            rf (float, optional): Defaults to linear.</span>
+<span class="sd">            - rt (float, optional): Defaults to 2.</span>
+<span class="sd">            - rf (float, optional): Defaults to linear.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            Animation: Shows the original potential.</span>
+<span class="sd">            Animation: Writes the original potential.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         
         <span class="k">return</span> <span class="n">Write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pot_4D_cosmos_og</span><span class="p">,</span> <span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">)</span> </div>
@@ -367,8 +363,8 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            rt (float, optional): Defaults to 2.</span>
-<span class="sd">            rf (float, optional): Defaults to linear.</span>
+<span class="sd">            - rt (float, optional): Defaults to 2.</span>
+<span class="sd">            - rf (float, optional): Defaults to linear.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Animation: Shows the potential with extra barrier of the angular momentum.</span>
@@ -387,8 +383,8 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            rt (float, optional): Defaults to 0.5.</span>
-<span class="sd">            rf (float, optional): Defaults to linear.</span>
+<span class="sd">            - rt (float, optional): Defaults to 0.5.</span>
+<span class="sd">            - rf (float, optional): Defaults to linear.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Animation: Moves the position in the potential to the outer horizon.</span>
@@ -406,8 +402,8 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            rt (float, optional): Defaults to 0.5.</span>
-<span class="sd">            rf (float, optional): Defaults to linear.</span>
+<span class="sd">            - rt (float, optional): Defaults to 0.5.</span>
+<span class="sd">            - rf (float, optional): Defaults to linear.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Animation: Takes the brane to the minimum of the potential.</span>
@@ -423,8 +419,8 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            rt (float, optional): Defaults to 4.</span>
-<span class="sd">            rf (float, optional): Defaults to linear.</span>
+<span class="sd">            - rt (float, optional): Defaults to 4.</span>
+<span class="sd">            - rf (float, optional): Defaults to linear.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Succession: Makes the system bounce in the potential.</span>
@@ -443,8 +439,8 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            rt (float, optional): Defaults to 6.</span>
-<span class="sd">            rf (float, optional): Defaults to linear.</span>
+<span class="sd">            - rt (float, optional): Defaults to 6.</span>
+<span class="sd">            - rf (float, optional): Defaults to linear.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Succession: Shows the modified potential to add the presence of the cosmological constant and then expand the bubble forever.</span>

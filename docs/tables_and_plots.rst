@@ -1,8 +1,6 @@
 tables\_and\_plots
 ==========================
 
-
-
 plot\_general
 ---------------------------------------
 
@@ -18,7 +16,7 @@ table\_general
    :members:
    :undoc-members:
    :show-inheritance:
-
+   
 plot\_induced\_potential
 --------------------------------------------------
 
@@ -67,6 +65,7 @@ table\_energy\_scales
    :undoc-members:
    :show-inheritance:
 
+
 table\_summary
 ----------------------------------------
 
@@ -74,4 +73,5 @@ table\_summary
    :members:
    :undoc-members:
    :show-inheritance:
+
 

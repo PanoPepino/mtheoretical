@@ -3,30 +3,35 @@ from .table_general import *
 
 
 class Table_Bh_Embedding(Table_General, Group):
-    """Class to represent a table of the coordinates of the embedding of the dark bubble. It can display the whole table (type= together) or divided (type= split). It has three methods (animations).
+    """Class to represent a table of the coordinates of the embedding of the dark bubble. See Table_General Class. It can display the whole table (type= together) or divided (type= split). It has three methods (animations).
 
-    Parameters: (See Table_General Class)
-    -----------
-        
-    - text_color (ParsableManimColor, optional): Defaults to BLACK.
-    - hlight_1_color (ParsableManimColor, optional): _description_. Defaults to RED.
-    - hlight_2_color (ParsableManimColor, optional): _description_. Defaults to BLUE.
-    - hlight_3_color (ParsableManimColor, optional): _description_. Defaults to PURPLE.
-    - corner_rad (float, optional): _description_. Defaults to 0.3.
-    - corner_rad_direction (list, optional). To modify which vertex bend and not.Defaults to [1, 1, 1, 1].
-    - decorator_color (ParsableManimColor, optional): _description_. Defaults to BLACK.
-    - decorator_stroke_w (float, optiona): Defaults to 1.
-    - stroke_w (float, optional): _description_. Defaults to 7.
-    - stroke_opa (float, optional): Defaults to 1,
-    - fill_opa (float, optional): _description_. Defaults to 0.05.
+    - **Parameters**::
+
+        - type: (str, optional): There are two types:
+            - "together", this will display all 9 spatial directions in
+            the same row.
+            - "split": It will display compact and non-compact dimesions 
+            in two different tables.
+
+    - **Example**::
+
+        from manim import*
+        from mtheoretical import *
+
+        class Example_Table_Bh_Embedding(Scene):
+            def construct(self):
+                together= Table_Bh_Embedding(type= "together")
+                together.scale_to_fit_width(config.frame_width-1).shift(UP)
+                split= Table_Bh_Embedding(type= "split", chosen_position= RIGHT)
+                split.scale_to_fit_width(config.frame_width-1).next_to(together, DOWN, buff= 0.2)
+                self.add(together, split)
+                self.play(AnimationGroup(together.move_all(), 
+                                        split.move_non_compact(), 
+                                        split.move_compact()))
         
             
-    Methods
-    -------
-    - move_non_compact: It moves the brane through the throat direction.
-    - move_compact: It moves the brane through the compact directions.
-    - move_all: It moves the brane through all dimensions in the whole table.
-
+    - **Methods**:
+   
     """
     
     def __init__(self,
@@ -141,11 +146,13 @@ class Table_Bh_Embedding(Table_General, Group):
     def move_non_compact(self,
                          rt: float= 3,
                          rf: float= rate_functions.linear)-> Animation:
-        """To move the brane through the AdS throat.
+        """
 
         Args:
-            rt (float, optional): _description_. Defaults to 3.
-            rf (float, optional): _description_. Defaults to rate_functions.linear.
+            - rt (float, optional): Defaults to 3.
+            - rf (float, optional): Defaults to rate_functions.linear.
+
+        Returns: Animation to move the brane through the AdS throat.
 
         """
         
@@ -154,11 +161,13 @@ class Table_Bh_Embedding(Table_General, Group):
     def move_compact(self,
                      rt: float= 3,
                      rf: float= rate_functions.linear)-> AnimationGroup:
-        """To move the brane through the compact dimensions.
+        """
 
         Args:
-            rt (float, optional): _description_. Defaults to 3.
-            rf (float, optional): _description_. Defaults to rate_functions.linear.
+            - rt (float, optional): Defaults to 3.
+            - rf (float, optional): Defaults to rate_functions.linear.
+
+        Returns: To move the brane through the compact dimensions.
         """
         
         return AnimationGroup(*[MoveAlongPath(self.compact_dim[-i][-1], self.compact_dim[-i][0], rate_functions= rf, run_time= rt) for i in range(1,4)])
@@ -166,11 +175,13 @@ class Table_Bh_Embedding(Table_General, Group):
     def move_all(self,
                  rt: float= 3,
                  rf: float= rate_functions.linear)-> AnimationGroup:
-        """To move the brane through all coordinates.
+        """
 
         Args:
-            rt (float, optional): _description_. Defaults to 3.
-            rf (float, optional): _description_. Defaults to rate_functions.linear.
+            - rt (float, optional): Defaults to 3.
+            - rf (float, optional): Defaults to rate_functions.linear.
+
+        Returns: To move the brane through all coordinates.
 
         """
         

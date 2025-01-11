@@ -5,7 +5,7 @@ class Ref(Text_General, VGroup):
     """Class to create citations of References. It has a dictionary built in. You can check it in [source].
 
     .. note::
-        Each reference will require its own definition, as one can play with the boxes and flip them to close the design and so on.
+        Each reference will require its own definition, as one can play with the boxes and flip them to close the design and so on. See an example in Text_General Class.
 
     .. attention::
         This Class should be transformed into a more general class capable of reading .bib files and extract dictionaries of references.

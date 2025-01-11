@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="objects" href="objects.html" /><link rel="prev" title="equations" href="equations.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="templates" href="templates.html" /><link rel="prev" title="objects" href="objects.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>tables_and_plots - mtheoretical 2.0 documentation</title>
@@ -200,12 +200,12 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">mtheoretical</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of mtheoretical</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">src</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="text_and_organisation.html">text_and_organisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="equations.html">equations</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">tables_and_plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="objects.html">objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="templates.html">templates package</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">tables_and_plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="templates.html">templates</a></li>
 </ul>
 </li>
 </ul>
@@ -256,7 +256,7 @@
 <dt class="sig sig-object py" id="tables_and_plots.plot_general.Plot_General">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Plot_General</span></span><a class="reference internal" href="_modules/tables_and_plots/plot_general.html#Plot_General"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_general.Plot_General" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></p>
-<p>This class is a mock class to control the apareance of all other plots through the inheritance property.</p>
+<p>This class is a general class to control the apareance of all other plots through the inheritance property.</p>
 <ul>
 <li><p><strong>Parameters</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">func_main_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">GREEN</span><span class="o">.</span>
@@ -265,11 +265,13 @@
 <span class="o">-</span> <span class="n">text_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">BLACK</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">axis_opacity</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">1.</span>
 <span class="o">-</span> <span class="n">axis_stroke</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">2.</span>
-<span class="o">-</span> <span class="n">decorator_presence</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="s2">&quot;box&quot;</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">decorator_presence</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Several</span> <span class="n">options</span><span class="p">:</span>
+    <span class="o">-</span> <span class="s2">&quot;box&quot;</span><span class="p">:</span> <span class="n">A</span> <span class="n">simple</span> <span class="n">surrounding</span> <span class="n">rectangle</span> <span class="n">around</span> <span class="n">the</span> <span class="n">title</span><span class="o">.</span>
+    <span class="o">-</span> <span class="s2">&quot;no&quot;</span><span class="p">:</span> <span class="n">Nothing</span><span class="o">.</span> <span class="n">Plain</span> <span class="n">text</span><span class="o">.</span> 
 <span class="o">-</span> <span class="n">decorator_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">BLACK</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">decorator_stroke_w</span><span class="p">:</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">)</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">1.</span>
 <span class="o">-</span> <span class="n">corner_rad</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.3</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">corner_rad_direction</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">corner_rad_direction</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">fill_opa</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.1</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">stroke_w</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">1.</span>
 <span class="o">-</span> <span class="n">stroke_opa</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.1</span><span class="o">.</span>
@@ -277,20 +279,11 @@
 </pre></div>
 </div>
 </li>
-<li><p><strong>Example</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manim</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">mtheoretical</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="k">class</span> <span class="nc">SquareExample</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">square_1</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="n">side_length</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">DOWN</span><span class="p">)</span>
-        <span class="n">square_2</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="n">side_length</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">square_1</span><span class="p">,</span><span class="n">direction</span><span class="o">=</span><span class="n">UP</span><span class="p">)</span>
-        <span class="n">square_3</span> <span class="o">=</span> <span class="n">Square</span><span class="p">(</span><span class="n">side_length</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">square_2</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="n">UP</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">square_1</span><span class="p">,</span> <span class="n">square_2</span><span class="p">,</span> <span class="n">square_3</span><span class="p">)</span>
-</pre></div>
-</div>
-</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Scale any graph with respect to the center scale(3, about_point=graph.ax_ins.c2p(0, 0, 0))</p>
+</div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tables_and_plots.plot_general.Plot_General.animation_overrides">
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#tables_and_plots.plot_general.Plot_General.animation_overrides" title="Link to this definition">¶</a></dt>
@@ -305,28 +298,43 @@
 <dt class="sig sig-object py" id="tables_and_plots.table_general.Table_General">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Table_General</span></span><a class="reference internal" href="_modules/tables_and_plots/table_general.html#Table_General"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.table_general.Table_General" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">VMobject</span></code></p>
-<p>Class to load all necessary common inputs for any table in this library.</p>
-<section id="parameters">
-<h3>Parameters:<a class="headerlink" href="#parameters" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>hlight_1_color (ParsableManimColor, optional): _description_. Defaults to RED.</p></li>
-<li><p>hlight_2_color (ParsableManimColor, optional): _description_. Defaults to BLUE.</p></li>
-<li><p>hlight_3_color (ParsableManimColor, optional): _description_. Defaults to PURPLE.</p></li>
-<li><p>corner_rad (float, optional): _description_. Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional). To modify which vertex bend and not.Defaults to [1, 1, 1, 1].</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): _description_. Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_w (float, optiona): Defaults to 1.</p></li>
-<li><p>stroke_w (float, optional): _description_. Defaults to 7.</p></li>
-<li><p>stroke_opa (float, optional): Defaults to 1,</p></li>
-<li><p>fill_opa (float, optional): _description_. Defaults to 0.05.</p></li>
+<p>Class to load all necessary common inputs for any table in this library through inheritance propertiy.</p>
+<ul>
+<li><p><strong>Parameters</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">text_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">BLACK</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">hlight_1_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Highlight</span> <span class="n">color</span> 
+<span class="k">for</span> <span class="n">some</span> <span class="n">of</span> <span class="n">the</span> <span class="n">cells</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">RED</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">hlight_2_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">BLUE</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">hlight_3_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">PURPLE</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">corner_rad</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.2</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">corner_rad_direction</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">optional</span><span class="p">)</span><span class="o">.</span> <span class="n">To</span> <span class="n">modify</span> <span class="n">which</span> <span class="n">vertex</span> <span class="n">bend</span> <span class="ow">and</span> <span class="ow">not</span><span class="o">.</span>
+<span class="n">Defaults</span> <span class="n">to</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">decorator_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">BLACK</span><span class="o">.</span>
+<span class="o">-</span> <span class="n">decorator_stroke_w</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optiona</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">1.</span>
+<span class="o">-</span> <span class="n">stroke_w</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">5.</span>
+<span class="o">-</span> <span class="n">stroke_opa</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mi">1</span><span class="p">,</span>
+<span class="o">-</span> <span class="n">fill_opa</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.05</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manim</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">manim</span> <span class="n">theoretical</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">Example_Table_Summary_Bubble_and_Scales</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">gp</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="n">Table_Summary_Induce</span><span class="p">(),</span> <span class="n">Table_Energy_Scales</span><span class="p">())</span><span class="o">.</span><span class="n">arrange</span><span class="p">(</span><span class="n">RIGHT</span><span class="p">)</span>
+        <span class="n">gp</span><span class="o">.</span><span class="n">scale_to_fit_width</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">frame_width</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">gp</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tables_and_plots.table_general.Table_General.animation_overrides">
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#tables_and_plots.table_general.Table_General.animation_overrides" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -336,45 +344,44 @@
 <dt class="sig sig-object py" id="tables_and_plots.plot_induced_potential.Plot_Induced_Potential">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Plot_Induced_Potential</span></span><a class="reference internal" href="_modules/tables_and_plots/plot_induced_potential.html#Plot_Induced_Potential"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_induced_potential.Plot_Induced_Potential" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tables_and_plots.plot_general.Plot_General" title="tables_and_plots.plot_general.Plot_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plot_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></p>
-<p>This is a class to represent a 4D cosmo potential for the nucleated brane from the 10D.</p>
-<section id="parameters-see-plot-general-class">
-<h3>Parameters (see Plot_General Class)<a class="headerlink" href="#parameters-see-plot-general-class" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>func_main_color (ParsableManimColor, optional): Defaults to GREEN.</p></li>
-<li><p>func_2_color (ParsableManimColor, optional): Defaults to RED.</p></li>
-<li><p>func_3_color (ParsableManimColor, optional): Defaults to BLUE.</p></li>
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>axis_opacity (float, optional): Defaults to 1.</p></li>
-<li><p>axis_stroke (float, optional): Defaults to 2.</p></li>
-<li><p>decorator_presence (str, optional): Defaults to “box”.</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_w: (float, optional). Defaults to 1.</p></li>
-<li><p>corner_rad (float, optional): Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional): Defaults to [1,1,1,1].</p></li>
-<li><p>fill_opa (float, optional): Defaults to 0.1.</p></li>
-<li><p>stroke_w (float, optional): Defaults to 1.</p></li>
-<li><p>stroke_opa (float, optional): Defaults to 0.1.</p></li>
-<li><p>tightness (float, optional): Defaults to 0.2.</p></li>
-</ul>
-</section>
-<section id="methods">
-<h3>Methods<a class="headerlink" href="#methods" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>show_jc: Modifies the barrier of the angular momentum.</p></li>
-<li><p>restore_jc: Return the angular momentum to initial example value.</p></li>
-<li><p>nucleate_brane: Moves the point to the nucleation point.</p></li>
-<li><p>accelerate: Moves the point along the acceleration phase.</p></li>
-<li><p>bounce: Moves the point back.</p></li>
-<li><p>add_cc_and_expand: Adds a little bit of cosmological constant and expand.</p></li>
+<p>This is a class to represent a 4D cosmo potential for the nucleated brane from the 10D.
+see Plot_General Class for more information.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that the axis and labels of these are the 0-th element of the group when you call it.</p>
+</div>
+<ul>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Example_Plot_Induced_Potential</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">plot_pot</span><span class="o">=</span> <span class="n">Plot_Induced_Potential</span><span class="p">()</span>
+        <span class="n">plot_pot</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">about_point</span><span class="o">=</span> <span class="n">plot_pot</span><span class="o">.</span><span class="n">ax_4D_cosmos</span><span class="o">.</span><span class="n">get_origin</span><span class="p">())</span>
+        <span class="n">plot_pot</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">LEFT</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">plot_pot</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">plot_pot</span><span class="o">.</span><span class="n">show_potential</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">plot_pot</span><span class="o">.</span><span class="n">show_jc</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">plot_pot</span><span class="o">.</span><span class="n">nucleate_brane</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">plot_pot</span><span class="o">.</span><span class="n">accelerate</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">plot_pot</span><span class="o">.</span><span class="n">bounce</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">plot_pot</span><span class="o">.</span><span class="n">add_cc_and_expand</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeOut</span><span class="p">(</span><span class="n">plot_pot</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">Wait</span><span class="p">())</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Methods</strong>:</p></li>
 </ul>
 <dl class="py method">
 <dt class="sig sig-object py" id="tables_and_plots.plot_induced_potential.Plot_Induced_Potential.show_potential">
 <span class="sig-name descname"><span class="pre">show_potential</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Animation</span></span></span><a class="reference internal" href="_modules/tables_and_plots/plot_induced_potential.html#Plot_Induced_Potential.show_potential"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_induced_potential.Plot_Induced_Potential.show_potential" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
-<dt>Args:</dt><dd><p>rt (float, optional): Defaults to 2.
-rf (float, optional): Defaults to linear.</p>
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>rt (float, optional): Defaults to 2.</p></li>
+<li><p>rf (float, optional): Defaults to linear.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>Animation: Shows the original potential.</p>
+<dt>Returns:</dt><dd><p>Animation: Writes the original potential.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -383,8 +390,10 @@ rf (float, optional): Defaults to linear.</p>
 <dt class="sig sig-object py" id="tables_and_plots.plot_induced_potential.Plot_Induced_Potential.show_jc">
 <span class="sig-name descname"><span class="pre">show_jc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Animation</span></span></span><a class="reference internal" href="_modules/tables_and_plots/plot_induced_potential.html#Plot_Induced_Potential.show_jc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_induced_potential.Plot_Induced_Potential.show_jc" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
-<dt>Args:</dt><dd><p>rt (float, optional): Defaults to 2.
-rf (float, optional): Defaults to linear.</p>
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>rt (float, optional): Defaults to 2.</p></li>
+<li><p>rf (float, optional): Defaults to linear.</p></li>
+</ul>
 </dd>
 <dt>Returns:</dt><dd><p>Animation: Shows the potential with extra barrier of the angular momentum.</p>
 </dd>
@@ -395,8 +404,10 @@ rf (float, optional): Defaults to linear.</p>
 <dt class="sig sig-object py" id="tables_and_plots.plot_induced_potential.Plot_Induced_Potential.nucleate_brane">
 <span class="sig-name descname"><span class="pre">nucleate_brane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Succession</span></span></span><a class="reference internal" href="_modules/tables_and_plots/plot_induced_potential.html#Plot_Induced_Potential.nucleate_brane"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_induced_potential.Plot_Induced_Potential.nucleate_brane" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
-<dt>Args:</dt><dd><p>rt (float, optional): Defaults to 0.5.
-rf (float, optional): Defaults to linear.</p>
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>rt (float, optional): Defaults to 0.5.</p></li>
+<li><p>rf (float, optional): Defaults to linear.</p></li>
+</ul>
 </dd>
 <dt>Returns:</dt><dd><p>Animation: Moves the position in the potential to the outer horizon.</p>
 </dd>
@@ -407,8 +418,10 @@ rf (float, optional): Defaults to linear.</p>
 <dt class="sig sig-object py" id="tables_and_plots.plot_induced_potential.Plot_Induced_Potential.accelerate">
 <span class="sig-name descname"><span class="pre">accelerate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Animation</span></span></span><a class="reference internal" href="_modules/tables_and_plots/plot_induced_potential.html#Plot_Induced_Potential.accelerate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_induced_potential.Plot_Induced_Potential.accelerate" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
-<dt>Args:</dt><dd><p>rt (float, optional): Defaults to 0.5.
-rf (float, optional): Defaults to linear.</p>
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>rt (float, optional): Defaults to 0.5.</p></li>
+<li><p>rf (float, optional): Defaults to linear.</p></li>
+</ul>
 </dd>
 <dt>Returns:</dt><dd><p>Animation: Takes the brane to the minimum of the potential.</p>
 </dd>
@@ -419,8 +432,10 @@ rf (float, optional): Defaults to linear.</p>
 <dt class="sig sig-object py" id="tables_and_plots.plot_induced_potential.Plot_Induced_Potential.bounce">
 <span class="sig-name descname"><span class="pre">bounce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Succession</span></span></span><a class="reference internal" href="_modules/tables_and_plots/plot_induced_potential.html#Plot_Induced_Potential.bounce"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_induced_potential.Plot_Induced_Potential.bounce" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
-<dt>Args:</dt><dd><p>rt (float, optional): Defaults to 4.
-rf (float, optional): Defaults to linear.</p>
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>rt (float, optional): Defaults to 4.</p></li>
+<li><p>rf (float, optional): Defaults to linear.</p></li>
+</ul>
 </dd>
 <dt>Returns:</dt><dd><p>Succession: Makes the system bounce in the potential.</p>
 </dd>
@@ -431,8 +446,10 @@ rf (float, optional): Defaults to linear.</p>
 <dt class="sig sig-object py" id="tables_and_plots.plot_induced_potential.Plot_Induced_Potential.add_cc_and_expand">
 <span class="sig-name descname"><span class="pre">add_cc_and_expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Succession</span></span></span><a class="reference internal" href="_modules/tables_and_plots/plot_induced_potential.html#Plot_Induced_Potential.add_cc_and_expand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_induced_potential.Plot_Induced_Potential.add_cc_and_expand" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
-<dt>Args:</dt><dd><p>rt (float, optional): Defaults to 6.
-rf (float, optional): Defaults to linear.</p>
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>rt (float, optional): Defaults to 6.</p></li>
+<li><p>rf (float, optional): Defaults to linear.</p></li>
+</ul>
 </dd>
 <dt>Returns:</dt><dd><p>Succession: Shows the modified potential to add the presence of the cosmological constant and then expand the bubble forever.</p>
 </dd>
@@ -444,7 +461,6 @@ rf (float, optional): Defaults to linear.</p>
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#tables_and_plots.plot_induced_potential.Plot_Induced_Potential.animation_overrides" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -454,39 +470,35 @@ rf (float, optional): Defaults to linear.</p>
 <dt class="sig sig-object py" id="tables_and_plots.plot_instanton.Plot_Instanton">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Plot_Instanton</span></span><a class="reference internal" href="_modules/tables_and_plots/plot_instanton.html#Plot_Instanton"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_instanton.Plot_Instanton" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tables_and_plots.plot_general.Plot_General" title="tables_and_plots.plot_general.Plot_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plot_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></p>
-<p>This is a class to represent an instanton potential with a false and true minima.</p>
-<section id="id1">
-<h3>Parameters (See Plot_General Class)<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>func_main_color (ParsableManimColor, optional): Defaults to GREEN.</p></li>
-<li><p>func_2_color (ParsableManimColor, optional): Defaults to RED.</p></li>
-<li><p>func_3_color (ParsableManimColor, optional): Defaults to BLUE.</p></li>
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>axis_opacity (float, optional): Defaults to 1.</p></li>
-<li><p>axis_stroke (float, optional): Defaults to 2.</p></li>
-<li><p>decorator_presence (str, optional): Defaults to “box”.</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_w: (float, optional). Defaults to 1.</p></li>
-<li><p>corner_rad (float, optional): Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional): Defaults to [1,1,1,1].</p></li>
-<li><p>fill_opa (float, optional): Defaults to 0.1.</p></li>
-<li><p>stroke_w (float, optional): Defaults to 1.</p></li>
-<li><p>stroke_opa (float, optional): Defaults to 0.1.</p></li>
-<li><p>tightness (float, optional): Defaults to 0.2.</p></li>
-</ul>
-</section>
-<section id="id2">
-<h3>Methods<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>fade_in_field_position (rt= 0.5, rf= linear)</p></li>
-<li><p>decay (rt= 0.5, rf= linear)</p></li>
+<p>This is a class to represent an instanton potential with a false and true minima. See Plot_General Class.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that the axis and labels of these are the 0-th element of the group when you call it.</p>
+</div>
+<ul>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manim</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">mtheoretical</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">Example_Plot_Instanton</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">p_ins</span><span class="o">=</span> <span class="n">Plot_Instanton</span><span class="p">()</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">DL</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">p_ins</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">p_ins</span><span class="o">.</span><span class="n">fade_in_field_position</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">p_ins</span><span class="o">.</span><span class="n">decay</span><span class="p">())</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Methods</strong>:</p></li>
 </ul>
 <dl class="py method">
 <dt class="sig sig-object py" id="tables_and_plots.plot_instanton.Plot_Instanton.fade_in_field_position">
 <span class="sig-name descname"><span class="pre">fade_in_field_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Animation</span></span></span><a class="reference internal" href="_modules/tables_and_plots/plot_instanton.html#Plot_Instanton.fade_in_field_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_instanton.Plot_Instanton.fade_in_field_position" title="Link to this definition">¶</a></dt>
 <dd><dl class="simple">
-<dt>Args:</dt><dd><p>rt (float, optional): Defaults to 0.5.
-rf (float, optional): Defaults to linear.</p>
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>rt (float, optional): Defaults to 0.5.</p></li>
+<li><p>rf (float, optional): Defaults to linear.</p></li>
+</ul>
 </dd>
 <dt>Returns:</dt><dd><p>Animation: Fades the field position in.</p>
 </dd>
@@ -501,17 +513,17 @@ rf (float, optional): Defaults to linear.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="tables_and_plots.plot_instanton.Plot_Instanton.decay">
 <span class="sig-name descname"><span class="pre">decay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Animation</span></span></span><a class="reference internal" href="_modules/tables_and_plots/plot_instanton.html#Plot_Instanton.decay"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_instanton.Plot_Instanton.decay" title="Link to this definition">¶</a></dt>
-<dd><p>_summary_</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>rt (float, optional): Defaults to 0.5.
-rf (float, optional): Defaults to linear.</p>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>rt (float, optional): Defaults to 0.5.</p></li>
+<li><p>rf (float, optional): Defaults to linear.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>Animation: Describes the decay process in the potential.</p>
+<dt>Returns:</dt><dd><p>Animation: Describes the tunneling process in the potential.</p>
 </dd>
 </dl>
 </dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -521,31 +533,29 @@ rf (float, optional): Defaults to linear.</p>
 <dt class="sig sig-object py" id="tables_and_plots.plot_quantum.Plot_Quantum">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Plot_Quantum</span></span><a class="reference internal" href="_modules/tables_and_plots/plot_quantum.html#Plot_Quantum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_quantum.Plot_Quantum" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tables_and_plots.plot_general.Plot_General" title="tables_and_plots.plot_general.Plot_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plot_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
-<p>This class returns the simplest quantum cosmology potential to discuss the two different boundary conditions of this framework.</p>
-<section id="id3">
-<h3>Parameters (See Plot_General Class)<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>func_main_color (ParsableManimColor, optional): Defaults to GREEN.</p></li>
-<li><p>func_2_color (ParsableManimColor, optional): Defaults to RED.</p></li>
-<li><p>func_3_color (ParsableManimColor, optional): Defaults to BLUE.</p></li>
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>axis_opacity (float, optional): Defaults to 1.</p></li>
-<li><p>axis_stroke (float, optional): Defaults to 2.</p></li>
-<li><p>decorator_presence (str, optional): Defaults to “box”.</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_w: (float, optional). Defaults to 1.</p></li>
-<li><p>corner_rad (float, optional): Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional): Defaults to [1,1,1,1].</p></li>
-<li><p>fill_opa (float, optional): Defaults to 0.1.</p></li>
-<li><p>stroke_w (float, optional): Defaults to 1.</p></li>
-<li><p>stroke_opa (float, optional): Defaults to 0.1.</p></li>
-<li><p>tightness (float, optional): Defaults to 0.2.</p></li>
+<p>This class returns the simplest quantum cosmology potential to discuss the two different boundary conditions of this framework. See Plot_General Class.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The axis and potential are the 0-th element of the class.</p>
+</div>
+<ul>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manim</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">mtheoretical</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">Example_Plot_Q</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">gq</span><span class="o">=</span> <span class="n">Plot_Quantum</span><span class="p">()</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.4</span><span class="p">)</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">DL</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">gq</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">gq</span><span class="o">.</span><span class="n">create_wave_functions</span><span class="p">())</span>
+</pre></div>
+</div>
+</li>
 </ul>
-</section>
-<section id="id4">
-<h3>Methods<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
+</div></blockquote>
 <ul class="simple">
-<li><p>create_wave_functions: (It shows both wave functions to H-Hawk and Vilenkin wave functions)</p></li>
+<li><p><strong>Methods</strong>:</p></li>
 </ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tables_and_plots.plot_quantum.Plot_Quantum.animation_overrides">
@@ -555,17 +565,17 @@ rf (float, optional): Defaults to linear.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="tables_and_plots.plot_quantum.Plot_Quantum.create_wave_functions">
 <span class="sig-name descname"><span class="pre">create_wave_functions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Succession</span></span></span><a class="reference internal" href="_modules/tables_and_plots/plot_quantum.html#Plot_Quantum.create_wave_functions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_quantum.Plot_Quantum.create_wave_functions" title="Link to this definition">¶</a></dt>
-<dd><p>Write both wavefunctions for the discussion and its legend.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>rt (float, optional): Defaults to 2.
-rf (float, optional): Defaults to linear.</p>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>rt (float, optional): Defaults to 2.</p></li>
+<li><p>rf (float, optional): Defaults to linear.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>Succession:</p>
+<dt>Returns:</dt><dd><p>Succession: Write both wavefunctions for the discussion and its legend.</p>
 </dd>
 </dl>
 </dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -575,25 +585,25 @@ rf (float, optional): Defaults to linear.</p>
 <dt class="sig sig-object py" id="tables_and_plots.plot_tension.Plot_Lambda_Tension">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Plot_Lambda_Tension</span></span><a class="reference internal" href="_modules/tables_and_plots/plot_tension.html#Plot_Lambda_Tension"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_tension.Plot_Lambda_Tension" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tables_and_plots.plot_general.Plot_General" title="tables_and_plots.plot_general.Plot_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Plot_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
-<p>This class represents the tension of the nucleated brane with respect to the different values of the AdS scales inside and outside.</p>
-<section id="id5">
-<h3>Parameters (See Plot_General Class)<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>func_main_color (ParsableManimColor, optional): Defaults to GREEN.</p></li>
-<li><p>func_2_color (ParsableManimColor, optional): Defaults to RED.</p></li>
-<li><p>func_3_color (ParsableManimColor, optional): Defaults to BLUE.</p></li>
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>axis_opacity (float, optional): Defaults to 1.</p></li>
-<li><p>axis_stroke (float, optional): Defaults to 2.</p></li>
-<li><p>decorator_presence (str, optional): Defaults to “box”.</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_w: (float, optional). Defaults to 1.</p></li>
-<li><p>corner_rad (float, optional): Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional): Defaults to [1,1,1,1].</p></li>
-<li><p>fill_opa (float, optional): Defaults to 0.1.</p></li>
-<li><p>stroke_w (float, optional): Defaults to 1.</p></li>
-<li><p>stroke_opa (float, optional): Defaults to 0.1.</p></li>
-<li><p>tightness (float, optional): Defaults to 0.2.</p></li>
+<p>This class represents the tension of the nucleated brane with respect to the different values of the AdS scales inside and outside. See Plot_General Class.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The 0-th element correspond to the axis and labels.</p>
+</div>
+<ul>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manim</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">mtheoretical</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">Example_Plot_Tension</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">p_tension</span><span class="o">=</span> <span class="n">Plot_Lambda_Tension</span><span class="p">()</span>
+        <span class="n">p_tension</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">about_point</span><span class="o">=</span> <span class="n">p_tension</span><span class="o">.</span><span class="n">ax_tension_DB</span><span class="o">.</span><span class="n">get_origin</span><span class="p">())</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">LEFT</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">FadeIn</span><span class="p">(</span><span class="n">p_tension</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">p_tension</span><span class="o">.</span><span class="n">create_function</span><span class="p">())</span>
+</pre></div>
+</div>
+</li>
 </ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tables_and_plots.plot_tension.Plot_Lambda_Tension.animation_overrides">
@@ -602,18 +612,18 @@ rf (float, optional): Defaults to linear.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="tables_and_plots.plot_tension.Plot_Lambda_Tension.create_function">
-<span class="sig-name descname"><span class="pre">create_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Succession</span></span></span><a class="reference internal" href="_modules/tables_and_plots/plot_tension.html#Plot_Lambda_Tension.create_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_tension.Plot_Lambda_Tension.create_function" title="Link to this definition">¶</a></dt>
-<dd><p>Write the function for the tension of the brane as a function of the AdS scale.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>rt (float, optional): Defaults to 2.
-rf (float, optional): Defaults to linear.</p>
+<span class="sig-name descname"><span class="pre">create_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Succession</span></span></span><a class="reference internal" href="_modules/tables_and_plots/plot_tension.html#Plot_Lambda_Tension.create_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.plot_tension.Plot_Lambda_Tension.create_function" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>rt (float, optional): Defaults to 1.</p></li>
+<li><p>rf (float, optional): Defaults to linear.</p></li>
+</ul>
 </dd>
-<dt>Returns:</dt><dd><p>Succession:</p>
+<dt>Returns:</dt><dd><p>Succession: Write the function for the tension of the brane as a function of the AdS scale.</p>
 </dd>
 </dl>
 </dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -623,50 +633,60 @@ rf (float, optional): Defaults to linear.</p>
 <dt class="sig sig-object py" id="tables_and_plots.table_bh_embedding.Table_Bh_Embedding">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Table_Bh_Embedding</span></span><a class="reference internal" href="_modules/tables_and_plots/table_bh_embedding.html#Table_Bh_Embedding"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.table_bh_embedding.Table_Bh_Embedding" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tables_and_plots.table_general.Table_General" title="tables_and_plots.table_general.Table_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Table_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Group</span></code></p>
-<p>Class to represent a table of the coordinates of the embedding of the dark bubble. It can display the whole table (type= together) or divided (type= split). It has three methods (animations).</p>
-<section id="parameters-see-table-general-class">
-<h3>Parameters: (See Table_General Class)<a class="headerlink" href="#parameters-see-table-general-class" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>hlight_1_color (ParsableManimColor, optional): _description_. Defaults to RED.</p></li>
-<li><p>hlight_2_color (ParsableManimColor, optional): _description_. Defaults to BLUE.</p></li>
-<li><p>hlight_3_color (ParsableManimColor, optional): _description_. Defaults to PURPLE.</p></li>
-<li><p>corner_rad (float, optional): _description_. Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional). To modify which vertex bend and not.Defaults to [1, 1, 1, 1].</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): _description_. Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_w (float, optiona): Defaults to 1.</p></li>
-<li><p>stroke_w (float, optional): _description_. Defaults to 7.</p></li>
-<li><p>stroke_opa (float, optional): Defaults to 1,</p></li>
-<li><p>fill_opa (float, optional): _description_. Defaults to 0.05.</p></li>
-</ul>
-</section>
-<section id="id6">
-<h3>Methods<a class="headerlink" href="#id6" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>move_non_compact: It moves the brane through the throat direction.</p></li>
-<li><p>move_compact: It moves the brane through the compact directions.</p></li>
-<li><p>move_all: It moves the brane through all dimensions in the whole table.</p></li>
+<p>Class to represent a table of the coordinates of the embedding of the dark bubble. See Table_General Class. It can display the whole table (type= together) or divided (type= split). It has three methods (animations).</p>
+<ul>
+<li><p><strong>Parameters</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="nb">type</span><span class="p">:</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">There</span> <span class="n">are</span> <span class="n">two</span> <span class="n">types</span><span class="p">:</span>
+    <span class="o">-</span> <span class="s2">&quot;together&quot;</span><span class="p">,</span> <span class="n">this</span> <span class="n">will</span> <span class="n">display</span> <span class="nb">all</span> <span class="mi">9</span> <span class="n">spatial</span> <span class="n">directions</span> <span class="ow">in</span>
+    <span class="n">the</span> <span class="n">same</span> <span class="n">row</span><span class="o">.</span>
+    <span class="o">-</span> <span class="s2">&quot;split&quot;</span><span class="p">:</span> <span class="n">It</span> <span class="n">will</span> <span class="n">display</span> <span class="n">compact</span> <span class="ow">and</span> <span class="n">non</span><span class="o">-</span><span class="n">compact</span> <span class="n">dimesions</span> 
+    <span class="ow">in</span> <span class="n">two</span> <span class="n">different</span> <span class="n">tables</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Example</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">manim</span> <span class="kn">import</span><span class="o">*</span>
+<span class="kn">from</span> <span class="nn">mtheoretical</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">class</span> <span class="nc">Example_Table_Bh_Embedding</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">together</span><span class="o">=</span> <span class="n">Table_Bh_Embedding</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span> <span class="s2">&quot;together&quot;</span><span class="p">)</span>
+        <span class="n">together</span><span class="o">.</span><span class="n">scale_to_fit_width</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">frame_width</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="n">UP</span><span class="p">)</span>
+        <span class="n">split</span><span class="o">=</span> <span class="n">Table_Bh_Embedding</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span> <span class="s2">&quot;split&quot;</span><span class="p">,</span> <span class="n">chosen_position</span><span class="o">=</span> <span class="n">RIGHT</span><span class="p">)</span>
+        <span class="n">split</span><span class="o">.</span><span class="n">scale_to_fit_width</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">frame_width</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">together</span><span class="p">,</span> <span class="n">DOWN</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">together</span><span class="p">,</span> <span class="n">split</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">AnimationGroup</span><span class="p">(</span><span class="n">together</span><span class="o">.</span><span class="n">move_all</span><span class="p">(),</span> 
+                                <span class="n">split</span><span class="o">.</span><span class="n">move_non_compact</span><span class="p">(),</span> 
+                                <span class="n">split</span><span class="o">.</span><span class="n">move_compact</span><span class="p">()))</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Methods</strong>:</p></li>
 </ul>
 <dl class="py method">
 <dt class="sig sig-object py" id="tables_and_plots.table_bh_embedding.Table_Bh_Embedding.move_non_compact">
 <span class="sig-name descname"><span class="pre">move_non_compact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Animation</span></span></span><a class="reference internal" href="_modules/tables_and_plots/table_bh_embedding.html#Table_Bh_Embedding.move_non_compact"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.table_bh_embedding.Table_Bh_Embedding.move_non_compact" title="Link to this definition">¶</a></dt>
-<dd><p>To move the brane through the AdS throat.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>rt (float, optional): _description_. Defaults to 3.
-rf (float, optional): _description_. Defaults to rate_functions.linear.</p>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>rt (float, optional): Defaults to 3.</p></li>
+<li><p>rf (float, optional): Defaults to rate_functions.linear.</p></li>
+</ul>
 </dd>
 </dl>
+<p>Returns: Animation to move the brane through the AdS throat.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="tables_and_plots.table_bh_embedding.Table_Bh_Embedding.move_compact">
 <span class="sig-name descname"><span class="pre">move_compact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AnimationGroup</span></span></span><a class="reference internal" href="_modules/tables_and_plots/table_bh_embedding.html#Table_Bh_Embedding.move_compact"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.table_bh_embedding.Table_Bh_Embedding.move_compact" title="Link to this definition">¶</a></dt>
-<dd><p>To move the brane through the compact dimensions.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>rt (float, optional): _description_. Defaults to 3.
-rf (float, optional): _description_. Defaults to rate_functions.linear.</p>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>rt (float, optional): Defaults to 3.</p></li>
+<li><p>rf (float, optional): Defaults to rate_functions.linear.</p></li>
+</ul>
 </dd>
 </dl>
+<p>Returns: To move the brane through the compact dimensions.</p>
 </dd></dl>
 
 <dl class="py attribute">
@@ -677,15 +697,16 @@ rf (float, optional): _description_. Defaults to rate_functions.linear.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="tables_and_plots.table_bh_embedding.Table_Bh_Embedding.move_all">
 <span class="sig-name descname"><span class="pre">move_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AnimationGroup</span></span></span><a class="reference internal" href="_modules/tables_and_plots/table_bh_embedding.html#Table_Bh_Embedding.move_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.table_bh_embedding.Table_Bh_Embedding.move_all" title="Link to this definition">¶</a></dt>
-<dd><p>To move the brane through all coordinates.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>rt (float, optional): _description_. Defaults to 3.
-rf (float, optional): _description_. Defaults to rate_functions.linear.</p>
+<dd><dl class="simple">
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>rt (float, optional): Defaults to 3.</p></li>
+<li><p>rf (float, optional): Defaults to rate_functions.linear.</p></li>
+</ul>
 </dd>
 </dl>
+<p>Returns: To move the brane through all coordinates.</p>
 </dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -695,28 +716,12 @@ rf (float, optional): _description_. Defaults to rate_functions.linear.</p>
 <dt class="sig sig-object py" id="tables_and_plots.table_energy_scales.Table_Energy_Scales">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Table_Energy_Scales</span></span><a class="reference internal" href="_modules/tables_and_plots/table_energy_scales.html#Table_Energy_Scales"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.table_energy_scales.Table_Energy_Scales" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tables_and_plots.table_general.Table_General" title="tables_and_plots.table_general.Table_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Table_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VMobject</span></code></p>
-<p>Class to display the table of energy scales of the dark bubble embedding.</p>
-<section id="id7">
-<h3>Parameters: (See Table_General Class)<a class="headerlink" href="#id7" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>hlight_1_color (ParsableManimColor, optional): _description_. Defaults to RED.</p></li>
-<li><p>hlight_2_color (ParsableManimColor, optional): _description_. Defaults to BLUE.</p></li>
-<li><p>hlight_3_color (ParsableManimColor, optional): _description_. Defaults to PURPLE.</p></li>
-<li><p>corner_rad (float, optional): _description_. Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional). To modify which vertex bend and not.Defaults to [1, 1, 1, 1].</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): _description_. Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_w (float, optiona): Defaults to 1.</p></li>
-<li><p>stroke_w (float, optional): _description_. Defaults to 7.</p></li>
-<li><p>stroke_opa (float, optional): Defaults to 1,</p></li>
-<li><p>fill_opa (float, optional): _description_. Defaults to 0.05.</p></li>
-</ul>
+<p>Class to display the table of energy scales of the dark bubble embedding. See Table_General Class.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tables_and_plots.table_energy_scales.Table_Energy_Scales.animation_overrides">
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#tables_and_plots.table_energy_scales.Table_Energy_Scales.animation_overrides" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -726,28 +731,12 @@ rf (float, optional): _description_. Defaults to rate_functions.linear.</p>
 <dt class="sig sig-object py" id="tables_and_plots.table_summary.Table_Summary_Induce">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Table_Summary_Induce</span></span><a class="reference internal" href="_modules/tables_and_plots/table_summary.html#Table_Summary_Induce"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tables_and_plots.table_summary.Table_Summary_Induce" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#tables_and_plots.table_general.Table_General" title="tables_and_plots.table_general.Table_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Table_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
-<p>Class to display a table with all relations between 4D and higher dimension fields and the papers where they are discussed.</p>
-<section id="parameters-see-table-general">
-<h3>Parameters: (See Table_General)<a class="headerlink" href="#parameters-see-table-general" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>hlight_1_color (ParsableManimColor, optional): _description_. Defaults to RED.</p></li>
-<li><p>hlight_2_color (ParsableManimColor, optional): _description_. Defaults to BLUE.</p></li>
-<li><p>hlight_3_color (ParsableManimColor, optional): _description_. Defaults to PURPLE.</p></li>
-<li><p>corner_rad (float, optional): _description_. Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional). To modify which vertex bend and not.Defaults to [1, 1, 1, 1].</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): _description_. Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_w (float, optiona): Defaults to 1.</p></li>
-<li><p>stroke_w (float, optional): _description_. Defaults to 7.</p></li>
-<li><p>stroke_opa (float, optional): Defaults to 1,</p></li>
-<li><p>fill_opa (float, optional): _description_. Defaults to 0.05.</p></li>
-</ul>
+<p>Class to display a table with all relations between 4D and higher dimension fields and the papers where they are discussed. See Table_General Class.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="tables_and_plots.table_summary.Table_Summary_Induce.animation_overrides">
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#tables_and_plots.table_summary.Table_Summary_Induce.animation_overrides" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -758,23 +747,23 @@ rf (float, optional): _description_. Defaults to rate_functions.linear.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="objects.html">
+          <a class="next-page" href="templates.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">objects</div>
+                <div class="title">templates</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="equations.html">
+          <a class="prev-page" href="objects.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">equations</div>
+                <div class="title">objects</div>
                 
               </div>
             </a>

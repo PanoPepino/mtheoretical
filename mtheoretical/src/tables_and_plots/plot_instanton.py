@@ -1,35 +1,27 @@
-from textwrap import fill
 from manim import *
 from .plot_general import Plot_General
 
 class Plot_Instanton(Plot_General, Group):
-    """This is a class to represent an instanton potential with a false and true minima. 
+    """This is a class to represent an instanton potential with a false and true minima. See Plot_General Class.
+
+    .. note::
+
+        Note that the axis and labels of these are the 0-th element of the group when you call it.
+  
+    - **Example**::
+
+        from manim import *
+        from mtheoretical import *
+
+        class Example_Plot_Instanton(Scene):
+            def construct(self):
+                p_ins= Plot_Instanton().to_corner(DL)
+                self.add(p_ins[0])
+                self.play(p_ins.fade_in_field_position())
+                self.play(p_ins.decay())
     
-    Parameters (See Plot_General Class)
-    ----------
-   
-    - func_main_color (ParsableManimColor, optional): Defaults to GREEN.
-    - func_2_color (ParsableManimColor, optional): Defaults to RED.
-    - func_3_color (ParsableManimColor, optional): Defaults to BLUE.
-    - text_color (ParsableManimColor, optional): Defaults to BLACK.
-    - axis_opacity (float, optional): Defaults to 1.
-    - axis_stroke (float, optional): Defaults to 2.
-    - decorator_presence (str, optional): Defaults to "box".
-    - decorator_color (ParsableManimColor, optional): Defaults to BLACK.
-    - decorator_stroke_w: (float, optional). Defaults to 1.
-    - corner_rad (float, optional): Defaults to 0.3.
-    - corner_rad_direction (list, optional): Defaults to [1,1,1,1].
-    - fill_opa (float, optional): Defaults to 0.1.
-    - stroke_w (float, optional): Defaults to 1.
-    - stroke_opa (float, optional): Defaults to 0.1.
-    - tightness (float, optional): Defaults to 0.2.
-    
-    Methods
-    -------
-    
-    - fade_in_field_position (rt= 0.5, rf= linear)
-    - decay (rt= 0.5, rf= linear)
-     
+    - **Methods**:
+
     """
     
     # Scale any graph with respect to the center scale(3, about_point=graph.ax_ins.c2p(0, 0, 0)
@@ -69,8 +61,7 @@ class Plot_Instanton(Plot_General, Group):
         self.field_position= Dot(color= self.decorator_color, stroke_width= self.stroke_w, fill_opacity= 1)
         self.tracker_ins= ValueTracker(-0.845649)
         self.field_position.add_updater(lambda y: y.move_to(self.ax_ins.c2p(self.tracker_ins.get_value(),0)))
-        
-        
+              
         if self.decorator_presence== "box":
             box= SurroundingRectangle(self.ax_ins, corner_radius= self.corner_rad, color= self.decorator_color, fill_opacity= self.fill_opa, buff= self.tightness, stroke_width= self.decorator_stroke_w)
             self.initial_show= VGroup(self.ax_ins, lab_ax_ins, pot_ins, minima_labels, box)
@@ -86,8 +77,8 @@ class Plot_Instanton(Plot_General, Group):
         """
 
         Args:
-            rt (float, optional): Defaults to 0.5.
-            rf (float, optional): Defaults to linear.
+            - rt (float, optional): Defaults to 0.5.
+            - rf (float, optional): Defaults to linear.
 
         Returns:
             Animation: Fades the field position in.
@@ -97,14 +88,14 @@ class Plot_Instanton(Plot_General, Group):
     def decay(self,
               rt: float= 0.5,
               rf: float= linear)-> Animation:
-        """_summary_
+        """
 
         Args:
-            rt (float, optional): Defaults to 0.5.
-            rf (float, optional): Defaults to linear.
+            - rt (float, optional): Defaults to 0.5.
+            - rf (float, optional): Defaults to linear.
 
         Returns:
-            Animation: Describes the decay process in the potential.
+            Animation: Describes the tunneling process in the potential.
         """
         
         return self.tracker_ins.animate(run_time= rt, rate_func= rf).set_value(0.7)

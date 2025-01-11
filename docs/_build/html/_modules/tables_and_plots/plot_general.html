@@ -199,12 +199,12 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">mtheoretical</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of mtheoretical</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../equations.html">equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../objects.html">objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates</a></li>
 </ul>
 </li>
 </ul>
@@ -247,8 +247,7 @@
 <div class="viewcode-block" id="Plot_General">
 <a class="viewcode-back" href="../../tables_and_plots.html#tables_and_plots.plot_general.Plot_General">[docs]</a>
 <span class="k">class</span> <span class="nc">Plot_General</span><span class="p">(</span><span class="n">Group</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This class is a mock class to control the apareance of all other plots through the inheritance property.</span>
-
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This class is a general class to control the apareance of all other plots through the inheritance property.</span>
 
 <span class="sd">    - **Parameters**::</span>
 <span class="sd">   </span>
@@ -258,27 +257,21 @@
 <span class="sd">            - text_color (ParsableManimColor, optional): Defaults to BLACK.</span>
 <span class="sd">            - axis_opacity (float, optional): Defaults to 1.</span>
 <span class="sd">            - axis_stroke (float, optional): Defaults to 2.</span>
-<span class="sd">            - decorator_presence (str, optional): Defaults to &quot;box&quot;.</span>
+<span class="sd">            - decorator_presence (str, optional): Several options:</span>
+<span class="sd">                - &quot;box&quot;: A simple surrounding rectangle around the title.</span>
+<span class="sd">                - &quot;no&quot;: Nothing. Plain text. </span>
 <span class="sd">            - decorator_color (ParsableManimColor, optional): Defaults to BLACK.</span>
 <span class="sd">            - decorator_stroke_w: (float, optional). Defaults to 1.</span>
 <span class="sd">            - corner_rad (float, optional): Defaults to 0.3.</span>
-<span class="sd">            - corner_rad_direction (list, optional): Defaults to [1,1,1,1].</span>
+<span class="sd">            - corner_rad_direction (list, optional): Defaults to [1, 1, 1, 1].</span>
 <span class="sd">            - fill_opa (float, optional): Defaults to 0.1.</span>
 <span class="sd">            - stroke_w (float, optional): Defaults to 1.</span>
 <span class="sd">            - stroke_opa (float, optional): Defaults to 0.1.</span>
 <span class="sd">            - tightness (float, optional): Defaults to 0.2.</span>
 
-<span class="sd">    - **Example**::</span>
+<span class="sd">    .. note::</span>
 
-<span class="sd">            from manim import *</span>
-<span class="sd">            from mtheoretical import *</span>
-
-<span class="sd">            class SquareExample(Scene):</span>
-<span class="sd">                def construct(self):</span>
-<span class="sd">                    square_1 = Square(side_length=2.0).shift(DOWN)</span>
-<span class="sd">                    square_2 = Square(side_length=1.0).next_to(square_1,direction=UP)</span>
-<span class="sd">                    square_3 = Square(side_length=0.5).next_to(square_2, direction=UP)</span>
-<span class="sd">                    self.add(square_1, square_2, square_3)</span>
+<span class="sd">        Scale any graph with respect to the center scale(3, about_point=graph.ax_ins.c2p(0, 0, 0))</span>
 
 <span class="sd">    &quot;&quot;&quot;</span> 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>

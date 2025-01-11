@@ -199,12 +199,12 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">mtheoretical</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of mtheoretical</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../equations.html">equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../objects.html">objects</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates</a></li>
 </ul>
 </li>
 </ul>
@@ -248,31 +248,25 @@
 <div class="viewcode-block" id="Plot_Quantum">
 <a class="viewcode-back" href="../../tables_and_plots.html#tables_and_plots.plot_quantum.Plot_Quantum">[docs]</a>
 <span class="k">class</span> <span class="nc">Plot_Quantum</span><span class="p">(</span><span class="n">Plot_General</span><span class="p">,</span> <span class="n">VGroup</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This class returns the simplest quantum cosmology potential to discuss the two different boundary conditions of this framework.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This class returns the simplest quantum cosmology potential to discuss the two different boundary conditions of this framework. See Plot_General Class.</span>
 
-<span class="sd">    Parameters (See Plot_General Class)</span>
-<span class="sd">    ----------</span>
-<span class="sd">   </span>
-<span class="sd">    - func_main_color (ParsableManimColor, optional): Defaults to GREEN.</span>
-<span class="sd">    - func_2_color (ParsableManimColor, optional): Defaults to RED.</span>
-<span class="sd">    - func_3_color (ParsableManimColor, optional): Defaults to BLUE.</span>
-<span class="sd">    - text_color (ParsableManimColor, optional): Defaults to BLACK.</span>
-<span class="sd">    - axis_opacity (float, optional): Defaults to 1.</span>
-<span class="sd">    - axis_stroke (float, optional): Defaults to 2.</span>
-<span class="sd">    - decorator_presence (str, optional): Defaults to &quot;box&quot;.</span>
-<span class="sd">    - decorator_color (ParsableManimColor, optional): Defaults to BLACK.</span>
-<span class="sd">    - decorator_stroke_w: (float, optional). Defaults to 1.</span>
-<span class="sd">    - corner_rad (float, optional): Defaults to 0.3.</span>
-<span class="sd">    - corner_rad_direction (list, optional): Defaults to [1,1,1,1].</span>
-<span class="sd">    - fill_opa (float, optional): Defaults to 0.1.</span>
-<span class="sd">    - stroke_w (float, optional): Defaults to 1.</span>
-<span class="sd">    - stroke_opa (float, optional): Defaults to 0.1.</span>
-<span class="sd">    - tightness (float, optional): Defaults to 0.2.</span>
+<span class="sd">    .. note::</span>
 
-<span class="sd">    Methods</span>
-<span class="sd">    ---------</span>
+<span class="sd">        The axis and potential are the 0-th element of the class.</span>
 
-<span class="sd">    - create_wave_functions: (It shows both wave functions to H-Hawk and Vilenkin wave functions)</span>
+<span class="sd">    - **Example**::</span>
+
+<span class="sd">        from manim import *</span>
+<span class="sd">        from mtheoretical import *</span>
+
+<span class="sd">        class Example_Plot_Q(Scene):</span>
+<span class="sd">            def construct(self):</span>
+<span class="sd">                gq= Plot_Quantum().scale(0.4).to_corner(DL)</span>
+<span class="sd">                self.add(gq[0])</span>
+<span class="sd">                self.play(gq.create_wave_functions())</span>
+<span class="sd">        </span>
+
+<span class="sd">   - **Methods**::</span>
 <span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
@@ -337,18 +331,18 @@
     <span class="k">def</span> <span class="nf">create_wave_functions</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                               <span class="n">rt</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
                               <span class="n">rf</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="n">linear</span><span class="p">)</span><span class="o">-&gt;</span> <span class="n">Succession</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Write both wavefunctions for the discussion and its legend.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            rt (float, optional): Defaults to 2.</span>
-<span class="sd">            rf (float, optional): Defaults to linear.</span>
+<span class="sd">            - rt (float, optional): Defaults to 2.</span>
+<span class="sd">            - rf (float, optional): Defaults to linear.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            Succession: </span>
+<span class="sd">            Succession: Write both wavefunctions for the discussion and its legend.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         
         <span class="k">return</span> <span class="n">Succession</span><span class="p">(</span>
-            <span class="o">*</span><span class="p">[</span><span class="n">Write</span><span class="p">(</span><span class="n">piece</span><span class="p">)</span> <span class="k">for</span> <span class="n">piece</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_draw</span><span class="p">])</span></div>
+            <span class="o">*</span><span class="p">[</span><span class="n">Write</span><span class="p">(</span><span class="n">piece</span><span class="p">,</span> <span class="n">run_time</span> <span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">)</span> <span class="k">for</span> <span class="n">piece</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_draw</span><span class="p">])</span></div>
 </div>
 
 
