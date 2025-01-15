@@ -1,6 +1,6 @@
 ABOUT THIS REPOSITORY
 
-- This repository contains v2.0 of manim_theoretical libraries. It is an improved version, with more straightforward commands and a better folder and files organisation, with more optional parameters and the cleanest documentation I am able to achieve.
+- This repository contains v2.0 of mtheoretical libraries. It is an improved version, with more straightforward commands and a better folder and files organisation, with more optional parameters and the cleanest documentation I am able to achieve.
 
 - These libraries are supposed to be used with [manim-slides](https://manim-slides.eertmans.be/latest/) and [manim](https://www.manim.community). 
 
@@ -11,7 +11,7 @@ ABOUT THIS REPOSITORY
 - TO DO:
 
 - Elaborate on the Readme.txt
-- Add simple description to the main page of the documentation about the aim and target of the libraries.
+- Create package to be installed.
 - Include old animations:
     - Diagrams
     - Pulling strings and bending branes.
