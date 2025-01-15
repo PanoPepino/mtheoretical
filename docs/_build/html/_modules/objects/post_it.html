@@ -197,7 +197,7 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Contents of the package:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
@@ -248,19 +248,28 @@
 <div class="viewcode-block" id="Post_It">
 <a class="viewcode-back" href="../../objects.html#objects.post_it.Post_It">[docs]</a>
 <span class="k">class</span> <span class="nc">Post_It</span><span class="p">(</span><span class="n">Group</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This is a class that creates a Group that represents a Post it sticker with text. </span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This is a class represents a Post-it sticker with a list of To-Do and a pin on top.</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">    -----------</span>
-<span class="sd">    - to_dos (list): The bullet points to add to the post it.</span>
-<span class="sd">    - text_color (ParsableManimColor, optional): _description_. Defaults to BLACK.</span>
-<span class="sd">    - text_size (float, optional): _description_. Defaults to 30.</span>
-<span class="sd">    - pin_color (ParsableManimColor, optional): _description_. Defaults to RED.</span>
+<span class="sd">    - **Parameters**::</span>
+
+<span class="sd">        - to_dos (list): The bullet points to add to the post it.</span>
+<span class="sd">        - text_color (ParsableManimColor, optional): Defaults to BLACK.</span>
+<span class="sd">        - text_size (float, optional): Defaults to 30.</span>
+<span class="sd">        - pin_color (ParsableManimColor, optional): Defaults to RED.</span>
 <span class="sd">    </span>
-<span class="sd">    Returns:</span>
-<span class="sd">    -------</span>
-<span class="sd">    </span>
-<span class="sd">    - A post it with the bulleted list written on top and a pin on top.</span>
+<span class="sd">    - **Example**::</span>
+
+<span class="sd">        from manim import *</span>
+<span class="sd">        from mtheoretical import *</span>
+
+<span class="sd">        class Example_Photo_Post_it(Scene):</span>
+<span class="sd">        def construct(self):</span>
+<span class="sd">            photo_1= Photo(&quot;pedro.png&quot;, decorator_style= &quot;polaroid&quot;, caption= &quot;Perro Xanxe&quot;)</span>
+<span class="sd">            photo_2= Photo(&quot;pedro.png&quot;, decorator_style= &quot;techno&quot;, caption= &quot;Perro Xanxe&quot;)</span>
+<span class="sd">            p_it= Post_It(to_dos= [&quot;Random example&quot;, &quot;Just Do It!&quot;]).scale(0.9)</span>
+<span class="sd">            all_them= Group(photo_1, photo_2, p_it).arrange(RIGHT, buff= 0.2)</span>
+<span class="sd">            all_them.scale_to_fit_width(config.frame_width-1)</span>
+<span class="sd">            self.add(all_them)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 

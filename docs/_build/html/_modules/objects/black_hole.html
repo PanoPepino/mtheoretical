@@ -197,7 +197,7 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Contents of the package:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
@@ -248,24 +248,46 @@
 <div class="viewcode-block" id="Black_Hole">
 <a class="viewcode-back" href="../../objects.html#objects.black_hole.Black_Hole">[docs]</a>
 <span class="k">class</span> <span class="nc">Black_Hole</span><span class="p">(</span><span class="n">Brane_General</span><span class="p">,</span> <span class="n">VGroup</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This class creates a black hole group that can potentialy emmit a brane. Some of the written parameters depend on the arguments. Note that the expanding bubble will always be the LAST element of the object.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This class creates a black hole group that can potentialy emmit a brane. See Brane General for further information.</span>
+<span class="sd">    </span>
+<span class="sd">    .. note::</span>
+<span class="sd">     </span>
+<span class="sd">       Obs! the expanding bubble will always be the [-1] element of the object.</span>
 
-<span class="sd">    Parameters: (See Brane_General Class)</span>
-<span class="sd">    -----------</span>
-<span class="sd">    - brane_color (ParsableManimColor, optional): _description_. Defaults to RED.</span>
-<span class="sd">    - brane_text_color (ParsableManimColor, optional): _description_. Defaults to WHITE.</span>
-<span class="sd">    - fill_opa_brane (float, optional): _description_. Defaults to 0.2.</span>
-<span class="sd">    - stroke_w: (float, optional). Defaults to 0.2.</span>
-<span class="sd">    - bh_size (float, optional): _description_. Defaults to 1.</span>
-<span class="sd">    - bh_type (str, optional): _description_. Defaults to &quot;none&quot;.</span>
-<span class="sd">    - bh_type:</span>
-<span class="sd">        - &quot;fragmentation&quot; : the written elements will be Q &gt; T, corresponding to the nucleation of a brane a la AdS fragmentation by Maldacena. </span>
-<span class="sd">        - &quot;spinning&quot; : written elements will be theta and mu, as in the rotating black hole.</span>
-<span class="sd">        - none : empty black hole. No text.</span>
+<span class="sd">    - **Parameters**::</span>
+
+<span class="sd">        - bh_size (float, optional): Defaults to brane_radius= 1.</span>
+<span class="sd">        - bh_color (ParsableManimColor, optional): Defaults to Black.</span>
+<span class="sd">        - bh_fill_opa (float, optional): Defaults to 0.8.</span>
+<span class="sd">        - bh_type:</span>
+<span class="sd">            - &quot;fragmentation&quot;: the written elements will be Q &gt; T, corresponding to </span>
+<span class="sd">            the nucleation of a brane a la AdS fragmentation by Maldacena. </span>
+<span class="sd">            - &quot;spinning&quot;: written elements will be theta and mu, as in the rotating black</span>
+<span class="sd">            hole.</span>
+<span class="sd">            - none: empty black hole. No text.</span>
+
+<span class="sd">    - **Example**::</span>
+
+<span class="sd">        from manim import *</span>
+<span class="sd">        from mtheoretical import *</span>
+
+<span class="sd">        class Example_Black_Hole(Scene):</span>
+<span class="sd">            def construct(self):</span>
+<span class="sd">                bh_sp= Black_Hole(bh_type= &quot;spinning&quot;)</span>
+<span class="sd">                bh_frag= Black_Hole(bh_type= &quot;fragmentation&quot;)</span>
+<span class="sd">                bh= Black_Hole()</span>
+<span class="sd">                bh_group= VGroup(bh_sp, bh_frag, bh).arrange(RIGHT, buff= 3)</span>
+<span class="sd">                bh_group.scale_to_fit_width(config.frame_width-1)</span>
+<span class="sd">                self.add(bh_group)</span>
+<span class="sd">                self.play(AnimationGroup(map(lambda x: x.nucleate(), bh_group)))</span>
+<span class="sd">                self.play(AnimationGroup(map(lambda x: x.expand(), bh_group)))</span>
+
+<span class="sd">    - **Methods**::</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
-                 <span class="n">bh_size</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                 <span class="n">bh_size</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="n">Brane_General</span><span class="p">()</span><span class="o">.</span><span class="n">brane_radius</span><span class="p">,</span>
                  <span class="n">bh_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span> <span class="o">=</span> <span class="n">BLACK</span><span class="p">,</span>
                  <span class="n">bh_fill_opa</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span>
                  <span class="n">bh_type</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span> 
@@ -300,12 +322,12 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            rt (float, optional): _description_. Defaults to 3.</span>
-<span class="sd">            rf (float, optional): _description_. Defaults to linear.</span>
-<span class="sd">            scaling (float, optional): _description_. Defaults to 2.5.</span>
+<span class="sd">            - rt (float, optional): Run time animation. Defaults to 3.</span>
+<span class="sd">            - rf (float, optional): Rate funciton. Defaults to linear.</span>
+<span class="sd">            - scaling (float, optional): How much it scales. Defaults to 1.1.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            Animation: Nucleation of the brane through the horizon of the black hole.</span>
+<span class="sd">            - Animation: Nucleation of the brane through the horizon of the black hole.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         
         <span class="k">return</span> <span class="n">AnimationGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">brane</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">scaling</span><span class="p">))</span></div>
@@ -319,12 +341,12 @@
                   <span class="n">scaling</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">2.5</span><span class="p">)</span><span class="o">-&gt;</span> <span class="n">Animation</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args:</span>
-<span class="sd">            rt (float, optional): _description_. Defaults to 3.</span>
-<span class="sd">            rf (float, optional): _description_. Defaults to linear.</span>
-<span class="sd">            scaling (float, optional): _description_. Defaults to 2.5.</span>
+<span class="sd">            - rt (float, optional): Defaults to 3.</span>
+<span class="sd">            - rf (float, optional): Defaults to linear.</span>
+<span class="sd">            - scaling (float, optional): Defaults to 2.5.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            Animation: Expansion of the brane.</span>
+<span class="sd">            - Animation: Expansion of the brane.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bh_type</span> <span class="o">==</span> <span class="s2">&quot;spinning&quot;</span><span class="p">:</span>

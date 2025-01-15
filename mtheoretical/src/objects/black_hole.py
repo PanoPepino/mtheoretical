@@ -2,24 +2,46 @@ from manim import *
 from .brane_general import *
 
 class Black_Hole(Brane_General, VGroup):
-    """This class creates a black hole group that can potentialy emmit a brane. Some of the written parameters depend on the arguments. Note that the expanding bubble will always be the LAST element of the object.
+    """This class creates a black hole group that can potentialy emmit a brane. See Brane General for further information.
+    
+    .. note::
+     
+       Obs! the expanding bubble will always be the [-1] element of the object.
 
-    Parameters: (See Brane_General Class)
-    -----------
-    - brane_color (ParsableManimColor, optional): _description_. Defaults to RED.
-    - brane_text_color (ParsableManimColor, optional): _description_. Defaults to WHITE.
-    - fill_opa_brane (float, optional): _description_. Defaults to 0.2.
-    - stroke_w: (float, optional). Defaults to 0.2.
-    - bh_size (float, optional): _description_. Defaults to 1.
-    - bh_type (str, optional): _description_. Defaults to "none".
-    - bh_type:
-        - "fragmentation" : the written elements will be Q > T, corresponding to the nucleation of a brane a la AdS fragmentation by Maldacena. 
-        - "spinning" : written elements will be theta and mu, as in the rotating black hole.
-        - none : empty black hole. No text.
+    - **Parameters**::
+
+        - bh_size (float, optional): Defaults to brane_radius= 1.
+        - bh_color (ParsableManimColor, optional): Defaults to Black.
+        - bh_fill_opa (float, optional): Defaults to 0.8.
+        - bh_type:
+            - "fragmentation": the written elements will be Q > T, corresponding to 
+            the nucleation of a brane a la AdS fragmentation by Maldacena. 
+            - "spinning": written elements will be theta and mu, as in the rotating black
+            hole.
+            - none: empty black hole. No text.
+
+    - **Example**::
+
+        from manim import *
+        from mtheoretical import *
+
+        class Example_Black_Hole(Scene):
+            def construct(self):
+                bh_sp= Black_Hole(bh_type= "spinning")
+                bh_frag= Black_Hole(bh_type= "fragmentation")
+                bh= Black_Hole()
+                bh_group= VGroup(bh_sp, bh_frag, bh).arrange(RIGHT, buff= 3)
+                bh_group.scale_to_fit_width(config.frame_width-1)
+                self.add(bh_group)
+                self.play(AnimationGroup(map(lambda x: x.nucleate(), bh_group)))
+                self.play(AnimationGroup(map(lambda x: x.expand(), bh_group)))
+
+    - **Methods**::
+
     """
 
     def __init__(self, 
-                 bh_size: float= 1,
+                 bh_size: float= Brane_General().brane_radius,
                  bh_color: ParsableManimColor = BLACK,
                  bh_fill_opa: float= 0.8,
                  bh_type: str= "none", 
@@ -52,12 +74,12 @@ class Black_Hole(Brane_General, VGroup):
         """
 
         Args:
-            rt (float, optional): _description_. Defaults to 3.
-            rf (float, optional): _description_. Defaults to linear.
-            scaling (float, optional): _description_. Defaults to 2.5.
+            - rt (float, optional): Run time animation. Defaults to 3.
+            - rf (float, optional): Rate funciton. Defaults to linear.
+            - scaling (float, optional): How much it scales. Defaults to 1.1.
 
         Returns:
-            Animation: Nucleation of the brane through the horizon of the black hole.
+            - Animation: Nucleation of the brane through the horizon of the black hole.
         """
         
         return AnimationGroup(self.brane.animate(run_time= rt, rate_func= rf).scale(scaling))
@@ -68,12 +90,12 @@ class Black_Hole(Brane_General, VGroup):
                   scaling: float= 2.5)-> Animation:
         """
         Args:
-            rt (float, optional): _description_. Defaults to 3.
-            rf (float, optional): _description_. Defaults to linear.
-            scaling (float, optional): _description_. Defaults to 2.5.
+            - rt (float, optional): Defaults to 3.
+            - rf (float, optional): Defaults to linear.
+            - scaling (float, optional): Defaults to 2.5.
 
         Returns:
-            Animation: Expansion of the brane.
+            - Animation: Expansion of the brane.
         """
         
         if self.bh_type == "spinning":

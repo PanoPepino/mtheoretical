@@ -4,19 +4,7 @@ from .eq_general import *
 
 class Eq_Brane_Corrections(Eq_General, VGroup):
     """Class to create equations related to higher curvature corrections in DBI + WZ terms of branes. It has a dictionary built in.
-
-    Parameters:
-    -----------
-    - text_size (float, optional): Defaults to 20.
-    - text_color (ParsableManimColor, optional): Defaults to BLACK.
-    - decorator_presence (str, optional). yes/no. Defaults to yes. If no, does not return the surrounding box.
-    - decorator_color (ParsableManimColor, optional): Defaults to BLACK.
-    - decorator_stroke_width (float, optional): Defaults to 2.
-    - corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.
-    - corner_rad_direction (list, optional): Which corners get rounded. Defaults to [1, 1, 1, 1].
-    - fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.
-    - tightness (float, optional): How tight the box around the title is. Defaults to 0.2.
-     
+  
     """
     
     def __init__(self,

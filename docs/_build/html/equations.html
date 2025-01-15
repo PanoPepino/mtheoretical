@@ -198,7 +198,7 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Contents of the package:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">src</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="text_and_organisation.html">text_and_organisation</a></li>
@@ -272,6 +272,10 @@
 </div>
 </li>
 </ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This Class should be transformed into a more general class capable of reading .tex files and extract dictionaries of equations.</p>
+</div>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="equations.eq_general.Eq_General.animation_overrides">
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#equations.eq_general.Eq_General.animation_overrides" title="Link to this definition">¶</a></dt>
@@ -330,25 +334,11 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Eq_Cosmo</span></span><a class="reference internal" href="_modules/equations/eq_cosmo.html#Eq_Cosmo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#equations.eq_cosmo.Eq_Cosmo" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#equations.eq_general.Eq_General" title="equations.eq_general.Eq_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Eq_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
 <p>Class to create equations related to cosmology. It has a dictionary built in.</p>
-<section id="parameters">
-<h3>Parameters:<a class="headerlink" href="#parameters" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>text_size (float, optional): Defaults to 20.</p></li>
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_presence (str, optional). yes/no. Defaults to yes. If no, does not return the surrounding box.</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_width (float, optional): Defaults to 2.</p></li>
-<li><p>corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional): Which corners get rounded. Defaults to [1, 1, 1, 1].</p></li>
-<li><p>fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.</p></li>
-<li><p>tightness (float, optional): How tight the box around the title is. Defaults to 0.2.</p></li>
-</ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="equations.eq_cosmo.Eq_Cosmo.animation_overrides">
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#equations.eq_cosmo.Eq_Cosmo.animation_overrides" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -359,25 +349,11 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Eq_Brane_Corrections</span></span><a class="reference internal" href="_modules/equations/eq_db_corrections.html#Eq_Brane_Corrections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#equations.eq_db_corrections.Eq_Brane_Corrections" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#equations.eq_general.Eq_General" title="equations.eq_general.Eq_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Eq_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
 <p>Class to create equations related to higher curvature corrections in DBI + WZ terms of branes. It has a dictionary built in.</p>
-<section id="id1">
-<h3>Parameters:<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>text_size (float, optional): Defaults to 20.</p></li>
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_presence (str, optional). yes/no. Defaults to yes. If no, does not return the surrounding box.</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_width (float, optional): Defaults to 2.</p></li>
-<li><p>corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional): Which corners get rounded. Defaults to [1, 1, 1, 1].</p></li>
-<li><p>fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.</p></li>
-<li><p>tightness (float, optional): How tight the box around the title is. Defaults to 0.2.</p></li>
-</ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="equations.eq_db_corrections.Eq_Brane_Corrections.animation_overrides">
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#equations.eq_db_corrections.Eq_Brane_Corrections.animation_overrides" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -388,25 +364,11 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Eq_EM</span></span><a class="reference internal" href="_modules/equations/eq_em_action.html#Eq_EM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#equations.eq_em_action.Eq_EM" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#equations.eq_general.Eq_General" title="equations.eq_general.Eq_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Eq_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
 <p>Class to create equations related to electromagnetic field in higher dimensions. It has a dictionary built in.</p>
-<section id="parameters-see-eq-general-class">
-<h3>Parameters (See Eq_General Class):<a class="headerlink" href="#parameters-see-eq-general-class" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>text_size (float, optional): Defaults to 20.</p></li>
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_presence (str, optional). yes/no. Defaults to yes. If no, does not return the surrounding box.</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_width (float, optional): Defaults to 2.</p></li>
-<li><p>corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional): Which corners get rounded. Defaults to [1, 1, 1, 1].</p></li>
-<li><p>fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.</p></li>
-<li><p>tightness (float, optional): How tight the box around the title is. Defaults to 0.2.</p></li>
-</ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="equations.eq_em_action.Eq_EM.animation_overrides">
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#equations.eq_em_action.Eq_EM.animation_overrides" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -417,25 +379,11 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Eq_GC</span></span><a class="reference internal" href="_modules/equations/eq_gc.html#Eq_GC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#equations.eq_gc.Eq_GC" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#equations.eq_general.Eq_General" title="equations.eq_general.Eq_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Eq_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
 <p>Class to create equations related to Gauss-Codazzi tech. It has a dictionary built in.</p>
-<section id="id2">
-<h3>Parameters (See Eq_General Class):<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>text_size (float, optional): Defaults to 20.</p></li>
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_presence (str, optional). yes/no. Defaults to yes. If no, does not return the surrounding box.</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_width (float, optional): Defaults to 2.</p></li>
-<li><p>corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional): Which corners get rounded. Defaults to [1, 1, 1, 1].</p></li>
-<li><p>fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.</p></li>
-<li><p>tightness (float, optional): How tight the box around the title is. Defaults to 0.2.</p></li>
-</ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="equations.eq_gc.Eq_GC.animation_overrides">
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#equations.eq_gc.Eq_GC.animation_overrides" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -446,25 +394,11 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Eq_Junc</span></span><a class="reference internal" href="_modules/equations/eq_junc.html#Eq_Junc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#equations.eq_junc.Eq_Junc" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#equations.eq_general.Eq_General" title="equations.eq_general.Eq_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Eq_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
 <p>Class to create equations related to cosmology. It has a dictionary built in.</p>
-<section id="id3">
-<h3>Parameters (See Eq_General Class):<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>text_size (float, optional): Defaults to 20.</p></li>
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_presence (str, optional). yes/no. Defaults to yes. If no, does not return the surrounding box.</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_width (float, optional): Defaults to 2.</p></li>
-<li><p>corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional): Which corners get rounded. Defaults to [1, 1, 1, 1].</p></li>
-<li><p>fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.</p></li>
-<li><p>tightness (float, optional): How tight the box around the title is. Defaults to 0.2.</p></li>
-</ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="equations.eq_junc.Eq_Junc.animation_overrides">
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#equations.eq_junc.Eq_Junc.animation_overrides" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -475,25 +409,11 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Eq_Metric</span></span><a class="reference internal" href="_modules/equations/eq_metric.html#Eq_Metric"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#equations.eq_metric.Eq_Metric" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#equations.eq_general.Eq_General" title="equations.eq_general.Eq_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Eq_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
 <p>Class to create equations related to metrics. It has a dictionary built in.</p>
-<section id="id4">
-<h3>Parameters (See Eq_General Class):<a class="headerlink" href="#id4" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>text_size (float, optional): Defaults to 20.</p></li>
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_presence (str, optional). yes/no. Defaults to yes. If no, does not return the surrounding box.</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_width (float, optional): Defaults to 2.</p></li>
-<li><p>corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional): Which corners get rounded. Defaults to [1, 1, 1, 1].</p></li>
-<li><p>fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.</p></li>
-<li><p>tightness (float, optional): How tight the box around the title is. Defaults to 0.2.</p></li>
-</ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="equations.eq_metric.Eq_Metric.animation_overrides">
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#equations.eq_metric.Eq_Metric.animation_overrides" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
 </dd></dl>
 
 </section>
@@ -504,18 +424,6 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Eq_Quantum_Cosmo</span></span><a class="reference internal" href="_modules/equations/eq_quantum.html#Eq_Quantum_Cosmo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#equations.eq_quantum.Eq_Quantum_Cosmo" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#equations.eq_general.Eq_General" title="equations.eq_general.Eq_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Eq_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
 <p>Class to create equations related to quantum bubble disucssion. It has a dictionary built in.</p>
-<blockquote>
-<div><p>Parameters (See Eq_General Class):</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>decorator_presence (str, optional). yes/no. Defaults to yes. If no, does not return the surrounding box.</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_width (float, optional): Defaults to 2.</p></li>
-<li><p>corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional): Which corners get rounded. Defaults to [1, 1, 1, 1].</p></li>
-<li><p>fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.</p></li>
-<li><p>tightness (float, optional): How tight the box around the title is. Defaults to 0.2.</p></li>
-</ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="equations.eq_quantum.Eq_Quantum_Cosmo.animation_overrides">
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#equations.eq_quantum.Eq_Quantum_Cosmo.animation_overrides" title="Link to this definition">¶</a></dt>
@@ -531,25 +439,11 @@
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Eq_Scales_DB</span></span><a class="reference internal" href="_modules/equations/eq_scales_db.html#Eq_Scales_DB"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#equations.eq_scales_db.Eq_Scales_DB" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#equations.eq_general.Eq_General" title="equations.eq_general.Eq_General"><code class="xref py py-class docutils literal notranslate"><span class="pre">Eq_General</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">VGroup</span></code></p>
 <p>Class to create equations related to hierarchy of scales in the Dark Bubble model. It has a dictionary built in.</p>
-<section id="id5">
-<h3>Parameters (See Eq_General Class):<a class="headerlink" href="#id5" title="Link to this heading">¶</a></h3>
-<ul class="simple">
-<li><p>text_size (float, optional): Defaults to 20.</p></li>
-<li><p>text_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_presence (str, optional). yes/no. Defaults to yes. If no, does not return the surrounding box.</p></li>
-<li><p>decorator_color (ParsableManimColor, optional): Defaults to BLACK.</p></li>
-<li><p>decorator_stroke_width (float, optional): Defaults to 2.</p></li>
-<li><p>corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.</p></li>
-<li><p>corner_rad_direction (list, optional): Which corners get rounded. Defaults to [1, 1, 1, 1].</p></li>
-<li><p>fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.</p></li>
-<li><p>tightness (float, optional): How tight the box around the title is. Defaults to 0.2.</p></li>
-</ul>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="equations.eq_scales_db.Eq_Scales_DB.animation_overrides">
 <span class="sig-name descname"><span class="pre">animation_overrides</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#equations.eq_scales_db.Eq_Scales_DB.animation_overrides" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</section>
 </dd></dl>
 
 </section>

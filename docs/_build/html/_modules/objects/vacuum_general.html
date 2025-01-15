@@ -197,7 +197,7 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Contents of the package:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
@@ -247,30 +247,32 @@
 <div class="viewcode-block" id="Vacuum_General">
 <a class="viewcode-back" href="../../objects.html#objects.vacuum_general.Vacuum_General">[docs]</a>
 <span class="k">class</span> <span class="nc">Vacuum_General</span><span class="p">(</span><span class="n">VGroup</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Hola, Amigos@@</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;General class to load all inputs related to color and shape of vacua.</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">    -----------</span>
-<span class="sd">    - vacuum_color (ParsableManimColor, optional): _description_. Defaults to RED.</span>
-<span class="sd">    - vacuum_fill_opa (float, optional): _description_. Defaults to 0.2.</span>
-<span class="sd">    - vacuum_stroke_w: (float, optional). Defaults to 0.2.</span>
-<span class="sd">    - vacuum_text_color (ParsableManimColor, optional): _description_. Defaults to WHITE.</span>
+<span class="sd">    - **Parameters**::</span>
+
+<span class="sd">        - vacuum_color (ParsableManimColor, optional): Defaults to RED.</span>
+<span class="sd">        - vacuum_fill_opa (float, optional): Defaults to 0.2.</span>
+<span class="sd">        - vacuum_stroke_w: (float, optional). Defaults to 0.2.</span>
+<span class="sd">        - corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.</span>
+<span class="sd">        - corner_rad_direction (list, optional): which corners of the surrounding rectangle</span>
+<span class="sd">        get rounded. Defaults to [1, 1, 1, 1].</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
                  <span class="n">vacuum_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">RED</span><span class="p">,</span>
                  <span class="n">vacuum_fill_opa</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
                  <span class="n">vacuum_stroke_w</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
-                 <span class="n">direction_corner_rad</span><span class="p">:</span> <span class="nb">list</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
-                 <span class="n">corner_rad</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>
                  <span class="n">vacuum_text_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">WHITE</span><span class="p">,</span>
+                 <span class="n">corner_rad</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>
+                 <span class="n">corner_rad_direction</span><span class="p">:</span> <span class="nb">list</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
                  <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">vacuum_color</span><span class="o">=</span> <span class="n">vacuum_color</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">vacuum_fill_opa</span><span class="o">=</span> <span class="n">vacuum_fill_opa</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">vacuum_stroke_w</span><span class="o">=</span> <span class="n">vacuum_stroke_w</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">corner_rad</span><span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">corner_rad</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">direction_corner_rad</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">corner_rad</span><span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">corner_rad</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">corner_rad_direction</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">vacuum_text_color</span><span class="o">=</span> <span class="n">vacuum_text_color</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cr</span><span class="o">=</span> <span class="n">corner_rad</span> <span class="c1"># To give the scalar value when displaying strings in the bubble </span></div>
 

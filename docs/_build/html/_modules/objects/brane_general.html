@@ -197,7 +197,7 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Contents of the package:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
@@ -247,16 +247,17 @@
 <div class="viewcode-block" id="Brane_General">
 <a class="viewcode-back" href="../../objects.html#objects.brane_general.Brane_General">[docs]</a>
 <span class="k">class</span> <span class="nc">Brane_General</span><span class="p">(</span><span class="n">VGroup</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This is a mock-up class to load all inputs for branes and associated objects.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;This is a mock-up class to load all inputs for branes and associated objects. </span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">    -----------</span>
-<span class="sd">    - brane_color (ParsableManimColor, optional): _description_. Defaults to RED.</span>
-<span class="sd">    - brane_fill_opa (float, optional): _description_. Defaults to 0.2.</span>
-<span class="sd">    - brane_radius (float, optional): Size of brane. Defaults to 1.</span>
-<span class="sd">    - brane_text_color (ParsableManimColor, optional): _description_. Defaults to WHITE.</span>
+<span class="sd">    - **Parameters**::</span>
 <span class="sd">    </span>
-<span class="sd">    - brane_stroke_w: (float, optional). Defaults to 0.2.</span>
+<span class="sd">        - brane_color (ParsableManimColor, optional): filling in color of the brane.</span>
+<span class="sd">        Defaults to RED.</span>
+<span class="sd">        - brane_fill_opa (float, optional): Recall that fill opacity will become slightly </span>
+<span class="sd">        when we go lower in AdS scale. Defaults to 0.2. </span>
+<span class="sd">        - brane_radius (float, optional): Initial size of brane. Defaults to 1.</span>
+<span class="sd">        - brane_text_color (ParsableManimColor, optional): Defaults to WHITE.</span>
+<span class="sd">        - brane_stroke_w: (float, optional). Defaults to 0.2.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 

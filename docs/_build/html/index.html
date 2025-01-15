@@ -198,7 +198,7 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Contents of the package:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="text_and_organisation.html">text_and_organisation</a></li>
@@ -255,7 +255,6 @@
 <dt>These are divided into several sub-packages as:</dt><dd><ul class="simple">
 <li><p><strong>text_and_organisation</strong>, which contains things like titles, bulleted lists and references.</p></li>
 <li><p><strong>equations</strong>, where you can find, I do not know, perhaps some fancy chocolate(?)</p></li>
-<li><p><strong>refs</strong>, specially dedicated to references and citations to scientific papers.</p></li>
 <li><p><strong>tables_and_plots</strong>, containing any plots and tables required.</p></li>
 <li><p><strong>objects</strong>, which mainly contains 2D mobjects to be animated and discussed in the slides.</p></li>
 </ul>
@@ -266,8 +265,16 @@
 <p class="admonition-title">Note</p>
 <p>These libraries will become updated as new objects and set of equations are required for presentations of the future. It can also be that some of the structure and notation gets modified.</p>
 </div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<ul class="simple">
+<li><p>Class Bubble lacks a B-field in the background to be added. Animation of the B-field surfing the brane will be changed.</p></li>
+<li><p>Equations sub-package will probably become part of [text_and_organisation]. Ideally, a python code will be created such that it reads a .tex file and creates a dictionary, where keys are the equation labels of the .tex. Then, the class reads the dictionary and writes the desired equations given the input.</p></li>
+<li><p>Same for Ref Class.</p></li>
+</ul>
+</div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Contents of the package:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">src</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="text_and_organisation.html">text_and_organisation</a></li>
@@ -281,7 +288,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Thank you to Uwezi, Abulafia, Jeertmans and the Manim Discord for all the help provided during these years. This humble library would not be possible without them.</p>
+<p>Thanks to Uwezi, Abulafia, Jeertmans and the Manim Discord for all the help provided during these years. This humble library would not be possible without them.</p>
 </div>
 </section>
 

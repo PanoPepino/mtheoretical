@@ -22,8 +22,8 @@ class Example_AdS_Jc(Scene):
 
 class Example_Photo_Post_it(Scene):
     def construct(self):
-        photo_1= Photo("pedro.png", style= "polaroid", caption= "Perro Xanxe")
-        photo_2= Photo("pedro.png", style= "techno", caption= "Perro Xanxe" )
+        photo_1= Photo("pedro.png", decorator_style= "polaroid", caption= "Perro Xanxe")
+        photo_2= Photo("pedro.png", decorator_style= "techno", caption= "Perro Xanxe" )
         p_it= Post_It(to_dos= ["Random example", "Just Do It!"]).scale(0.9)
         self.add(Group(photo_1, photo_2, p_it).arrange(RIGHT, buff= 0.2).scale_to_fit_width(config.frame_width-1))
 
@@ -39,7 +39,7 @@ class Example_Black_Hole(Scene):
 
 class Example_Bubble(Scene):
     def construct(self):
-        bubble_types= ["Empty", "Radiation", "EM", "Strings", "GW"]
+        bubble_types= ["empty", "radiation", "em", "strings", "gw"]
         bubble_group= Group(*[Bubble(bubble_type= style).scale(0.4) for style in bubble_types]).arrange_in_grid(2,3)
         
         #self.add(bubble_group)
@@ -49,7 +49,7 @@ class Example_Bubble(Scene):
         
 class Example_Energy_Discussion(Scene):
     def construct(self):
-        bub= Bubble(bubble_type= "Energy_Discussion").scale(0.8)
+        bub= Bubble(bubble_type= "energy_discussion").scale(0.8)
         self.play(bub.fade_in_bulk())
         self.play(bub.fail_creation())
         self.play(bub.create_bubble())

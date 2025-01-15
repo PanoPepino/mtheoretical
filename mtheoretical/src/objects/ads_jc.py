@@ -3,28 +3,36 @@ from .brane_general import *
 from .vacuum_general import *
 
 class AdS_Jc(Vacuum_General, Brane_General, VGroup):
-    """Class to represent the vacua discussion for RS and DB models. It includes an arrow to discuss the normal orientation changes (Last Entry). It has several animations in the form of methods. See below. 
+    """Class to represent the vacua discussion for RS and DB models. It includes an arrow to discuss the normal orientation changes ([-1] Entry). It has several animations in the form of methods. See Classes Vacuum and Brane General for further parameters. 
 
-    Parameters
-    ----------
-    - vacua_type (str, optional): To choose among Randall-Sundrum (RS) or DarkBubble (DB). Defaults to "DB".
-    - vacuum_color (ParsableManimColor, optional): _description_. Defaults to RED_E.
-    - text_color (ParsableManimColor, optional): _description_. Defaults to RED_E.
-    - brane_color (ParsableManimColor, optional): _description_. Defaults to GREEN_E.
-    - arrow_color (ParsableManimColor, optional): _description_. Defaults to BLACK.
-    - fill_opa (float, optional): _description_. Defaults to 0.2.
-    - corner_rad (float, optional): _description_. Defaults to 0.3.
-        
-    Animations (all with run_time as rt and rate_func as rf. Defaults to 2 andlinear, respectively)
-    ----------
+    - **Parameters**::
     
-    - fade_in: The system appears without the arrow.
-    - fade_in_arrow: The arrow appears.
-    - show_self.symmetry: Shows the self.symmetry in the RS case. 
-    - restore_self.symmetry: Restores the self.symmetry and the vacua.
-    - show_n_vector_rs: Shows the behaviour of the normal vector in the RS set-up.
-    - show_n_vector_db: Shows the behaviour of the normal vector in the DB set-up.
-    - fade_out: The system is removed from screen.
+        - vacua_type (str, optional): To choose among Randall-Sundrum (RS) or DarkBubble (DB). Defaults to "DB".
+        - arrow_color (ParsableManimColor, optional): Defaults to BLACK.
+    
+    - An **Example** of how this class works::
+
+        from manim import *
+        from mtheoretical import *
+
+        class Example_AdS_Jc(Scene):
+            def construct(self):
+                show_db= AdS_Jc(vacua_type= "DB")
+                show_rs= AdS_Jc(vacua_type= "RS")
+                show= VGroup(show_db, show_rs).arrange(RIGHT, aligned_edge= DOWN, buff= 0.2)
+                show.scale_to_fit_width(config.frame_width-2)
+
+                self.play(AnimationGroup(map(lambda x: x.fade_in(), show)))
+                self.play(AnimationGroup(map(lambda x: x.fade_in_arrow(), show)))
+                self.play(show[1].show_symmetry(rt= 5))
+                self.play(show[1].restore_symmetry())
+                self.play(AnimationGroup(show[0].show_n_vector_db(rt= 5),
+                                         show[1].show_n_vector_rs(rt= 5)))
+                self.play(show.animate.shift(2*UP))
+                self.play(FadeOut(show))
+        
+    - **Methods**::
+
     """
         
     def __init__(self,
@@ -77,12 +85,14 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
         rf: float= linear)-> Animation: #There is an issue with adding the group and scaling or shifting position of it. If I do not add the whole group from the very beginning, the system will not rescale those elements that I will add later. In order to solve this issue, I override the FadeIn animation to avoid this issue.
 
         """
+
         Args:
             - rt (float, optional): run_time animation. Defaults to 1.
             - rf (float, optioanl): rate function. Defaults to linear.
 
         Returns:
-            - Animation: FadeIn animation of the group
+            - Animation: FadeIn animation of the group without the arrow.
+
         """
 
         return FadeIn(self.object[:-1], run_time= rt, rate_function= rf)
@@ -96,7 +106,8 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
             - rf (float, optioanl): rate function. Defaults to linear.
 
         Returns:
-            - Animation: FadeIn animation of the arrow of the group
+            - Animation: FadeIn the arrow of the group.
+
         """
         
         return FadeIn(self.object[-1],  run_time= rt, rate_func= rf)
@@ -110,7 +121,12 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
             - rf (float, optioanl): rate function. Defaults to linear.
 
         Returns:
-            - Animation: Removes out vacuum and bend over to simulate the action of the self.symmetry.
+            - Animation: Removes outside vacuum and bend over the Z2 sym to simulate the action of the self.symmetry.
+
+        .. note::
+
+            This method only works with RS-type. Recall. The Dark Bubble has a proper inside and outside.
+
         """
        
         return Succession(
@@ -123,12 +139,13 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
                 rf= linear)-> Succession:
         """
         Args:
-            - rt (float, optional): _description_. Defaults to 1.
-            - rf (_vacua_type_, optional): _description_. Defaults to linear.
+            - rt (float, optional): Defaults to 1.
+            - rf (_vacua_type_, optional): Defaults to linear.
 
         Returns:
-            - Animation: Removes out vacuum and bend over to simulate the action of the self.symmetry.
-            """
+            - Animation: Restores previous symmetry.
+
+        """
             
         return Succession(
             Rotate(self.object[-4], about_point= self.object[0].get_center(), axis= [0,1,0], run_time= rt/2, rate_func= rf),
@@ -140,11 +157,12 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
                      rf= linear)-> Succession:
         """
         Args:
-            rt (float, optional): _description_. Defaults to 1.
-            rf (_type_, optional): _description_. Defaults to linear.
+            - rt (float, optional): Defaults to 1.
+            - rf (_type_, optional): Defaults to linear.
 
         Returns:
            - Animation: Shows the behaviour of the normal vector across the vacua in the RS model.
+
         """
         center= self.object[0].get_center()
         
@@ -158,8 +176,8 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
                      rf= linear)-> Succession:
         """
         Args:
-            rt (float, optional): _description_. Defaults to 1.
-            rf (_type_, optional): _description_. Defaults to linear.
+            - rt (float, optional): Defaults to 1.
+            - rf (_type_, optional): Defaults to linear.
 
         Returns:
             - Animation: Shows the behaviour of the normal vector across the vacua in the DB model.

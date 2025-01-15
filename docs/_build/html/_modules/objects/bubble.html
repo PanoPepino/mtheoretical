@@ -197,7 +197,7 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Contents of the package:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
@@ -251,44 +251,69 @@
 <div class="viewcode-block" id="Bubble">
 <a class="viewcode-back" href="../../objects.html#objects.bubble.Bubble">[docs]</a>
 <span class="k">class</span> <span class="nc">Bubble</span><span class="p">(</span><span class="n">Brane_General</span><span class="p">,</span> <span class="n">Vacuum_General</span><span class="p">,</span> <span class="n">Group</span><span class="p">):</span> 
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to represent Braneworld bubbles in string theory.</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to represent Dark Bubble discussions in 2 dimensions. See Brane and Vacuum General for further information.</span>
 
-<span class="sd">    Parameters (See Brane_General and Vacuum_General classes)</span>
-<span class="sd">    -----------</span>
-<span class="sd">    - bubble_type (str, optional): Choose the type of Bubble to represent. To choose between Empty, Instanton, Radiation, Matter, Strings, GW, EM, Energy_Discussion. Defaults to &quot;Empty&quot;.</span>
-<span class="sd">    - box_height (float, optional): Defaults to 6.</span>
-<span class="sd">    - box_width (float, optional): Defaults to 8.</span>
-<span class="sd">    - vacuum_color (ParsableManimColor, optional): _description_. Defaults to RED.</span>
-<span class="sd">    - vacuum_fill_opa (float, optional): _description_. Defaults to 0.2.</span>
-<span class="sd">    - vacuum_stroke_w: (float, optional). Defaults to 0.2.</span>
-<span class="sd">    - vacuum_text_color (ParsableManimColor, optional): _description_. Defaults to WHITE.</span>
-<span class="sd">    - brane_color (ParsableManimColor, optional): _description_. Defaults to RED.</span>
-<span class="sd">    - brane_fill_opa (float, optional): _description_. Defaults to 0.2.</span>
-<span class="sd">    - brane_radius (float, optional): Size of brane. Defaults to 1.</span>
-<span class="sd">    - brane_text_color (ParsableManimColor, optional): _description_. Defaults to WHITE.</span>
-<span class="sd">    - brane_stroke_w: (float, optional). Defaults to 0.2.</span>
-<span class="sd">    - string_color (ParsableManimColor, optional): Defaults to BLUE.</span>
-<span class="sd">    - string_stroke_w (float, optional): Defaults to 1.5.</span>
-<span class="sd">    - field_gradient (float, optional): Represents how good the gradient of thesource bulk field is. Defaults to 50.</span>
-<span class="sd">    - field_top_color (ParsableManimColor, optional): Color of field on top of the brane. Defaults to BLUE.</span>
-<span class="sd">    - field_bulk_color (ParsableManimColor, optional): (To be constructed). Defaults to PINK.</span>
-<span class="sd">    - stroke_w (float, optional): Stroke width of rectangle and bubble boundaries. Defaults to 1.</span>
-<span class="sd">    - self.brane_fill_opa (float, optional): Defaults to 0.2.</span>
-<span class="sd">    - self.brane_fill_opa (float, optional): Defaults to 0.4.</span>
+<span class="sd">    - **Parameters**::</span>
+
+<span class="sd">        - bubble_type (str, optional): Choose the type of bubble to represent.</span>
+<span class="sd">        Defaults to empty.</span>
+<span class="sd">            - empty: Regular inside/outside with both AdS scales.</span>
+<span class="sd">            - instanton: Same as before, but AdS scales are replaced by potentials.</span>
+<span class="sd">            - radiation: Add mass to the inside vacuum.</span>
+<span class="sd">            - strings: Add radially stretching strings to the bulk.</span>
+<span class="sd">            - gw: Add gravitational waves to the bulk.</span>
+<span class="sd">            - em: Add background B-field to bulk and on the brane.</span>
+<span class="sd">            - energy_discussion: An &quot;energy bar&quot; appears below the box, to discuss </span>
+<span class="sd">            energy conservation.</span>
+<span class="sd">        - box_height (float, optional):Height of vacuum. Defaults to 6.</span>
+<span class="sd">        - box_width (float, optional): Length of vacuum. Defaults to 8.</span>
+<span class="sd">        - string_color (ParsableManimColor, optional): Colors of strings. Defaults to BLUE.</span>
+<span class="sd">        - string_stroke_w (float, optional): Defaults to 1.5.</span>
+<span class="sd">        - field_gradient (float, optional): Represents how good the gradient of the source </span>
+<span class="sd">        field ON the brane is. Defaults to 50.</span>
+<span class="sd">        - field_top_color (ParsableManimColor, optional): Color of field on top of the brane.</span>
+<span class="sd">        Defaults to BLUE.</span>
+<span class="sd">        - field_bulk_color (ParsableManimColor, optional): (To be constructed). </span>
+<span class="sd">        Defaults to PINK.</span>
+<span class="sd">    </span>
+<span class="sd">    .. note::</span>
+
+<span class="sd">        The bubble is always the 2nd entry of the class.</span>
+<span class="sd">    </span>
+<span class="sd">    .. attention::</span>
+
+<span class="sd">        The &quot;em&quot; mode lacks the representation of the B-field in the bulk</span>
+
+<span class="sd">    - **Examples**::</span>
+
+<span class="sd">        from manim import *</span>
+<span class="sd">        from mtheoretical import *</span>
+
+<span class="sd">        class Example_Bubble(Scene):</span>
+<span class="sd">            def construct(self):</span>
+<span class="sd">                bubble_types= [&quot;empty&quot;, &quot;radiation&quot;, &quot;em&quot;, &quot;strings&quot;, &quot;gw&quot;]</span>
+<span class="sd">                bubble_group= Group(*[Bubble(bubble_type= style).scale(0.4) for style in bubble_types])</span>
+<span class="sd">                bubble_group.arrange_in_grid(2,3)</span>
+
+<span class="sd">                self.play(AnimationGroup(map(lambda x: x.fade_in_bulk(), bubble_group)))</span>
+<span class="sd">                self.play(AnimationGroup(map(lambda x: x.create_bubble(), bubble_group)))</span>
+<span class="sd">                self.play(AnimationGroup(map(lambda x: x.expand_bubble(), bubble_group)))</span>
 <span class="sd">        </span>
-<span class="sd">    Methods</span>
-<span class="sd">    -----------</span>
-<span class="sd">    - fade_in_bulk(): Fades in the bulk (Background rectangle).</span>
-<span class="sd">    - create_bubble(): Create the bubble and any other feature associated with it. (i.e. strings attached or fields on top)</span>
-<span class="sd">    - expand_bubble(): Expands the bubble and create the dynamics of each of features on it.</span>
-<span class="sd">    - For the Energy_Discussion type there are extra methods:</span>
-<span class="sd">        - create_fail():</span>
-<span class="sd">        - more_energy():</span>
-
+<span class="sd">        class Example_Energy_Discussion(Scene):</span>
+<span class="sd">            def construct(self):</span>
+<span class="sd">                bub= Bubble(bubble_type= &quot;energy_discussion&quot;).scale(0.8)</span>
+<span class="sd">                self.play(bub.fade_in_bulk())</span>
+<span class="sd">                self.play(bub.fail_creation())</span>
+<span class="sd">                self.play(bub.create_bubble())</span>
+<span class="sd">                self.play(bub.expand_bubble())</span>
+<span class="sd">                self.play(FadeOut(bub))</span>
+<span class="sd">     </span>
+<span class="sd">    - **Methods**::</span>
+<span class="sd">   </span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                 <span class="n">bubble_type</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;Empty&quot;</span><span class="p">,</span>
+                 <span class="n">bubble_type</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;empty&quot;</span><span class="p">,</span>
                  <span class="n">box_height</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">6</span><span class="p">,</span>
                  <span class="n">box_width</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">8</span><span class="p">,</span>
                  <span class="n">string_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">BLUE</span><span class="p">,</span>
@@ -317,11 +342,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">radius_text</span><span class="o">=</span> <span class="n">MathTex</span><span class="p">(</span><span class="s2">&quot;r=a(</span><span class="se">\\</span><span class="s2">tau)&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vacuum_text_color</span><span class="p">)</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">PI</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius_line</span><span class="o">.</span><span class="n">get_center</span><span class="p">(),</span> <span class="n">LEFT</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span> <span class="mf">0.05</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">radius_info</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius_line</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius_text</span><span class="p">)</span>
 
-        <span class="c1">#Matter</span>
+        <span class="c1">#matter</span>
         <span class="n">get_mass_path</span><span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;../figures/weight.svg&#39;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mass</span><span class="o">=</span> <span class="n">SVGMobject</span><span class="p">(</span><span class="n">get_mass_path</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 
-        <span class="c1">#Strings</span>
+        <span class="c1">#strings</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">()</span>
         <span class="n">box_positions</span><span class="o">=</span> <span class="p">[</span><span class="n">RIGHT</span><span class="p">,</span> <span class="n">UR</span><span class="p">,</span> <span class="n">UP</span><span class="p">,</span> <span class="n">UL</span><span class="p">,</span> <span class="n">LEFT</span><span class="p">,</span> <span class="n">DL</span><span class="p">,</span> <span class="n">DOWN</span><span class="p">,</span> <span class="n">DR</span><span class="p">]</span>
         <span class="n">dots</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">Dot</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">fill_opacity</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">point</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">brane</span><span class="o">.</span><span class="n">point_at_angle</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="mi">360</span><span class="o">/</span><span class="mi">8</span><span class="o">*</span><span class="n">DEGREES</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">box_positions</span><span class="p">))])</span>
@@ -366,33 +391,33 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">energy_cost_bubble</span><span class="o">=</span> <span class="n">DashedVMobject</span><span class="p">(</span><span class="n">Circle</span><span class="p">(</span><span class="n">radius</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">brane_radius</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">brane_color</span><span class="p">,</span> <span class="n">fill_opacity</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stroke_width</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vacuum_stroke_w</span> <span class="o">+</span><span class="mf">0.9</span><span class="p">))</span>
         
         <span class="c1">#Note that position of the brane is always [2] in the bubble_group.</span>
-        <span class="k">if</span> <span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;Empty&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;empty&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">background</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">brane</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius_info</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;Instanton&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;instanton&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">background</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_insta_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">brane</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_insta_text</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;Radiation&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;radiation&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">in_text</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mass</span><span class="p">,</span> <span class="n">DOWN</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">background</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">brane</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mass</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;GW&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;gw&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">background</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">brane_waves</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_text</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;Strings&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;strings&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">out_text</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mf">0.3</span><span class="o">*</span><span class="n">DOWN</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">background</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">brane_w_anchor</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_text</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;EM&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;em&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">background</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">brane</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_top</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">field_glow</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;Energy_Discussion&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;energy_discussion&quot;</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">fake_brane</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">brane</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">background</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fake_brane</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">brane</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">energy_cost_bubble</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bar_outside</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_text</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">energy_gain</span><span class="p">)</span>
@@ -411,7 +436,7 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            - Animation: Returns the creation of the bulk box and the value of the cosmological constant outside.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;Energy_Discussion&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;energy_discussion&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">Succession</span><span class="p">(</span>
                 <span class="n">FadeIn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">),</span>
                 <span class="n">FadeIn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">),</span>
@@ -426,11 +451,14 @@
     <span class="k">def</span> <span class="nf">fail_creation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
             <span class="n">rt</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
             <span class="n">rf</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="n">there_and_back_with_pause</span><span class="p">)</span><span class="o">-&gt;</span> <span class="n">AnimationGroup</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fails to create bubble for discussion of energy.</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        .. note::</span>
+
+<span class="sd">            This method only works with energy_discussion.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            rt (float, optional): _description_. Defaults to 2.</span>
-<span class="sd">            rf (float, optional): _description_. Defaults to linear.</span>
+<span class="sd">            - rt (float, optional): Defaults to 2.</span>
+<span class="sd">            - rf (float, optional): Defaults to linear.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            - Animation: The creation of the bubble fails due to lack of energy.</span>
@@ -451,15 +479,15 @@
 <span class="sd">            - rf (float, optioanl): rate function. Defaults to linear.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            - Animation: Returns the creation of the bubble and its inside value of the scale curvature.</span>
+<span class="sd">            - Animation: Shows the creation of the bubble and its inside value of the scale curvature.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;Energy_Discussion&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;energy_discussion&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">Succession</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">vacuum_tracker</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">run_time</span><span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">)</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="mf">2.5</span><span class="p">),</span>
                 <span class="n">GrowFromCenter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">run_time</span><span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">),</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">energy_cost_bubble</span><span class="o">.</span><span class="n">animate</span><span class="o">.</span><span class="n">set_opacity</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
         
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;EM&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;em&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">Succession</span><span class="p">(</span>
                 <span class="n">GrowFromCenter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">),</span>
                 <span class="n">FadeIn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_function</span><span class="o">=</span> <span class="n">rt</span><span class="p">),</span>
@@ -467,13 +495,13 @@
                 <span class="n">Wait</span><span class="p">(),</span>
                 <span class="n">Create</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">field_glow</span><span class="p">,</span> <span class="n">run_time</span><span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">))</span>
         
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;Strings&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;strings&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">Succession</span><span class="p">(</span>
                 <span class="n">GrowFromCenter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">),</span>
                 <span class="n">Create</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">strings</span><span class="p">,</span> <span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">),</span>
                 <span class="n">FadeIn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_function</span><span class="o">=</span> <span class="n">rt</span><span class="p">))</span>
         
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;Radiation&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;radiation&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">Succession</span><span class="p">(</span>
                 <span class="n">GrowFromCenter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">),</span>
                 <span class="n">FadeIn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">[</span><span class="mi">3</span><span class="p">:],</span> <span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_function</span><span class="o">=</span> <span class="n">rt</span><span class="p">))</span>
@@ -498,21 +526,22 @@
 <span class="sd">            - sca (float, optional): size for the scaling of the brane.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            - Animation: Returns the expansion of the bubble. Depeding on the type of bubble, it will also add other features.</span>
+<span class="sd">            - Animation: Returns the expansion of the bubble. Denpeding on the type of bubble, </span>
+<span class="sd">            it automatically shows the evolution of energy densities in the bulk.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;Energy_Discussion&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;energy_discussion&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">Succession</span><span class="p">(</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">vacuum_tracker</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">)</span><span class="o">.</span><span class="n">set_value</span><span class="p">(</span><span class="mf">4.5</span><span class="p">),</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">sca</span><span class="p">))</span>
         
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;GW&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;gw&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">AnimationGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">brane_waves</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">sca</span><span class="p">),</span> <span class="n">Broadcast</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">waves</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.6</span><span class="o">*</span><span class="n">sca</span><span class="p">),</span> <span class="n">focal_point</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">get_center</span><span class="p">(),</span> <span class="n">initial_opacity</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span>  <span class="n">final_opacity</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n_mobs</span><span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">))</span>
         
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;EM&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;em&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">AnimationGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">brane</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.8</span><span class="o">*</span><span class="n">sca</span><span class="p">),</span><span class="bp">self</span><span class="o">.</span><span class="n">bubble</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">0.8</span><span class="o">*</span><span class="n">sca</span><span class="p">))</span>
         
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;Strings&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bubble_type</span><span class="o">==</span> <span class="s2">&quot;strings&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">AnimationGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">brane_w_anchor</span><span class="o">.</span><span class="n">animate</span><span class="p">(</span><span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_func</span><span class="o">=</span> <span class="n">rf</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="n">sca</span><span class="p">))</span>
 
         <span class="k">else</span><span class="p">:</span>
@@ -524,6 +553,15 @@
     <span class="k">def</span> <span class="nf">show_radius</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
             <span class="n">rt</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
             <span class="n">rf</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="n">linear</span><span class="p">)</span><span class="o">-&gt;</span> <span class="n">Succession</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Args:</span>
+<span class="sd">            - rt (float, optional): run_time animation. Defaults to 1.</span>
+<span class="sd">            - rf (float, optional): rate function. Defaults to linear.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            - Succession: Shows the time dependence of the radius of the bubble.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        
         <span class="k">return</span> <span class="n">Succession</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">in_text</span><span class="o">.</span><span class="n">animate</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">brane</span><span class="o">.</span><span class="n">get_center</span><span class="p">(),</span> <span class="n">DOWN</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span> <span class="mf">0.2</span><span class="p">),</span>
             <span class="n">Create</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius_info</span><span class="p">,</span> <span class="n">run_time</span><span class="o">=</span> <span class="n">rt</span><span class="p">,</span> <span class="n">rate_function</span><span class="o">=</span> <span class="n">rf</span><span class="p">))</span></div>

@@ -14,6 +14,9 @@ class Eq_General(VGroup):
         - corner_rad_direction (list, optional): Which corners get rounded. Defaults to [1, 1, 1, 1].
         - fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.
         - tightness (float, optional): How tight the box around the title is. Defaults to 0.2.
+
+    .. attention::
+        This Class should be transformed into a more general class capable of reading .tex files and extract dictionaries of equations.
     
     """
     def __init__(self,

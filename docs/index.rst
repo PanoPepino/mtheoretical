@@ -11,7 +11,6 @@ This webpage contains the documentation for mtheoretical, a (personal) library b
 These are divided into several sub-packages as:
    - **text_and_organisation**, which contains things like titles, bulleted lists and references. 
    - **equations**, where you can find, I do not know, perhaps some fancy chocolate(?)
-   - **refs**, specially dedicated to references and citations to scientific papers.
    - **tables_and_plots**, containing any plots and tables required.
    - **objects**, which mainly contains 2D mobjects to be animated and discussed in the slides.
 
@@ -19,11 +18,17 @@ The main idea is to generalise the sub-packages for **refs** and **equations**, 
 
 .. note::
    These libraries will become updated as new objects and set of equations are required for presentations of the future. It can also be that some of the structure and notation gets modified.
+
+.. attention::
+
+   - Class Bubble lacks a B-field in the background to be added. Animation of the B-field surfing the brane will be changed.
+   - Equations sub-package will probably become part of [text_and_organisation]. Ideally, a python code will be created such that it reads a .tex file and creates a dictionary, where keys are the equation labels of the .tex. Then, the class reads the dictionary and writes the desired equations given the input.
+   - Same for Ref Class.  
    
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Contents of the package:
 
    modules
 
@@ -32,4 +37,4 @@ The main idea is to generalise the sub-packages for **refs** and **equations**, 
 
 .. note::
 
-   Thank you to Uwezi, Abulafia, Jeertmans and the Manim Discord for all the help provided during these years. This humble library would not be possible without them.   
+   Thanks to Uwezi, Abulafia, Jeertmans and the Manim Discord for all the help provided during these years. This humble library would not be possible without them.   

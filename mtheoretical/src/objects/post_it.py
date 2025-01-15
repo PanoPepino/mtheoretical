@@ -2,19 +2,28 @@ from manim import *
 from os import path
 
 class Post_It(Group):
-    """This is a class that creates a Group that represents a Post it sticker with text. 
+    """This is a class represents a Post-it sticker with a list of To-Do and a pin on top.
 
-    Parameters:
-    -----------
-    - to_dos (list): The bullet points to add to the post it.
-    - text_color (ParsableManimColor, optional): _description_. Defaults to BLACK.
-    - text_size (float, optional): _description_. Defaults to 30.
-    - pin_color (ParsableManimColor, optional): _description_. Defaults to RED.
+    - **Parameters**::
+
+        - to_dos (list): The bullet points to add to the post it.
+        - text_color (ParsableManimColor, optional): Defaults to BLACK.
+        - text_size (float, optional): Defaults to 30.
+        - pin_color (ParsableManimColor, optional): Defaults to RED.
     
-    Returns:
-    -------
-    
-    - A post it with the bulleted list written on top and a pin on top.
+    - **Example**::
+
+        from manim import *
+        from mtheoretical import *
+
+        class Example_Photo_Post_it(Scene):
+        def construct(self):
+            photo_1= Photo("pedro.png", decorator_style= "polaroid", caption= "Perro Xanxe")
+            photo_2= Photo("pedro.png", decorator_style= "techno", caption= "Perro Xanxe")
+            p_it= Post_It(to_dos= ["Random example", "Just Do It!"]).scale(0.9)
+            all_them= Group(photo_1, photo_2, p_it).arrange(RIGHT, buff= 0.2)
+            all_them.scale_to_fit_width(config.frame_width-1)
+            self.add(all_them)
     """
     
     def __init__(self, 

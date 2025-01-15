@@ -1,16 +1,17 @@
 from manim import *
 
 class Brane_General(VGroup):
-    """This is a mock-up class to load all inputs for branes and associated objects.
+    """This is a mock-up class to load all inputs for branes and associated objects. 
 
-    Parameters:
-    -----------
-    - brane_color (ParsableManimColor, optional): _description_. Defaults to RED.
-    - brane_fill_opa (float, optional): _description_. Defaults to 0.2.
-    - brane_radius (float, optional): Size of brane. Defaults to 1.
-    - brane_text_color (ParsableManimColor, optional): _description_. Defaults to WHITE.
+    - **Parameters**::
     
-    - brane_stroke_w: (float, optional). Defaults to 0.2.
+        - brane_color (ParsableManimColor, optional): filling in color of the brane.
+        Defaults to RED.
+        - brane_fill_opa (float, optional): Recall that fill opacity will become slightly 
+        when we go lower in AdS scale. Defaults to 0.2. 
+        - brane_radius (float, optional): Initial size of brane. Defaults to 1.
+        - brane_text_color (ParsableManimColor, optional): Defaults to WHITE.
+        - brane_stroke_w: (float, optional). Defaults to 0.2.
 
     """
     def __init__(self, 

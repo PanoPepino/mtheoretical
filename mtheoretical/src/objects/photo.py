@@ -3,30 +3,35 @@ import os
 from os import path
 
 class Photo(Group):
-    """Class to represent a Photo. It has two styles:
+    """Class to represent a Photography. Find and example in Post_It Class.
     
-        - Polaroid: It simulates a polaroid picture with a pin on top.
-        - Techno: Just the photo with a rectangle surrounding it.
+    - **Parameters**::
 
-        Parameters:
-        ----------
-        - photo (str): path to the desired photo.
-        - style (str, optional): _description_. Defaults to "techno".
-        - caption (str, optional): The text to add under the polaroid picture. Defaults to "".
-        - text_size (float, optional): text_size of font for the text mentioned above. Defaults to 30.
-        - text_color (ParsableManimColor, optional): _description_. Defaults to BLACK.
-        - decorator_color (ParsableManimColor, optional): _description_. Defaults to RED.
-        - pin_color (ParsableManimColor, optional): _description_. Defaults to RED.
-        - decorator_stroke_w (float, optional): _description_. Defaults to 5.
-        
-        Returns:
-        --------
-        - The chosen type of photo.
+        - photo (str): path to the desired photo. It assumes your photo is located in a 
+        folder called figures, at the same level of the main script where you call this class.
+        - decorator_style (str, optional): Defaults to "techno".
+            - polaroid: It resembles a polaroid photo, with a pin on top.
+            - techno: It is just a frame of the decorator_color.
+        - decorator_color (ParsableManimColor, optional): Defaults to RED.
+        - decorator_stroke_w (float, optional): Thickness of the frame.
+        Defaults to 5.
+        - caption (str, optional): The text to add under the polaroid picture.
+        Defaults to "".
+        - text_size (float, optional): text_size of font for the text mentioned above. 
+        Defaults to 30.
+        - text_color (ParsableManimColor, optional): Defaults to BLACK.
+        - pin_color (ParsableManimColor, optional): Color of the pin on top of the polaroid. 
+        Defaults to RED.
+       
+    .. note::
+
+        Captions are only allowed in decorator_style= "polaroid" 
+
     """
     
     def __init__(self,
                  photo, 
-                 style: str= "techno", 
+                 decorator_style: str= "techno", 
                  caption: str= "",
                  text_size: float= 30,
                  text_color: ParsableManimColor= BLACK,
@@ -45,7 +50,7 @@ class Photo(Group):
         get_svg_path= path.join(path.dirname(__file__), '../figures/pin.svg')
         
         # Polaroid
-        if style== "polaroid":
+        if decorator_style== "polaroid":
             r1= Rectangle(width= 2, height= 2.9)
             r2= Rectangle(width= 1.8, height= 2.1).move_to(r1.get_center()).shift(0.3*UP)
             polaroid= Cutout(r1, r2, fill_opacity= 1, color= WHITE, stroke_color= GRAY_A).scale(1.5)
@@ -62,7 +67,7 @@ class Photo(Group):
             self.add(self.chosen_photo)
          
         # Technophoto   
-        if style== "techno":
+        if decorator_style== "techno":
             image= ImageMobject("figures/" + photo).set(z_index= -1)
             frame= SurroundingRectangle(image, corner_radius= corner_rad, color= decorator_color, stroke_width= 2*decorator_stroke_w, buff= 0.03)
             self.chosen_photo= Group(frame.set_z_index(3), image)

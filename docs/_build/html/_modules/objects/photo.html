@@ -197,7 +197,7 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+  <p class="caption" role="heading"><span class="caption-text">Contents of the package:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
@@ -249,30 +249,35 @@
 <div class="viewcode-block" id="Photo">
 <a class="viewcode-back" href="../../objects.html#objects.photo.Photo">[docs]</a>
 <span class="k">class</span> <span class="nc">Photo</span><span class="p">(</span><span class="n">Group</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to represent a Photo. It has two styles:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to represent a Photography. Find and example in Post_It Class.</span>
 <span class="sd">    </span>
-<span class="sd">        - Polaroid: It simulates a polaroid picture with a pin on top.</span>
-<span class="sd">        - Techno: Just the photo with a rectangle surrounding it.</span>
+<span class="sd">    - **Parameters**::</span>
 
-<span class="sd">        Parameters:</span>
-<span class="sd">        ----------</span>
-<span class="sd">        - photo (str): path to the desired photo.</span>
-<span class="sd">        - style (str, optional): _description_. Defaults to &quot;techno&quot;.</span>
-<span class="sd">        - caption (str, optional): The text to add under the polaroid picture. Defaults to &quot;&quot;.</span>
-<span class="sd">        - text_size (float, optional): text_size of font for the text mentioned above. Defaults to 30.</span>
-<span class="sd">        - text_color (ParsableManimColor, optional): _description_. Defaults to BLACK.</span>
-<span class="sd">        - decorator_color (ParsableManimColor, optional): _description_. Defaults to RED.</span>
-<span class="sd">        - pin_color (ParsableManimColor, optional): _description_. Defaults to RED.</span>
-<span class="sd">        - decorator_stroke_w (float, optional): _description_. Defaults to 5.</span>
-<span class="sd">        </span>
-<span class="sd">        Returns:</span>
-<span class="sd">        --------</span>
-<span class="sd">        - The chosen type of photo.</span>
+<span class="sd">        - photo (str): path to the desired photo. It assumes your photo is located in a </span>
+<span class="sd">        folder called figures, at the same level of the main script where you call this class.</span>
+<span class="sd">        - decorator_style (str, optional): Defaults to &quot;techno&quot;.</span>
+<span class="sd">            - polaroid: It resembles a polaroid photo, with a pin on top.</span>
+<span class="sd">            - techno: It is just a frame of the decorator_color.</span>
+<span class="sd">        - decorator_color (ParsableManimColor, optional): Defaults to RED.</span>
+<span class="sd">        - decorator_stroke_w (float, optional): Thickness of the frame.</span>
+<span class="sd">        Defaults to 5.</span>
+<span class="sd">        - caption (str, optional): The text to add under the polaroid picture.</span>
+<span class="sd">        Defaults to &quot;&quot;.</span>
+<span class="sd">        - text_size (float, optional): text_size of font for the text mentioned above. </span>
+<span class="sd">        Defaults to 30.</span>
+<span class="sd">        - text_color (ParsableManimColor, optional): Defaults to BLACK.</span>
+<span class="sd">        - pin_color (ParsableManimColor, optional): Color of the pin on top of the polaroid. </span>
+<span class="sd">        Defaults to RED.</span>
+<span class="sd">       </span>
+<span class="sd">    .. note::</span>
+
+<span class="sd">        Captions are only allowed in decorator_style= &quot;polaroid&quot; </span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
     
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">photo</span><span class="p">,</span> 
-                 <span class="n">style</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;techno&quot;</span><span class="p">,</span> 
+                 <span class="n">decorator_style</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;techno&quot;</span><span class="p">,</span> 
                  <span class="n">caption</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
                  <span class="n">text_size</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">30</span><span class="p">,</span>
                  <span class="n">text_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">BLACK</span><span class="p">,</span>
@@ -291,7 +296,7 @@
         <span class="n">get_svg_path</span><span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;../figures/pin.svg&#39;</span><span class="p">)</span>
         
         <span class="c1"># Polaroid</span>
-        <span class="k">if</span> <span class="n">style</span><span class="o">==</span> <span class="s2">&quot;polaroid&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">decorator_style</span><span class="o">==</span> <span class="s2">&quot;polaroid&quot;</span><span class="p">:</span>
             <span class="n">r1</span><span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">width</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span> <span class="mf">2.9</span><span class="p">)</span>
             <span class="n">r2</span><span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">width</span><span class="o">=</span> <span class="mf">1.8</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span> <span class="mf">2.1</span><span class="p">)</span><span class="o">.</span><span class="n">move_to</span><span class="p">(</span><span class="n">r1</span><span class="o">.</span><span class="n">get_center</span><span class="p">())</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mf">0.3</span><span class="o">*</span><span class="n">UP</span><span class="p">)</span>
             <span class="n">polaroid</span><span class="o">=</span> <span class="n">Cutout</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">,</span> <span class="n">fill_opacity</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="n">WHITE</span><span class="p">,</span> <span class="n">stroke_color</span><span class="o">=</span> <span class="n">GRAY_A</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
@@ -308,7 +313,7 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chosen_photo</span><span class="p">)</span>
          
         <span class="c1"># Technophoto   </span>
-        <span class="k">if</span> <span class="n">style</span><span class="o">==</span> <span class="s2">&quot;techno&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">decorator_style</span><span class="o">==</span> <span class="s2">&quot;techno&quot;</span><span class="p">:</span>
             <span class="n">image</span><span class="o">=</span> <span class="n">ImageMobject</span><span class="p">(</span><span class="s2">&quot;figures/&quot;</span> <span class="o">+</span> <span class="n">photo</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">z_index</span><span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
             <span class="n">frame</span><span class="o">=</span> <span class="n">SurroundingRectangle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">corner_radius</span><span class="o">=</span> <span class="n">corner_rad</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="n">decorator_color</span><span class="p">,</span> <span class="n">stroke_width</span><span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">decorator_stroke_w</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span> <span class="mf">0.03</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">chosen_photo</span><span class="o">=</span> <span class="n">Group</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">set_z_index</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">image</span><span class="p">)</span>
