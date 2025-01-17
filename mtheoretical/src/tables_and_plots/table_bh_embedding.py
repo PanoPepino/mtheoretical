@@ -7,11 +7,13 @@ class Table_Bh_Embedding(Table_General, Group):
 
     - **Parameters**::
 
-        - type: (str, optional): There are two types:
+        - type (str, optional): There are two types:
             - "together", this will display all 9 spatial directions in
             the same row.
             - "split": It will display compact and non-compact dimesions 
             in two different tables.
+        - chosen_position (str, optional): The relative position of the
+        compact dimensions with respect to uncompact. Defaults to RIGHT.
 
     - **Example**::
 

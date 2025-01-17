@@ -8,7 +8,7 @@ class Brane_General(VGroup):
         - brane_color (ParsableManimColor, optional): filling in color of the brane.
         Defaults to RED.
         - brane_fill_opa (float, optional): Recall that fill opacity will become slightly 
-        when we go lower in AdS scale. Defaults to 0.2. 
+        when we go lower in AdS scale. Defaults to 0.1. 
         - brane_radius (float, optional): Initial size of brane. Defaults to 1.
         - brane_text_color (ParsableManimColor, optional): Defaults to WHITE.
         - brane_stroke_w: (float, optional). Defaults to 0.2.
@@ -17,7 +17,7 @@ class Brane_General(VGroup):
     def __init__(self, 
                  brane_color: ParsableManimColor= RED,
                  brane_radius: float= 1,
-                 brane_fill_opa: float= 0.2,
+                 brane_fill_opa: float= 0.1,
                  brane_stroke_w: float= 0.2,
                  brane_text_color: ParsableManimColor= WHITE,
                  **kwargs):

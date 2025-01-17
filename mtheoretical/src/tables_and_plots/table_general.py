@@ -5,19 +5,19 @@ class Table_General(VMobject):
 
     - **Parameters**::
         
-        - text_color (ParsableManimColor, optional): Defaults to BLACK.
+        - text_color (ParsableManimColor, optional): Defaults to WHITE.
         - hlight_1_color (ParsableManimColor, optional): Highlight color 
-        for some of the cells. Defaults to RED.
-        - hlight_2_color (ParsableManimColor, optional): Defaults to BLUE.
-        - hlight_3_color (ParsableManimColor, optional): Defaults to PURPLE.
-        - corner_rad (float, optional): Defaults to 0.2.
+        for some of the cells. Defaults to GREEN.
+        - hlight_2_color (ParsableManimColor, optional): Defaults to RED.
+        - hlight_3_color (ParsableManimColor, optional): Defaults to BLUE.
+        - corner_rad (float, optional): Defaults to 0.
         - corner_rad_direction (list, optional). To modify which vertex bend and not.
-        Defaults to [1, 1, 1, 1].
-        - decorator_color (ParsableManimColor, optional): Defaults to BLACK.
+        Defaults to [0, 0, 0, 0].
+        - decorator_color (ParsableManimColor, optional): Defaults to WHITE.
         - decorator_stroke_w (float, optiona): Defaults to 1.
-        - stroke_w (float, optional): Defaults to 5.
+        - stroke_w (float, optional): Defaults to 1.
         - stroke_opa (float, optional): Defaults to 1,
-        - fill_opa (float, optional): Defaults to 0.05.
+        - fill_opa (float, optional): Defaults to 0.3.
 
     - **Example**::
 
@@ -33,17 +33,17 @@ class Table_General(VMobject):
     """
 
     def __init__(self,
-                 text_color: ParsableManimColor= BLACK,
-                 hlight_1_color: ParsableManimColor= RED,
-                 hlight_2_color: ParsableManimColor= BLUE,
-                 hlight_3_color: ParsableManimColor= PURPLE,
-                 decorator_color: ParsableManimColor= BLACK,
+                 text_color: ParsableManimColor= WHITE,
+                 hlight_1_color: ParsableManimColor= GREEN,
+                 hlight_2_color: ParsableManimColor= RED,
+                 hlight_3_color: ParsableManimColor= BLUE,
+                 decorator_color: ParsableManimColor= WHITE,
                  decorator_stroke_w: float= 1,
-                 corner_rad: float= 0.2,
-                 corner_rad_direction: list= [1, 1, 1, 1],
-                 stroke_w: float= 5,
+                 corner_rad: float= 0,
+                 corner_rad_direction: list= [0, 0, 0, 0],
+                 stroke_w: float= 1,
                  stroke_opa: float= 1,
-                 fill_opa: float= 0.05,                  
+                 fill_opa: float= 0.3,                  
                  **kwargs):
     
         super().__init__(**kwargs)

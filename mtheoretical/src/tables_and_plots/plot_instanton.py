@@ -35,7 +35,7 @@ class Plot_Instanton(Plot_General, Group):
             x_range=[-2.1, 2.1, 1],
             y_range=[-1, 1.5, 1],
             tips= False,
-            background_line_style= {"stroke_opacity": 0}).set_color(BLACK).set(stroke_opacity= self.axis_opacity)
+            background_line_style= {"stroke_opacity": 0}).set_color(self.text_color).set(stroke_opacity= self.axis_opacity)
         lab_ax_ins= self.ax_ins.get_axis_labels(x_label= MathTex("\phi",font_size= 20, color= self.func_main_color), y_label= MathTex("V(\phi)",font_size= 25, color= self.func_main_color))
         lab_ax_ins[1].shift(0.2*DOWN)
         lab_ax_ins[0].shift(0.2*LEFT)

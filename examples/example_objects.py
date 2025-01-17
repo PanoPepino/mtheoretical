@@ -39,7 +39,7 @@ class Example_Black_Hole(Scene):
 
 class Example_Bubble(Scene):
     def construct(self):
-        bubble_types= ["empty", "radiation", "em", "strings", "gw"]
+        bubble_types= ["empty", "radiation", "em", "strings", "GW"]
         bubble_group= Group(*[Bubble(bubble_type= style).scale(0.4) for style in bubble_types]).arrange_in_grid(2,3)
         
         #self.add(bubble_group)

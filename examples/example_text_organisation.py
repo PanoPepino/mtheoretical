@@ -5,7 +5,8 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 from manim import *
 from mtheoretical.src.text_and_organisation import *
 from mtheoretical.src.equations import *
-from mtheoretical.src.templates import *
+
+
 
 
 class Title_Slide(Scene):
@@ -23,4 +24,3 @@ class Generic_Slide(Scene):
         self.play(FadeIn(ref1, important_points))
         for point in range(len(important_points)+2):
             self.play(important_points.next_point())
-    

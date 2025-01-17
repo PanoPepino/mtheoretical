@@ -8,9 +8,9 @@ class Vacuum_General(VGroup):
         - vacuum_color (ParsableManimColor, optional): Defaults to RED.
         - vacuum_fill_opa (float, optional): Defaults to 0.2.
         - vacuum_stroke_w: (float, optional). Defaults to 0.2.
-        - corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.
+        - corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.
         - corner_rad_direction (list, optional): which corners of the surrounding rectangle
-        get rounded. Defaults to [1, 1, 1, 1].
+        get rounded. Defaults to [0, 0, 0, 0].
 
     """
     def __init__(self, 
@@ -18,8 +18,8 @@ class Vacuum_General(VGroup):
                  vacuum_fill_opa: float= 0.2,
                  vacuum_stroke_w: float= 0.2,
                  vacuum_text_color: ParsableManimColor= WHITE,
-                 corner_rad: float= 0.3,
-                 corner_rad_direction: list= [0,0,1,1],
+                 corner_rad: float= 0,
+                 corner_rad_direction: list= [0, 0, 0, 0],
                  **kwargs):
         
         super().__init__(**kwargs)

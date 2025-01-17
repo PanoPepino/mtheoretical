@@ -47,6 +47,7 @@ class Title_Section(Title_General, VGroup):
             self.add(self.t_sec)
 
         else:
+            self.tit.to_corner(UL)
             self.add(self.tit)
 
     
@@ -69,6 +70,6 @@ class Title_Section(Title_General, VGroup):
             return FadeIn(self.t_sec, shift= 5*LEFT, run_time= rt, rate_function= rate_functions.linear)
         
         else:
-            return Create(self.t_sec, run_time= rt, rate_function= rate_functions.linear)
+            return Create(self.tit, run_time= rt, rate_function= rate_functions.linear)
 
     

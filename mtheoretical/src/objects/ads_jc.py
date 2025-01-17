@@ -8,7 +8,7 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
     - **Parameters**::
     
         - vacua_type (str, optional): To choose among Randall-Sundrum (RS) or DarkBubble (DB). Defaults to "DB".
-        - arrow_color (ParsableManimColor, optional): Defaults to BLACK.
+        - arrow_color (ParsableManimColor, optional): Defaults to WHITE.
     
     - An **Example** of how this class works::
 
@@ -37,7 +37,7 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
         
     def __init__(self,
                  vacua_type: str= "DB",
-                 arrow_color: ParsableManimColor= BLACK,
+                 arrow_color: ParsableManimColor= WHITE,
                  **kwargs):
         
         super().__init__(**kwargs)
@@ -50,9 +50,9 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
         self.adskmRS.next_to(self.brane, LEFT, buff= 0.1, aligned_edge= DOWN)
         
         #Text (RS)
-        self.in_text_RS= MathTex("\Lambda_{5D}= -6 k_{-}^{2}", color= self.vacuum_text_color).move_to(self.adskmRS.get_center()).shift(0.5*DOWN)
+        self.in_text_RS= MathTex("\\Lambda_{5D}= -6 k_{-}^{2}", color= self.vacuum_text_color).move_to(self.adskmRS.get_center()).shift(0.5*DOWN)
         self.out_text_RS= self.in_text_RS.copy().move_to(self.adskpRS.get_center()).shift(0.5*DOWN)
-        self.sym= MathTex("\mathbb{Z}_{2}", color= self.brane_color).move_to(self.brane.get_corner(UL)+ [0.3,0.1,0])
+        self.sym= MathTex("\\mathbb{Z}_{2}", color= self.brane_color).move_to(self.brane.get_corner(UL)+ [0.3,0.1,0])
         
         #Geometry (DB)
         self.adskpDB= RoundedRectangle(corner_radius= self.corner_rad, height= 4,  width= 4, stroke_width= self.vacuum_stroke_w, color= self.vacuum_color, fill_opacity= self.vacuum_fill_opa)
@@ -62,7 +62,7 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
         
         #Text (DB)
         in_text_DB= self.in_text_RS.copy().move_to(self.adskmDB.get_center()).shift(0.5*DOWN)
-        self.out_text_DB= MathTex("\Lambda_{5D}= -6 k_{+}^{2}", color= self.vacuum_text_color).move_to(self.adskpDB.get_center()).shift(0.5*DOWN)
+        self.out_text_DB= MathTex("\\Lambda_{5D}= -6 k_{+}^{2}", color= self.vacuum_text_color).move_to(self.adskpDB.get_center()).shift(0.5*DOWN)
         
         #Arrows
         self.arrowRS= Arrow(max_stroke_width_to_length_ratio= 8, color= arrow_color, start= LEFT, end= [0.3,0,0]).move_to(self.adskmRS.get_left())

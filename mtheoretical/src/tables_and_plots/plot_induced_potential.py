@@ -50,7 +50,7 @@ class Plot_Induced_Potential(Plot_General, Group):
             x_length= 12,
             y_length= 6,
             tips= False,
-            background_line_style= {"stroke_opacity":0}).set_color(BLACK)
+            background_line_style= {"stroke_opacity":0}).set_color(self.text_color)
         self.lab_ax_4D_cosmos= self.ax_4D_cosmos.get_axis_labels(x_label= MathTex("a",font_size= 40, color= self.func_main_color), y_label= MathTex("V(a)",font_size= 40, color= self.func_main_color))
         self.lab_ax_4D_cosmos[1].shift(0.5*DOWN)
         self.ax_4D_cosmos.y_axis.set_opacity(self.axis_opacity).set(stroke_width= self.axis_stroke)

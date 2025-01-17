@@ -8,20 +8,20 @@ class Plot_General(Group):
             - func_main_color (ParsableManimColor, optional): Defaults to GREEN.
             - func_2_color (ParsableManimColor, optional): Defaults to RED.
             - func_3_color (ParsableManimColor, optional): Defaults to BLUE.
-            - text_color (ParsableManimColor, optional): Defaults to BLACK.
-            - axis_opacity (float, optional): Defaults to 1.
-            - axis_stroke (float, optional): Defaults to 2.
+            - text_color (ParsableManimColor, optional): Defaults to WHITE.
+            - axis_opacity (float, optional): Defaults to 0.5.
+            - axis_stroke (float, optional): Defaults to 1.
             - decorator_presence (str, optional): Several options:
                 - "box": A simple surrounding rectangle around the title.
                 - "no": Nothing. Plain text. 
-            - decorator_color (ParsableManimColor, optional): Defaults to BLACK.
+            - decorator_color (ParsableManimColor, optional): Defaults to WHITE.
             - decorator_stroke_w: (float, optional). Defaults to 1.
-            - corner_rad (float, optional): Defaults to 0.3.
-            - corner_rad_direction (list, optional): Defaults to [1, 1, 1, 1].
+            - corner_rad (float, optional): Defaults to 0.
+            - corner_rad_direction (list, optional): Defaults to [0, 0, 0, 0].
             - fill_opa (float, optional): Defaults to 0.1.
             - stroke_w (float, optional): Defaults to 1.
-            - stroke_opa (float, optional): Defaults to 0.1.
-            - tightness (float, optional): Defaults to 0.2.
+            - stroke_opa (float, optional): Defaults to 1.
+            - tightness (float, optional): Defaults to 0.3.
 
     .. note::
 
@@ -32,18 +32,18 @@ class Plot_General(Group):
                  func_main_color: ParsableManimColor= GREEN,
                  func_2_color: ParsableManimColor= RED,
                  func_3_color: ParsableManimColor= BLUE,
-                 text_color: ParsableManimColor= BLACK,
+                 text_color: ParsableManimColor= WHITE,
                  axis_opacity: float= 0.5,
-                 axis_stroke: float= 2,
+                 axis_stroke: float= 1,
                  decorator_presence: str= "box",
-                 decorator_color: ParsableManimColor= BLACK,
-                 decorator_stroke_w: float= 0.5,
-                 corner_rad: float= 0.3,
-                 corner_rad_direction: list= [1, 1, 1, 1],
+                 decorator_color: ParsableManimColor= WHITE,
+                 decorator_stroke_w: float= 1,
+                 corner_rad: float= 0,
+                 corner_rad_direction: list= [0, 0, 0, 0],
                  fill_opa: float= 0.1,
                  stroke_w: float= 1,
-                 stroke_opa: float= 0.1,
-                 tightness: float= 0.2,
+                 stroke_opa: float= 1,
+                 tightness: float= 0.3,
                  **kwargs):
         
         super().__init__(**kwargs)

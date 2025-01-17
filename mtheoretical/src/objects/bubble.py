@@ -15,7 +15,7 @@ class Bubble(Brane_General, Vacuum_General, Group):
             - instanton: Same as before, but AdS scales are replaced by potentials.
             - radiation: Add mass to the inside vacuum.
             - strings: Add radially stretching strings to the bulk.
-            - gw: Add gravitational waves to the bulk.
+            - GW: Add gravitational waves to the bulk.
             - em: Add background B-field to bulk and on the brane.
             - energy_discussion: An "energy bar" appears below the box, to discuss 
             energy conservation.
@@ -45,7 +45,7 @@ class Bubble(Brane_General, Vacuum_General, Group):
 
         class Example_Bubble(Scene):
             def construct(self):
-                bubble_types= ["empty", "radiation", "em", "strings", "gw"]
+                bubble_types= ["empty", "radiation", "em", "strings", "GW"]
                 bubble_group= Group(*[Bubble(bubble_type= style).scale(0.4) for style in bubble_types])
                 bubble_group.arrange_in_grid(2,3)
 
@@ -90,8 +90,8 @@ class Bubble(Brane_General, Vacuum_General, Group):
         self.in_text= MathTex("k_{-}", font_size= 35, color= self.vacuum_text_color).move_to(self.background.get_center()).set_z_index(4)
         self.out_text= MathTex("k_{+}",font_size= 35, color= self.vacuum_text_color).move_to(self.background.get_corner(UR) -[0.45,0.45,0]).set_z_index(4)
 
-        self.in_insta_text= MathTex("V(\phi_{-})", font_size= 35, color= self.vacuum_text_color).move_to(self.background.get_center()).set_z_index(4)
-        self.out_insta_text= MathTex("V(\phi_{+})", font_size= 35, color= self.vacuum_text_color).move_to(self.background.get_corner(UR) -[0.55,0.55,0]).set_z_index(4)
+        self.in_insta_text= MathTex("V(\\phi_{-})", font_size= 35, color= self.vacuum_text_color).move_to(self.background.get_center()).set_z_index(4)
+        self.out_insta_text= MathTex("V(\\phi_{+})", font_size= 35, color= self.vacuum_text_color).move_to(self.background.get_corner(UR) -[0.55,0.55,0]).set_z_index(4)
         self.radius_line= Line(start= self.brane.get_center(), end= 2.5*self.brane.point_at_angle(PI/4), color= self.vacuum_text_color, stroke_width= self.brane_stroke_w)
         self.radius_text= MathTex("r=a(\\tau)", font_size= 30, color= self.vacuum_text_color).rotate(PI/4).next_to(self.radius_line.get_center(), LEFT, buff= 0.05)
         self.radius_info= VGroup(self.radius_line, self.radius_text)
@@ -158,7 +158,7 @@ class Bubble(Brane_General, Vacuum_General, Group):
             self.bubble= VGroup(self.background, self.out_text, self.brane, self.in_text, self.mass)
             self.add(self.bubble)
 
-        if bubble_type== "gw":
+        if bubble_type== "GW":
             self.bubble= VGroup(self.background, self.out_text, self.brane_waves, self.in_text)
             self.add(self.bubble)
 
@@ -278,8 +278,8 @@ class Bubble(Brane_General, Vacuum_General, Group):
                 self.vacuum_tracker.animate(run_time= rt/3, rate_func= rf).set_value(4.5),
                 self.bubble[3].animate(run_time= rt, rate_func= rf).scale(sca))
         
-        if self.bubble_type== "gw":
-            return AnimationGroup(self.brane_waves.animate(run_time= rt, rate_func= rf).scale(sca), Broadcast(self.waves.scale(0.6*sca), focal_point= self.bubble[2].get_center(), initial_opacity= 2,  final_opacity= 0, n_mobs= 10, run_time= rt, rate_func= rf))
+        if self.bubble_type== "GW":
+            return AnimationGroup(self.brane_waves.animate(run_time= rt, rate_func= rf).scale(sca), Broadcast(self.waves.scale(0.6*sca), focal_point= self.bubble[2].get_center(), initial_opacity= 1,  final_opacity= 0, n_mobs= 15, run_time= rt, rate_func= rf))
         
         if self.bubble_type== "em":
             return AnimationGroup(self.brane.animate(run_time= rt, rate_func= rf).scale(0.8*sca),self.bubble[-2:].animate(run_time= rt, rate_func= rf).scale(0.8*sca))

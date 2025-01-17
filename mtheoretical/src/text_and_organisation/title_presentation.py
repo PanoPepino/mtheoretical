@@ -37,7 +37,7 @@ class Title_Presentation(Title_General, VGroup):
         nam= Tex(author, font_size= 1.5*self.text_size, color= self.text_color)
         uni= Tex(affiliation, font_size= self.text_size, color= self.text_color)
         self.text_group= VGroup(tit, nam, uni).arrange(DOWN, buff= 0.4)
-        self.text_group.scale_to_fit_width(config.frame_width-2)
+        self.text_group.scale_to_fit_width(config.frame_width-3)
         
         if self.decorator_presence== "box":
             self.box= SurroundingRectangle(self.text_group, corner_radius= self.corner_rad, buff= self.tightness, stroke_width= self.decorator_stroke_width, color= self.decorator_color, fill_opacity= self.fill_opa, stroke_opacity= self.stroke_opa)

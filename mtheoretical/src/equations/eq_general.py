@@ -6,14 +6,14 @@ class Eq_General(VGroup):
     - **Parameters**::
 
         - text_size (float, optional): Defaults to 20.
-        - text_color (ParsableManimColor, optional): Defaults to BLACK.
-        - decorator_presence (str, optional). box/no. Defaults to box. If no, does not return the surrounding box.
-        - decorator_color (ParsableManimColor, optional): Defaults to BLACK.
-        - decorator_stroke_width (float, optional): Defaults to 2.
-        - corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.
-        - corner_rad_direction (list, optional): Which corners get rounded. Defaults to [1, 1, 1, 1].
+        - text_color (ParsableManimColor, optional): Defaults to WHITE.
+        - decorator_presence (str, optional). box/no. Defaults to no. If no, does not return the surrounding box.
+        - decorator_color (ParsableManimColor, optional): Defaults to WHITE.
+        - decorator_stroke_width (float, optional): Defaults to 1.
+        - corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.
+        - corner_rad_direction (list, optional): Which corners get rounded. Defaults to [0, 0, 0, 0].
         - fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.
-        - tightness (float, optional): How tight the box around the title is. Defaults to 0.2.
+        - tightness (float, optional): How tight the box around the title is. Defaults to 0.3.
 
     .. attention::
         This Class should be transformed into a more general class capable of reading .tex files and extract dictionaries of equations.
@@ -21,14 +21,14 @@ class Eq_General(VGroup):
     """
     def __init__(self,
                  text_size: float= 40, 
-                 text_color: ParsableManimColor= BLACK,
-                 decorator_presence: str= "box",
-                 decorator_color: ParsableManimColor= BLACK,
-                 decorator_stroke_width: float= 2,
-                 corner_rad: float= 0.3,
-                 corner_rad_direction: list= [1, 1, 1, 1],
+                 text_color: ParsableManimColor= WHITE,
+                 decorator_presence: str= "no",
+                 decorator_color: ParsableManimColor= WHITE,
+                 decorator_stroke_width: float= 1,
+                 corner_rad: float= 0,
+                 corner_rad_direction: list= [0, 0, 0, 0],
                  fill_opa: float= 0.1,
-                 tightness: float= 0.2,
+                 tightness: float= 0.3,
                  **kwargs):
         
         super().__init__(**kwargs)
