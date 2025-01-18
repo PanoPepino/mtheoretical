@@ -5,6 +5,7 @@ from .title_general import *
 class Title_Presentation(Title_General, VGroup):
     """Class to generate titles for presentations. Generates a group with the title and a background decorator.
 
+
     - **Parameters**::
    
             - title ("str"): Title of your talk.

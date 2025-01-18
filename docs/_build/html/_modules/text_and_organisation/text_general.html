@@ -201,7 +201,6 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../equations.html">equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../objects.html">objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates</a></li>
@@ -252,19 +251,19 @@
 <span class="sd">    - **Parameters**::</span>
 <span class="sd">   </span>
 <span class="sd">        - text_size (float, optional): Defaults to 25.</span>
-<span class="sd">        - text_color (ParsableManimColor, optional): Defaults to BLACK.</span>
-<span class="sd">        - decorator_presence (str, optional): This has several options (Defaults to box)</span>
+<span class="sd">        - text_color (ParsableManimColor, optional): Defaults to WHITE.</span>
+<span class="sd">        - decorator_presence (str, optional): This has several options (Defaults to no)</span>
 <span class="sd">            - &quot;box&quot;: A simple surrounding rectangle around the title.</span>
 <span class="sd">            - &quot;no&quot;: Nothing. Plain text. </span>
-<span class="sd">        - decorator_color (ParsableManimColor, optional): Defaults to BLACK.</span>
-<span class="sd">        - decorator_stroke_width (float, optional): Defaults to 2.</span>
-<span class="sd">        - corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.3.</span>
+<span class="sd">        - decorator_color (ParsableManimColor, optional): Defaults to WHITE.</span>
+<span class="sd">        - decorator_stroke_width (float, optional): Defaults to 1.</span>
+<span class="sd">        - corner_rad (float, optional): Corner radious of surrounding box. Defaults to 0.</span>
 <span class="sd">        - corner_rad_direction (list, optional): which corners of the surrounding rectangle</span>
-<span class="sd">        get rounded. Defaults to [1, 1, 1, 1].</span>
+<span class="sd">        get rounded. Defaults to [0, 0, 0, 0].</span>
 <span class="sd">        - fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.</span>
-<span class="sd">        - tightness (float, optional): How tight the box around the title is. Defaults to 0.5.</span>
+<span class="sd">        - tightness (float, optional): How tight the box around the title is. Defaults to 0.3.</span>
 <span class="sd">        - stroke_opa (float, optional): Opacity of the strokes. Defaults to 1.</span>
-<span class="sd">        - dot_scale (float, optional): Size of bullets. Defaults to 2.</span>
+<span class="sd">        - dot_scale (float, optional): Size of bullets. Defaults to 1.</span>
 
 <span class="sd">    - An **Example** of how text and organisation elements look like is::</span>
 
@@ -288,16 +287,16 @@
      
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">text_size</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">25</span><span class="p">,</span>
-                 <span class="n">text_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">BLACK</span><span class="p">,</span>
-                 <span class="n">decorator_presence</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;box&quot;</span><span class="p">,</span>
-                 <span class="n">decorator_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">BLACK</span><span class="p">,</span>
-                 <span class="n">decorator_stroke_width</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
-                 <span class="n">corner_rad</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>
-                 <span class="n">corner_rad_direction</span><span class="p">:</span> <span class="nb">list</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>
+                 <span class="n">text_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">WHITE</span><span class="p">,</span>
+                 <span class="n">decorator_presence</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;no&quot;</span><span class="p">,</span>
+                 <span class="n">decorator_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">WHITE</span><span class="p">,</span>
+                 <span class="n">decorator_stroke_width</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                 <span class="n">corner_rad</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="n">corner_rad_direction</span><span class="p">:</span> <span class="nb">list</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
                  <span class="n">fill_opa</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
-                 <span class="n">tightness</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
+                 <span class="n">tightness</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>
                  <span class="n">stroke_opa</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-                 <span class="n">dot_scale</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+                 <span class="n">dot_scale</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
                  <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">-&gt;</span> <span class="n">VGroup</span><span class="p">:</span>
         
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>

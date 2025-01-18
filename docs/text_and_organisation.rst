@@ -17,6 +17,14 @@ title\_general
    :undoc-members:
    :show-inheritance:
 
+eq\_general
+---------------------------------------------
+
+.. automodule:: text_and_organisation.eq_general
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 blb
 ----------------------------------
 

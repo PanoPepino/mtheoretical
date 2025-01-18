@@ -43,10 +43,11 @@ class Table_Bh_Embedding(Table_General, Group):
         
         super().__init__(**kwargs)
         
+        
         ### DEFINITION OF COORDINATES ####
             
         #Coordinates
-        coordinates= ["\\alpha", "\\beta", "\\gamma", "\\mathcal{Z}", "\\Theta","\\Psi", "\phi_{1}","\phi_{2}","\phi_{3}"]
+        coordinates= ["\\alpha", "\\beta", "\\gamma", "\\mathcal{Z}", "\\Theta","\\Psi", "\\phi_{1}","\\phi_{2}","\\phi_{3}"]
         
         coordinates_non_compact= coordinates[0:4]
         coordinates_compact= coordinates[4:]
@@ -56,9 +57,10 @@ class Table_Bh_Embedding(Table_General, Group):
            
         
         #Dimension representation
+        opa_table= self.fill_opa+0.1 #For it to be a little bit more intense.
         
         #4D
-        three_dim= VGroup(*[RoundedRectangle(corner_radius= self.corner_rad, height= 1.4, width= 1.4, color= self.hlight_1_color, fill_opacity= 2*self.fill_opa, stroke_width= self.stroke_w) for _ in range(3)])
+        three_dim= VGroup(*[RoundedRectangle(corner_radius= self.corner_rad, height= 1.4, width= 1.4, color= self.hlight_1_color, fill_opacity= 2*opa_table, stroke_width= self.stroke_w) for _ in range(3)])
         
         #Ads Throat
         self.ads_dim= Line(color= self.hlight_2_color, stroke_width= 0.7).rotate(PI/4)
@@ -83,14 +85,14 @@ class Table_Bh_Embedding(Table_General, Group):
         
         for i in range(4):
             if i==0:
-                tab_non_compact.add_highlighted_cell((1,i+1), color= self.hlight_1_color, fill_opacity= self.fill_opa, corner_radius= list(0.2*np.array([1, 0, 0, 0]))) # to bend only left corner
-                coordinates_mob_non_compact[i].set(color= self.hlight_1_color, fill_opacity= self.fill_opa)
+                tab_non_compact.add_highlighted_cell((1,i+1), color= self.hlight_1_color, fill_opacity= opa_table, corner_radius= list(self.corner_rad[0]*np.array([1, 0, 0, 0]))) # to bend only left corner
+                coordinates_mob_non_compact[i].set(color= self.hlight_1_color, fill_opacity= opa_table)
             elif i==3:
-                tab_non_compact.add_highlighted_cell((1,i+1), color= self.hlight_2_color, fill_opacity= self.fill_opa, corner_radius= list(0.2*np.array([0, 0, 0, 1])))
-                coordinates_mob_non_compact[i].set(color= self.hlight_2_color, fill_opacity= self.fill_opa)
+                tab_non_compact.add_highlighted_cell((1,i+1), color= self.hlight_2_color, fill_opacity= opa_table, corner_radius= list(self.corner_rad[0]*np.array([0, 0, 0, 1])))
+                coordinates_mob_non_compact[i].set(color= self.hlight_2_color, fill_opacity= opa_table)
             else:
-                tab_non_compact.add_highlighted_cell((1,i+1), color= self.hlight_1_color, fill_opacity= self.fill_opa)
-                coordinates_mob_non_compact[i].set(color= self.hlight_1_color, fill_opacity= self.fill_opa)
+                tab_non_compact.add_highlighted_cell((1,i+1), color= self.hlight_1_color, fill_opacity= opa_table)
+                coordinates_mob_non_compact[i].set(color= self.hlight_1_color, fill_opacity= opa_table)
         
         tab_compact= MobjectTable([coordinates_mob_compact, self.compact_dim],
         line_config= {"stroke_width": self.stroke_w, "color": self.decorator_color},
@@ -99,14 +101,14 @@ class Table_Bh_Embedding(Table_General, Group):
         
         for i in range(len(coordinates_mob_compact)):
             if i==0:
-                tab_compact.add_highlighted_cell((1,i+1), color= self.hlight_3_color, fill_opacity= self.fill_opa, corner_radius= list(0.2*np.array([1, 0, 0, 0])))
-                coordinates_mob_compact[i].set(color= self.hlight_3_color, fill_opacity= self.fill_opa)
+                tab_compact.add_highlighted_cell((1,i+1), color= self.hlight_3_color, fill_opacity= opa_table, corner_radius= list(self.corner_rad[0]*np.array([1, 0, 0, 0])))
+                coordinates_mob_compact[i].set(color= self.hlight_3_color, fill_opacity= opa_table)
             elif i==4:
-                tab_compact.add_highlighted_cell((1,i+1), color= self.hlight_3_color, fill_opacity= self.fill_opa, corner_radius= list(0.2*np.array([0, 0, 0, 1])))
-                coordinates_mob_compact[i].set(color= self.hlight_3_color, fill_opacity= self.fill_opa)
+                tab_compact.add_highlighted_cell((1,i+1), color= self.hlight_3_color, fill_opacity= opa_table, corner_radius= list(self.corner_rad[0]*np.array([0, 0, 0, 1])))
+                coordinates_mob_compact[i].set(color= self.hlight_3_color, fill_opacity= opa_table)
             else:
-                tab_compact.add_highlighted_cell((1,i+1), color= self.hlight_3_color, fill_opacity= self.fill_opa)
-                coordinates_mob_compact[i].set(color= self.hlight_3_color, fill_opacity= self.fill_opa)
+                tab_compact.add_highlighted_cell((1,i+1), color= self.hlight_3_color, fill_opacity= opa_table)
+                coordinates_mob_compact[i].set(color= self.hlight_3_color, fill_opacity= opa_table)
             
            
         ## ALL DIMENSIONS TOGETHER ##
@@ -120,20 +122,20 @@ class Table_Bh_Embedding(Table_General, Group):
         
         for i in range(9):
             if i==0:
-                tab_all.add_highlighted_cell((1,i+1), color= self.hlight_1_color, fill_opacity= self.fill_opa, corner_radius= list(0.2*np.array([1, 0,0,0])))
-                self.all_coordinates[i].set(color= self.hlight_1_color, fill_opacity= self.fill_opa)
+                tab_all.add_highlighted_cell((1,i+1), color= self.hlight_1_color, fill_opacity= opa_table, corner_radius= list(self.corner_rad[0]*np.array([1, 0,0,0])))
+                self.all_coordinates[i].set(color= self.hlight_1_color, fill_opacity= opa_table)
             elif i==8:
-                tab_all.add_highlighted_cell((1,i+1), color= self.hlight_3_color, fill_opacity= self.fill_opa, corner_radius= list(0.2*np.array([0, 0,0, 1])))
-                self.all_coordinates[i].set(color= self.hlight_3_color, fill_opacity= self.fill_opa)
+                tab_all.add_highlighted_cell((1,i+1), color= self.hlight_3_color, fill_opacity= opa_table, corner_radius= list(self.corner_rad[0]*np.array([0, 0,0, 1])))
+                self.all_coordinates[i].set(color= self.hlight_3_color, fill_opacity= opa_table)
             elif 0< i < 3:
-                tab_all.add_highlighted_cell((1,i+1), color= self.hlight_1_color, fill_opacity= self.fill_opa)
-                self.all_coordinates[i].set(color= self.hlight_1_color, fill_opacity= self.fill_opa)
+                tab_all.add_highlighted_cell((1,i+1), color= self.hlight_1_color, fill_opacity= opa_table)
+                self.all_coordinates[i].set(color= self.hlight_1_color, fill_opacity= opa_table)
             elif i== 3:
-                tab_all.add_highlighted_cell((1,i+1), color= self.hlight_2_color, fill_opacity= self.fill_opa)
-                self.all_coordinates[i].set(color= self.hlight_2_color, fill_opacity= self.fill_opa)
+                tab_all.add_highlighted_cell((1,i+1), color= self.hlight_2_color, fill_opacity= opa_table)
+                self.all_coordinates[i].set(color= self.hlight_2_color, fill_opacity= opa_table)
             else:
-                tab_all.add_highlighted_cell((1,i+1), color= self.hlight_3_color, fill_opacity= self.fill_opa)
-                self.all_coordinates[i].set(color= self.hlight_3_color, fill_opacity= self.fill_opa)
+                tab_all.add_highlighted_cell((1,i+1), color= self.hlight_3_color, fill_opacity= opa_table)
+                self.all_coordinates[i].set(color= self.hlight_3_color, fill_opacity= opa_table)
         
             
         if type== "together":

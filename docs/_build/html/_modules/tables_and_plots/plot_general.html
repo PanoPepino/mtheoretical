@@ -201,7 +201,6 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../equations.html">equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../objects.html">objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates</a></li>
@@ -254,20 +253,20 @@
 <span class="sd">            - func_main_color (ParsableManimColor, optional): Defaults to GREEN.</span>
 <span class="sd">            - func_2_color (ParsableManimColor, optional): Defaults to RED.</span>
 <span class="sd">            - func_3_color (ParsableManimColor, optional): Defaults to BLUE.</span>
-<span class="sd">            - text_color (ParsableManimColor, optional): Defaults to BLACK.</span>
-<span class="sd">            - axis_opacity (float, optional): Defaults to 1.</span>
-<span class="sd">            - axis_stroke (float, optional): Defaults to 2.</span>
+<span class="sd">            - text_color (ParsableManimColor, optional): Defaults to WHITE.</span>
+<span class="sd">            - axis_opacity (float, optional): Defaults to 0.5.</span>
+<span class="sd">            - axis_stroke (float, optional): Defaults to 1.</span>
 <span class="sd">            - decorator_presence (str, optional): Several options:</span>
 <span class="sd">                - &quot;box&quot;: A simple surrounding rectangle around the title.</span>
 <span class="sd">                - &quot;no&quot;: Nothing. Plain text. </span>
-<span class="sd">            - decorator_color (ParsableManimColor, optional): Defaults to BLACK.</span>
+<span class="sd">            - decorator_color (ParsableManimColor, optional): Defaults to WHITE.</span>
 <span class="sd">            - decorator_stroke_w: (float, optional). Defaults to 1.</span>
-<span class="sd">            - corner_rad (float, optional): Defaults to 0.3.</span>
-<span class="sd">            - corner_rad_direction (list, optional): Defaults to [1, 1, 1, 1].</span>
+<span class="sd">            - corner_rad (float, optional): Defaults to 0.</span>
+<span class="sd">            - corner_rad_direction (list, optional): Defaults to [0, 0, 0, 0].</span>
 <span class="sd">            - fill_opa (float, optional): Defaults to 0.1.</span>
 <span class="sd">            - stroke_w (float, optional): Defaults to 1.</span>
-<span class="sd">            - stroke_opa (float, optional): Defaults to 0.1.</span>
-<span class="sd">            - tightness (float, optional): Defaults to 0.2.</span>
+<span class="sd">            - stroke_opa (float, optional): Defaults to 1.</span>
+<span class="sd">            - tightness (float, optional): Defaults to 0.3.</span>
 
 <span class="sd">    .. note::</span>
 
@@ -278,18 +277,18 @@
                  <span class="n">func_main_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">GREEN</span><span class="p">,</span>
                  <span class="n">func_2_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">RED</span><span class="p">,</span>
                  <span class="n">func_3_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">BLUE</span><span class="p">,</span>
-                 <span class="n">text_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">BLACK</span><span class="p">,</span>
+                 <span class="n">text_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">WHITE</span><span class="p">,</span>
                  <span class="n">axis_opacity</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
-                 <span class="n">axis_stroke</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+                 <span class="n">axis_stroke</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
                  <span class="n">decorator_presence</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span> <span class="s2">&quot;box&quot;</span><span class="p">,</span>
-                 <span class="n">decorator_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">BLACK</span><span class="p">,</span>
-                 <span class="n">decorator_stroke_w</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
-                 <span class="n">corner_rad</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>
-                 <span class="n">corner_rad_direction</span><span class="p">:</span> <span class="nb">list</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+                 <span class="n">decorator_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">WHITE</span><span class="p">,</span>
+                 <span class="n">decorator_stroke_w</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                 <span class="n">corner_rad</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="n">corner_rad_direction</span><span class="p">:</span> <span class="nb">list</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
                  <span class="n">fill_opa</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
                  <span class="n">stroke_w</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-                 <span class="n">stroke_opa</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span>
-                 <span class="n">tightness</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
+                 <span class="n">stroke_opa</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                 <span class="n">tightness</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>
                  <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>

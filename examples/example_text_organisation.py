@@ -4,10 +4,6 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')
 
 from manim import *
 from mtheoretical.src.text_and_organisation import *
-from mtheoretical.src.equations import *
-
-
-
 
 class Title_Slide(Scene):
     def construct(self):
@@ -24,3 +20,9 @@ class Generic_Slide(Scene):
         self.play(FadeIn(ref1, important_points))
         for point in range(len(important_points)+2):
             self.play(important_points.next_point())
+
+class Example_Equation(Scene):
+    def construct(self):
+        eq_show= Eq_General(the_dictionary= 'equations/eq_metric', the_equation= 'induced metric')
+        self.add(eq_show)
+

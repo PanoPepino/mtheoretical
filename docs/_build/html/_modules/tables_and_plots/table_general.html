@@ -201,7 +201,6 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../equations.html">equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../objects.html">objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates</a></li>
@@ -251,19 +250,19 @@
 
 <span class="sd">    - **Parameters**::</span>
 <span class="sd">        </span>
-<span class="sd">        - text_color (ParsableManimColor, optional): Defaults to BLACK.</span>
+<span class="sd">        - text_color (ParsableManimColor, optional): Defaults to WHITE.</span>
 <span class="sd">        - hlight_1_color (ParsableManimColor, optional): Highlight color </span>
-<span class="sd">        for some of the cells. Defaults to RED.</span>
-<span class="sd">        - hlight_2_color (ParsableManimColor, optional): Defaults to BLUE.</span>
-<span class="sd">        - hlight_3_color (ParsableManimColor, optional): Defaults to PURPLE.</span>
-<span class="sd">        - corner_rad (float, optional): Defaults to 0.2.</span>
+<span class="sd">        for some of the cells. Defaults to GREEN.</span>
+<span class="sd">        - hlight_2_color (ParsableManimColor, optional): Defaults to RED.</span>
+<span class="sd">        - hlight_3_color (ParsableManimColor, optional): Defaults to BLUE.</span>
+<span class="sd">        - corner_rad (float, optional): Defaults to 0.</span>
 <span class="sd">        - corner_rad_direction (list, optional). To modify which vertex bend and not.</span>
-<span class="sd">        Defaults to [1, 1, 1, 1].</span>
-<span class="sd">        - decorator_color (ParsableManimColor, optional): Defaults to BLACK.</span>
+<span class="sd">        Defaults to [0, 0, 0, 0].</span>
+<span class="sd">        - decorator_color (ParsableManimColor, optional): Defaults to WHITE.</span>
 <span class="sd">        - decorator_stroke_w (float, optiona): Defaults to 1.</span>
-<span class="sd">        - stroke_w (float, optional): Defaults to 5.</span>
+<span class="sd">        - stroke_w (float, optional): Defaults to 1.</span>
 <span class="sd">        - stroke_opa (float, optional): Defaults to 1,</span>
-<span class="sd">        - fill_opa (float, optional): Defaults to 0.05.</span>
+<span class="sd">        - fill_opa (float, optional): Defaults to 0.3.</span>
 
 <span class="sd">    - **Example**::</span>
 
@@ -279,17 +278,17 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
-                 <span class="n">text_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">BLACK</span><span class="p">,</span>
-                 <span class="n">hlight_1_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">RED</span><span class="p">,</span>
-                 <span class="n">hlight_2_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">BLUE</span><span class="p">,</span>
-                 <span class="n">hlight_3_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">PURPLE</span><span class="p">,</span>
-                 <span class="n">decorator_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">BLACK</span><span class="p">,</span>
+                 <span class="n">text_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">WHITE</span><span class="p">,</span>
+                 <span class="n">hlight_1_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">GREEN</span><span class="p">,</span>
+                 <span class="n">hlight_2_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">RED</span><span class="p">,</span>
+                 <span class="n">hlight_3_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">BLUE</span><span class="p">,</span>
+                 <span class="n">decorator_color</span><span class="p">:</span> <span class="n">ParsableManimColor</span><span class="o">=</span> <span class="n">WHITE</span><span class="p">,</span>
                  <span class="n">decorator_stroke_w</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-                 <span class="n">corner_rad</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
-                 <span class="n">corner_rad_direction</span><span class="p">:</span> <span class="nb">list</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-                 <span class="n">stroke_w</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+                 <span class="n">corner_rad</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+                 <span class="n">corner_rad_direction</span><span class="p">:</span> <span class="nb">list</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                 <span class="n">stroke_w</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
                  <span class="n">stroke_opa</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-                 <span class="n">fill_opa</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span>                  
+                 <span class="n">fill_opa</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span>                  
                  <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>

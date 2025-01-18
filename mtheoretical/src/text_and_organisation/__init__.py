@@ -4,3 +4,4 @@ from .blb import *
 from .refs import *
 from .title_general import *
 from .text_general import *
+from .eq_general import *

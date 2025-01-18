@@ -201,7 +201,6 @@
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modules.html">src</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of src</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../text_and_organisation.html">text_and_organisation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../equations.html">equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../objects.html">objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tables_and_plots.html">tables_and_plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../templates.html">templates</a></li>
@@ -293,7 +292,9 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">t_sec</span><span class="p">)</span>
 
         <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tit</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">t_sec</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tit</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">t_sec</span><span class="o">.</span><span class="n">to_corner</span><span class="p">(</span><span class="n">UL</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">t_sec</span><span class="p">)</span>
 
     
 <div class="viewcode-block" id="Title_Section.show_title">
