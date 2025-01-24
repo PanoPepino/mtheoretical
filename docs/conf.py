@@ -9,7 +9,7 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath("../mtheoretical/src"))
+sys.path.insert(0, os.path.abspath("../mtheoretical"))
 
 project = 'mtheoretical'
 copyright = '2025, Pano'
@@ -39,7 +39,8 @@ autodoc_default_options = {
     'members': True,
     'member-order': 'bysource',
     'special-members': '__init__',
-    'undoc-members': False,
+    'undoc-members': True,
+    'show-inheritance': True,
     'exclude-members': '__init__'
 }
 

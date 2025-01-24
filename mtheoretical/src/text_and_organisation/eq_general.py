@@ -1,11 +1,12 @@
 from manim import *
+from pathlib import Path
 
 class Eq_General(VGroup):
     """Class to create a mock-up general description of equations to be inherited by specific types of equations. 
 
     - **Parameters**::
 
-        - the_dictionary: The path to the .txt file you would like the Class to read.
+        - the_dictionary: The path to the file () you would like the Class to read.
         - the_equation: The key (label in the .tex file) associated to the equation you would like to print.
         - text_size (float, optional): Defaults to 20.
         - text_color (ParsableManimColor, optional): Defaults to WHITE.
@@ -19,10 +20,7 @@ class Eq_General(VGroup):
 
     .. attention::
 
-        THIS REQUIRES SOME LINES SUCH THAT, IF THE CHOSEN SET OF EQUATIONS IS NOT PART OF AN INNER LIBRARY, IT LOOKS FOR THOSES FILES IN THE RELATIVE PATH WRT THE MANIM RENDERER FILE.
-
-        It also requires to transfer all dictionaries to new .txt files for this class to read them.
-
+        This class requires to think of special methods if the loaded dictionary is eq_quantum. There are several equations there that go in a group.
     """
     def __init__(self,
                  the_dictionary,
@@ -40,15 +38,63 @@ class Eq_General(VGroup):
         
         super().__init__(**kwargs)
 
-        open_the_dic= open(the_dictionary+ ".txt")
-        read_the_dic= open_the_dic.read()
-        load_the_dic= eval(read_the_dic)
-        open_the_dic.close()
+        def split_dictionary_path(input_string):
+            """This method splits a given string only in the last "/" symbol.
+
+            Args:
+                - input_string (str)
+
+            Returns:
+                list: ["everything up to the last "/" symbol, "the remaining"]
+
+            - An **Example**::
+
+                split_dictionary_path(the_dictionary) -> ["the path", "the dictionary file"]
+            """
+
+            return input_string.rsplit('/', 1)
+        
+        my_path= split_dictionary_path(the_dictionary)[0] # Uses previous function to split the relative path
+        my_file= split_dictionary_path(the_dictionary)[-1]
+        
+
+        def check_file_exists(directory, filename):
+            """This methods checks if a given file exists in a given directory.
+
+            Args:
+                - directory
+                - filename
+
+            Returns:
+                True or False
+            """
+
+            file_path = Path(directory) / filename
+            return file_path.is_file()
+
+        if check_file_exists(my_path, my_file): # Checks if the dictionary input exist
+            open_the_dic= open(the_dictionary)
+            read_the_dic= open_the_dic.read()
+            load_the_dic= eval(read_the_dic)
+            open_the_dic.close()
+        
+        else: # If not, it recommends to run first the code to extract dictionaries.
+            print("The are two possible options for this error: \n"
+                "---------------------------------------------------\n"
+                  "- The path you have specified is wrong. Double check.\n"
+                  "- The dictionary you refer to does not exist yet.\n"
+                  "---------------------------------------------------\n"
+                  "Consider running the function BLA BLA to extract the equations in a dictionary."
+                  )
 
         # To split the dictionary, use {{}} on each element you want to separate.
 
-        self.chosen_equation= MathTex(str(load_the_dic[the_equation]), font_size= text_size, color= text_color)
-           
+        if the_equation in load_the_dic:
+            self.chosen_equation= MathTex(str(load_the_dic[the_equation]), font_size= text_size, color= text_color)
+
+        else:
+            print("The equation you are looking for is not in this dictionary.")
+                 
         if decorator_presence== "box":
             self.box= SurroundingRectangle(self.chosen_equation, corner_radius= list(corner_rad*np.array(corner_rad_direction)), buff= tightness,  stroke_width= decorator_stroke_width, color= decorator_color, fill_opacity= fill_opa)
             self.add(self.chosen_equation, self.box)

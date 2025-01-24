@@ -23,14 +23,15 @@ The main idea is to generalise the sub-packages for **refs** and **equations**, 
 
    - Class Bubble lacks a B-field in the background to be added. Animation of the B-field surfing the brane will be changed.
    - Equations sub-package will probably become part of [text_and_organisation]. Ideally, a python code will be created such that it reads a .tex file and creates a dictionary, where keys are the equation labels of the .tex. Then, the class reads the dictionary and writes the desired equations given the input.
-   - Same for Ref Class.  
+   - Same for Ref Class. 
+   - Think of a way to remove the animation_overrides{} thing. 
    
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents of the package:
 
-   modules
+   src
 
    .. 
       Whenever you add a new class or sub-package, it seems that one has to rewite the corresponding .rst file to add that info.

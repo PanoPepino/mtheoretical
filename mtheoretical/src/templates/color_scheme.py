@@ -25,7 +25,7 @@ def import_module_from_input():
     if module_name not in allowed_modules:
         try:
             print("-------------------------------------------------------------------------------")
-            print(f"Template with the name {module_name} does not exit. I will use the default template (B/N) instead.")
+            print(f"Template with the given name does not exit. I will use the default template (B/N) instead.")
             module = importlib.import_module("mtheoretical.src.templates.template_0") #It seems one has to specify all the way down to the module
         except ImportError:
             return None
