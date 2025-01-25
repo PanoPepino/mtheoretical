@@ -2,7 +2,7 @@ import re #Some fancy libraries to find patterns. It seems so.
 import json #For good format of .txt when creating the resulting dictionary.
 from os import path
 
-#The following code has been crafted with help of AI. Modifications introduce by not so intelligent human.
+#The following code has been crafted with help of AI. Modifications introduced by not so intelligent human.
 
 def read_tex_file(file_path): #This reads the desired .tex file. I guess it cannot read inputs in the texfile.
     """Function to read the input .tex file.
@@ -26,6 +26,19 @@ def extract_equations(tex_content): # The patterns to look for.
         - tex_content: The .tex file to read. 
     Returns:
         - dictionary: The set of equations with their keys (the labels of each equation in the .tex file)
+    
+    - An **Example **::
+
+        tex_content = read_tex_file(tex_file_relative_path) #Reads the chosen .tex file given as input. (equation_dictionaries/fake_tex_file.tex)
+        equations_dict = extract_equations(tex_content) #Extracts the dictionary.
+        write_dict_to_file(equations_dict, output_file_relative_path) #Pours the dictionary in the .txt file chosen as output in the given input. (equation_dictionaries/eq_fake_file.txt)
+        print(f"Equations have been extracted and written to {output_file_relative_path}")
+
+    .. attention::
+
+        - The current state of the function is not capable of identifying multi_eq, split or other commands for a more elegant display in the .pdf file.
+        - This should be improved in the future.
+    
     """
 
     equation_pattern = r'\\begin\{equation\}(.*?)\\end\{equation\}' #(.*?) means to look for whatever is sandwiched by \begin and \end eq.

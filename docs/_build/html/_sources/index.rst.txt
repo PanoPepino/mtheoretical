@@ -38,4 +38,5 @@ The main idea is to generalise the sub-packages for **refs** and **equations**, 
 
 .. note::
 
-   Thanks to Uwezi, Abulafia, Jeertmans and the Manim Discord for all the help provided during these years. This humble library would not be possible without them.   
+   Thanks to Uwezi, Abulafia, Jeertmans and the Manim Discord for all the help provided during these years. This humble library would not be possible without them. 
+

@@ -266,7 +266,7 @@
 
 <span class="sd">    .. attention::</span>
 
-<span class="sd">        This class requires to think of special methods if the loaded dictionary is eq_quantum. There are several equations there that go in a group.</span>
+<span class="sd">        This class requires to think of special methods if the loaded dictionary is load_the_dic. There are several equations there that go in a group.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
                  <span class="n">the_dictionary</span><span class="p">,</span>
@@ -330,13 +330,34 @@
                   <span class="s2">&quot;- The path you have specified is wrong. Double check.</span><span class="se">\n</span><span class="s2">&quot;</span>
                   <span class="s2">&quot;- The dictionary you refer to does not exist yet.</span><span class="se">\n</span><span class="s2">&quot;</span>
                   <span class="s2">&quot;---------------------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span>
-                  <span class="s2">&quot;Consider running the function BLA BLA to extract the equations in a dictionary.&quot;</span>
+                  <span class="s2">&quot;Consider running the code </span><span class="se">\&quot;</span><span class="s2">extract equation from tex</span><span class="se">\&quot;</span><span class="s2"> in the tools subpackage</span><span class="se">\n</span><span class="s2">&quot;</span>
+                  <span class="s2">&quot;to extract the equations in a dictionary.&quot;</span>
                   <span class="p">)</span>
 
         <span class="c1"># To split the dictionary, use {{}} on each element you want to separate.</span>
-
+        <span class="nb">print</span><span class="p">(</span><span class="n">my_file</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">the_equation</span> <span class="ow">in</span> <span class="n">load_the_dic</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">chosen_equation</span><span class="o">=</span> <span class="n">MathTex</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">load_the_dic</span><span class="p">[</span><span class="n">the_equation</span><span class="p">]),</span> <span class="n">font_size</span><span class="o">=</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="n">text_color</span><span class="p">)</span>
+
+        <span class="c1"># Personal modifications for a specific set of equations that require to appear together in my slides #</span>
+
+        <span class="k">elif</span> <span class="n">my_file</span><span class="o">==</span> <span class="s2">&quot;eq_quantum.txt&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">the_equation</span><span class="o">==</span> <span class="s1">&#39;wave&#39;</span><span class="p">:</span>
+                <span class="n">p0</span><span class="o">=</span> <span class="n">MathTex</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">load_the_dic</span><span class="p">[</span><span class="s1">&#39;wave0&#39;</span><span class="p">]),</span> <span class="n">font_size</span><span class="o">=</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="n">text_color</span><span class="p">)</span>
+                <span class="n">p1</span><span class="o">=</span> <span class="n">MathTex</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">load_the_dic</span><span class="p">[</span><span class="s1">&#39;wave1&#39;</span><span class="p">]),</span> <span class="n">font_size</span><span class="o">=</span> <span class="mf">1.2</span><span class="o">*</span><span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="n">text_color</span><span class="p">)</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">RIGHT</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span> <span class="n">tightness</span><span class="p">)</span>
+                <span class="n">p2</span><span class="o">=</span> <span class="n">MathTex</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">load_the_dic</span><span class="p">[</span><span class="s1">&#39;wave2&#39;</span><span class="p">]),</span> <span class="n">font_size</span><span class="o">=</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="n">text_color</span><span class="p">)</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">RIGHT</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span> <span class="n">tightness</span><span class="p">)</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mf">0.4</span><span class="o">*</span><span class="n">UP</span><span class="p">)</span>
+                <span class="n">p3</span><span class="o">=</span> <span class="n">MathTex</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">load_the_dic</span><span class="p">[</span><span class="s1">&#39;wave3&#39;</span><span class="p">]),</span> <span class="n">font_size</span><span class="o">=</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="n">text_color</span><span class="p">)</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">DOWN</span><span class="p">,</span> <span class="n">aligned_edge</span><span class="o">=</span> <span class="n">LEFT</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span> <span class="n">tightness</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">chosen_equation</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">the_equation</span><span class="o">==</span> <span class="s1">&#39;prob boundaries&#39;</span><span class="p">:</span>
+                <span class="n">p0</span><span class="o">=</span> <span class="n">MathTex</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">load_the_dic</span><span class="p">[</span><span class="s1">&#39;prob hh&#39;</span><span class="p">]),</span> <span class="n">font_size</span><span class="o">=</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="n">text_color</span><span class="p">)</span>
+                <span class="n">p1</span><span class="o">=</span> <span class="n">MathTex</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">load_the_dic</span><span class="p">[</span><span class="s1">&#39;prob vil&#39;</span><span class="p">]),</span> <span class="n">font_size</span><span class="o">=</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="n">text_color</span><span class="p">)</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">DOWN</span><span class="p">,</span> <span class="n">aligned_edge</span><span class="o">=</span> <span class="n">LEFT</span><span class="p">,</span> <span class="n">buff</span><span class="o">=</span> <span class="n">tightness</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">chosen_equation</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">the_equation</span><span class="o">==</span> <span class="s1">&#39;prob comparison&#39;</span><span class="p">:</span>
+                <span class="n">p0</span><span class="o">=</span> <span class="n">MathTex</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">load_the_dic</span><span class="p">[</span><span class="s1">&#39;prob BT&#39;</span><span class="p">]),</span> <span class="n">font_size</span><span class="o">=</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="n">text_color</span><span class="p">)</span>
+                <span class="n">p1</span><span class="o">=</span> <span class="n">MathTex</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">load_the_dic</span><span class="p">[</span><span class="s1">&#39;prob WKB&#39;</span><span class="p">]),</span> <span class="n">font_size</span><span class="o">=</span> <span class="n">text_size</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span> <span class="n">text_color</span><span class="p">)</span><span class="o">.</span><span class="n">next_to</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">DOWN</span><span class="p">,</span> <span class="n">aligned_edge</span><span class="o">=</span> <span class="n">LEFT</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">chosen_equation</span><span class="o">=</span> <span class="n">VGroup</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
+        
+        <span class="c1">###########################</span>
 
         <span class="k">else</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The equation you are looking for is not in this dictionary.&quot;</span><span class="p">)</span>
@@ -347,6 +368,11 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chosen_equation</span><span class="p">)</span></div>
 
+
+        <span class="c1"># Personal modifications for a specific set of equations that require to appear together in my slides #</span>
+
+        
+        
 </pre></div>
         </article>
       </div>

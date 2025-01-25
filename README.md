@@ -19,6 +19,6 @@ ABOUT THIS REPOSITORY
     - (Non)-Normalisable modes and the bubble expanding.
     - Smooth transition between global and Poincaré coordinates for the bubble.
 - General Python code to write:
-    - Code to let you choose between different templates in the libraries.
     - Code to extract refs in the form of a dictionary {hep.th: '[names, hep.number]'}
-    - Code to extract all the equations of a .tex file in the form of a dictionary {eq_label: 'equation'}
+    - Rewrite code to extract all the equations of a .tex file in the form of a dictionary {eq_label: 'equation'}, but taking into account
+    things like \begin{split}, \begin{aligned} and so on. At the moment it only works with regular \begin{equation} enviroment.

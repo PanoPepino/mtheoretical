@@ -43,8 +43,6 @@ title\_section
    :undoc-members:
    :show-inheritance:
 
-
-
 blb
 --------------------------------------
 

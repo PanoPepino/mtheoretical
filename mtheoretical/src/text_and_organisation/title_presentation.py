@@ -44,14 +44,14 @@ class Title_Presentation(Title_General, VGroup):
             self.box= SurroundingRectangle(self.text_group, corner_radius= self.corner_rad, buff= self.tightness, stroke_width= self.decorator_stroke_width, color= self.decorator_color, fill_opacity= self.fill_opa, stroke_opacity= self.stroke_opa)
             self.add(self.text_group, self.box)
 
-        if self.decorator_presence== "box_long_left":
+        if self.decorator_presence== "box_long_right":
             self.box_long= RoundedRectangle(height= self.text_group.get_height()+self.tightness, width= self.text_group.get_width()+5, stroke_width= self.decorator_stroke_width, color= self.decorator_color, fill_opacity= self.fill_opa, corner_radius= self.corner_rad, stroke_opacity= self.stroke_opa)
             self.box_long.next_to(self.text_group.get_left(), RIGHT, aligned_edge= LEFT, buff= -self.tightness)
             self.text_group.move_to([0, 0, 0])
             t_sec= VGroup(self.text_group, self.box_long)
             self.add(t_sec)
 
-        if self.decorator_presence== "box_long_right":
+        if self.decorator_presence== "box_long_left":
             self.box_long= RoundedRectangle(height= self.text_group.get_height()+self.tightness, width=  self.text_group.get_width()+5, stroke_width= self.decorator_stroke_width, color= self.decorator_color, fill_opacity= self.fill_opa, corner_radius= self.corner_rad, stroke_opacity= self.stroke_opa)
             self.box_long.flip()
             self.box_long.next_to(self.text_group.get_right(), LEFT, aligned_edge= RIGHT, buff= -self.tightness)

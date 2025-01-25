@@ -42,7 +42,7 @@ class Ref(Text_General, VGroup):
             '241105912': '[Muntz, Padilla, Saffin, 2411.05192]'
          }
         
-        self.chosen_ref= Tex(dic_refs[ref_number], font_size= 0.8*self.text_size, color= self.text_color)
+        self.chosen_ref= Tex(dic_refs[ref_number], font_size= 0.7*self.text_size, color= self.text_color)
         
         if self.decorator_presence == "box":
             self.box= SurroundingRectangle(self.chosen_ref, corner_radius= self.corner_rad, buff= self.tightness,  stroke_width= self.decorator_stroke_width, color= self.decorator_color, fill_opacity= self.fill_opa, stroke_opacity= self.stroke_opa)

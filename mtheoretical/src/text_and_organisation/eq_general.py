@@ -20,7 +20,7 @@ class Eq_General(VGroup):
 
     .. attention::
 
-        This class requires to think of special methods if the loaded dictionary is eq_quantum. There are several equations there that go in a group.
+        This class requires to think of special methods if the loaded dictionary is load_the_dic. There are several equations there that go in a group.
     """
     def __init__(self,
                  the_dictionary,
@@ -84,13 +84,34 @@ class Eq_General(VGroup):
                   "- The path you have specified is wrong. Double check.\n"
                   "- The dictionary you refer to does not exist yet.\n"
                   "---------------------------------------------------\n"
-                  "Consider running the function BLA BLA to extract the equations in a dictionary."
+                  "Consider running the code \"extract equation from tex\" in the tools subpackage\n"
+                  "to extract the equations in a dictionary."
                   )
 
         # To split the dictionary, use {{}} on each element you want to separate.
-
+        print(my_file)
         if the_equation in load_the_dic:
             self.chosen_equation= MathTex(str(load_the_dic[the_equation]), font_size= text_size, color= text_color)
+
+        # Personal modifications for a specific set of equations that require to appear together in my slides #
+
+        elif my_file== "eq_quantum.txt":
+            if the_equation== 'wave':
+                p0= MathTex(str(load_the_dic['wave0']), font_size= text_size, color= text_color)
+                p1= MathTex(str(load_the_dic['wave1']), font_size= 1.2*text_size, color= text_color).next_to(p0, RIGHT, buff= tightness)
+                p2= MathTex(str(load_the_dic['wave2']), font_size= text_size, color= text_color).next_to(p1, RIGHT, buff= tightness).shift(0.4*UP)
+                p3= MathTex(str(load_the_dic['wave3']), font_size= text_size, color= text_color).next_to(p2, DOWN, aligned_edge= LEFT, buff= tightness)
+                self.chosen_equation= VGroup(p0, p1, p2, p3)
+            if the_equation== 'prob boundaries':
+                p0= MathTex(str(load_the_dic['prob hh']), font_size= text_size, color= text_color)
+                p1= MathTex(str(load_the_dic['prob vil']), font_size= text_size, color= text_color).next_to(p0, DOWN, aligned_edge= LEFT, buff= tightness)
+                self.chosen_equation= VGroup(p0, p1)
+            if the_equation== 'prob comparison':
+                p0= MathTex(str(load_the_dic['prob BT']), font_size= text_size, color= text_color)
+                p1= MathTex(str(load_the_dic['prob WKB']), font_size= text_size, color= text_color).next_to(p0, DOWN, aligned_edge= LEFT)
+                self.chosen_equation= VGroup(p0, p1)
+        
+        ###########################
 
         else:
             print("The equation you are looking for is not in this dictionary.")
@@ -100,3 +121,8 @@ class Eq_General(VGroup):
             self.add(self.chosen_equation, self.box)
         else:
             self.add(self.chosen_equation)
+
+        # Personal modifications for a specific set of equations that require to appear together in my slides #
+
+        
+        

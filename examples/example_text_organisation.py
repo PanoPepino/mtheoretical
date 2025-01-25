@@ -23,6 +23,6 @@ class Generic_Slide(Scene):
 
 class Example_Equation(Scene):
     def construct(self):
-        eq_show= Eq_General(the_dictionary= 'equation_dictionaries/eq_db_corrections.txt', the_equation= 'new lambda')
+        eq_show= Eq_General(the_dictionary= 'equation_dictionaries/eq_quantum.txt', the_equation= 'prob boundaries')
         self.add(eq_show)
 

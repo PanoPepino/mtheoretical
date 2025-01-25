@@ -246,7 +246,7 @@
 <span class="kn">import</span> <span class="nn">json</span> <span class="c1">#For good format of .txt when creating the resulting dictionary.</span>
 <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span>
 
-<span class="c1">#The following code has been crafted with help of AI. Modifications introduce by not so intelligent human.</span>
+<span class="c1">#The following code has been crafted with help of AI. Modifications introduced by not so intelligent human.</span>
 
 <div class="viewcode-block" id="read_tex_file">
 <a class="viewcode-back" href="../../../src.tools.html#src.tools.extract_eq_from_tex.read_tex_file">[docs]</a>
@@ -275,6 +275,19 @@
 <span class="sd">        - tex_content: The .tex file to read. </span>
 <span class="sd">    Returns:</span>
 <span class="sd">        - dictionary: The set of equations with their keys (the labels of each equation in the .tex file)</span>
+<span class="sd">    </span>
+<span class="sd">    - An **Example **::</span>
+
+<span class="sd">        tex_content = read_tex_file(tex_file_relative_path) #Reads the chosen .tex file given as input. (equation_dictionaries/fake_tex_file.tex)</span>
+<span class="sd">        equations_dict = extract_equations(tex_content) #Extracts the dictionary.</span>
+<span class="sd">        write_dict_to_file(equations_dict, output_file_relative_path) #Pours the dictionary in the .txt file chosen as output in the given input. (equation_dictionaries/eq_fake_file.txt)</span>
+<span class="sd">        print(f&quot;Equations have been extracted and written to {output_file_relative_path}&quot;)</span>
+
+<span class="sd">    .. attention::</span>
+
+<span class="sd">        - The current state of the function is not capable of identifying multi_eq, split or other commands for a more elegant display in the .pdf file.</span>
+<span class="sd">        - This should be improved in the future.</span>
+<span class="sd">    </span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">equation_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">begin\{equation\}(.*?)</span><span class="se">\\</span><span class="s1">end\{equation\}&#39;</span> <span class="c1">#(.*?) means to look for whatever is sandwiched by \begin and \end eq.</span>

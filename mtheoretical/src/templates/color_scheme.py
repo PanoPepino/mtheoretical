@@ -6,6 +6,11 @@ import importlib
 #Modify such template at your will and add it allowed_modules in this script and to the print list.
 
 def import_module_from_input():
+    """This function will be called everytime you run manim. It allows you to choose between, so far, two different templates, plus a default one in B/W.
+
+    Returns:
+        - The chosen template homogenised over all your objects.
+    """
     print("Before you run your presentation, choose among the following templates:\n"
           "-------------------------------------------------------------------------------\n"
           "- fancy_mint\n"

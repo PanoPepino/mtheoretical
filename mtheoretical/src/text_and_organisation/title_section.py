@@ -21,23 +21,21 @@ class Title_Section(Title_General, VGroup):
             self.t_sec= VGroup(self.tit, self.box).to_corner(UL)
             self.add(self.t_sec)
         
-        if self.decorator_presence== "box_long_left":
-            self.box_long= RoundedRectangle(height= self.tit.get_height()+self.tightness, width= config.frame_width+0.1, stroke_width= self.decorator_stroke_width, color= self.decorator_color, fill_opacity= self.fill_opa, corner_radius= self.corner_rad, stroke_opacity= self.stroke_opa)
-            self.tit.next_to(self.box_long.get_left(), RIGHT, aligned_edge= LEFT, buff= 0.2)
-            self.tit.to_corner(UL)
-            self.box_long.next_to(self.tit.get_left(), RIGHT, aligned_edge= LEFT, buff= -self.tightness)
-            
-            self.t_sec= VGroup(self.tit, self.box_long)
-            self.add(self.t_sec)
-
         if self.decorator_presence== "box_long_right":
-            self.box_long= RoundedRectangle(height= self.tit.get_height()+self.tightness, width=  self.tit.get_width()+5, stroke_width= self.decorator_stroke_width, color= self.decorator_color, fill_opacity= self.fill_opa, corner_radius= self.corner_rad, stroke_opacity= self.stroke_opa)
-            self.box_long.flip()
+            self.box_long_right= RoundedRectangle(height= self.tit.get_height()+self.tightness, width= config.frame_width+5, stroke_width= self.decorator_stroke_width, color= self.decorator_color, fill_opacity= self.fill_opa, corner_radius= self.corner_rad, stroke_opacity= self.stroke_opa)
             self.tit.to_corner(UL)
-            self.box_long.next_to(self.tit.get_right(), LEFT, aligned_edge= RIGHT, buff= -self.tightness)
+            self.box_long_right.next_to(self.tit.get_left(), RIGHT, aligned_edge= LEFT, buff= -self.tightness/2)
+            self.t_sec_right= VGroup(self.tit, self.box_long_right)
+            self.add(self.t_sec_right)
+
+        if self.decorator_presence== "box_long_left":
+            self.box_long_left= RoundedRectangle(height= self.tit.get_height()+self.tightness, width=  self.tit.get_width()+5, stroke_width= self.decorator_stroke_width, color= self.decorator_color, fill_opacity= self.fill_opa, corner_radius= self.corner_rad, stroke_opacity= self.stroke_opa)
+            self.box_long_left.flip()
+            self.tit.to_corner(UL)
+            self.box_long_left.next_to(self.tit.get_right(), LEFT, aligned_edge= RIGHT, buff= -self.tightness)
             
-            self.t_sec= VGroup(self.tit, self.box_long)
-            self.add(self.t_sec)
+            self.t_sec_left= VGroup(self.tit, self.box_long_left)
+            self.add(self.t_sec_left)
 
         elif self.decorator_presence== "back_frame":
             self.rectangle= Rectangle(height= self.tit.get_height()+self.tightness, width=  config.frame_width+2, stroke_width= self.decorator_stroke_width, color= self.decorator_color, fill_opacity= self.fill_opa, stroke_opacity= self.stroke_opa)
@@ -64,11 +62,11 @@ class Title_Section(Title_General, VGroup):
         
         """
         
-        if self.decorator_presence== "box_long_right":
-            return FadeIn(self.t_sec, shift= 5*RIGHT, run_time= rt, rate_function= rate_functions.linear)
-        
         if self.decorator_presence== "box_long_left":
-            return FadeIn(self.t_sec, shift= 5*LEFT, run_time= rt, rate_function= rate_functions.linear)
+            return FadeIn(self.t_sec_left, shift= 5*RIGHT, run_time= rt, rate_function= rate_functions.linear)
+        
+        if self.decorator_presence== "box_long_right":
+            return FadeIn(self.t_sec_right, shift= 5*LEFT, run_time= rt, rate_function= rate_functions.linear)
         
         else:
             return Create(self.t_sec, run_time= rt, rate_function= rate_functions.linear)

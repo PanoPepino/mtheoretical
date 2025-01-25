@@ -255,14 +255,142 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="src.templates.color_scheme.import_module_from_input">
 <span class="sig-name descname"><span class="pre">import_module_from_input</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/templates/color_scheme.html#import_module_from_input"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.templates.color_scheme.import_module_from_input" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>This function will be called everytime you run manim. It allows you to choose between, so far, two different templates, plus a default one in B/W.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><ul class="simple">
+<li><p>The chosen template homogenised over all your objects.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 <section id="dark-depths">
 <h2>dark_depths<a class="headerlink" href="#dark-depths" title="Link to this heading">¶</a></h2>
+<a class="reference internal image-reference" href="_images/dark_depths_tit.png"><img alt="dark_depths" src="_images/dark_depths_tit.png" style="width: 49%;" />
+</a>
+<a class="reference internal image-reference" href="_images/dark_depths_gen.png"><img alt="dark_depths" src="_images/dark_depths_gen.png" style="width: 49%;" />
+</a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here you can modify almost all parameters of objects used in these libraries.</span>
+<span class="c1">#In this way you can generate new homogenous templates for your presentations.</span>
+<span class="c1">#First you have all the variables.</span>
+<span class="c1">#You can find each of the classes attributes these variables modify down in the file.</span>
+
+<span class="c1">##### ---- DARK DEPTHS TEMPLATE ---- #####</span>
+
+<span class="c1">#Color of the background</span>
+<span class="n">bg_color</span><span class="o">=</span> <span class="s1">&#39;#ECFEFD&#39;</span>
+
+<span class="c1">#Font color and text size for any text and MathTex</span>
+<span class="n">tex_temp</span><span class="o">=</span> <span class="n">TexFontTemplates</span><span class="o">.</span><span class="n">new_century_schoolbook</span>
+<span class="n">t_size</span><span class="o">=</span> <span class="mi">30</span>
+<span class="n">t_color</span><span class="o">=</span> <span class="s1">&#39;#011638&#39;</span>
+
+<span class="c1">#Design of all the surrounding boxes (titles, refs, bullet points, vacua and similar)</span>
+<span class="c1">#and general opacities</span>
+
+<span class="c1">#What type of decorator surrounding the main title and section titles</span>
+<span class="n">d_presence_1</span><span class="o">=</span> <span class="s2">&quot;back_frame&quot;</span>
+<span class="c1">#What type of decorator surrounding bulleted lists.</span>
+<span class="n">d_presence_2</span><span class="o">=</span> <span class="s2">&quot;box&quot;</span>
+<span class="n">d_ref</span><span class="o">=</span> <span class="s2">&quot;none&quot;</span> <span class="c1">#What type of decorator surrounding references.</span>
+<span class="c1">#Notice that refs that do not go to the UR corner</span>
+<span class="c1">#should be individually modified to have a box.</span>
+<span class="c1">#Refs have the color of the decorator.</span>
+<span class="n">d_color</span><span class="o">=</span> <span class="s1">&#39;#1348A4&#39;</span> <span class="c1">#Color of all decorators</span>
+<span class="n">d_s_w</span><span class="o">=</span> <span class="mf">0.6</span> <span class="c1">#Stroke width of all decorator and surrounding boxes</span>
+<span class="n">c_rad</span><span class="o">=</span> <span class="mf">0.1</span> <span class="c1">#Curvature of the corners of such objects</span>
+<span class="n">c_rad_dir_title</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1">#Which corners get curved for titles</span>
+<span class="n">c_rad_dir_boxes</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1">#Same, but for boxes</span>
+<span class="n">f_opa</span><span class="o">=</span> <span class="mf">0.1</span> <span class="c1">#Opacity of background of things</span>
+<span class="n">tight</span><span class="o">=</span> <span class="mf">0.4</span> <span class="c1">#How tight is the decorator with respect to the object it contains.</span>
+<span class="n">s_opa</span><span class="o">=</span> <span class="mf">0.8</span> <span class="c1">#Stroke opacity of the border</span>
+<span class="n">dot_size</span><span class="o">=</span> <span class="mi">2</span> <span class="c1">#How big the bullet points are</span>
+
+<span class="c1">#Color homogenisation</span>
+<span class="n">h_1</span><span class="o">=</span> <span class="s1">&#39;#742F46&#39;</span>
+<span class="n">h_2</span><span class="o">=</span> <span class="s1">&#39;#9F4160&#39;</span>
+<span class="n">h_3</span><span class="o">=</span> <span class="s1">&#39;#45386B&#39;</span>
+<span class="n">b_color</span><span class="o">=</span> <span class="s1">&#39;#742F46&#39;</span>
+<span class="n">v_color</span><span class="o">=</span> <span class="s1">&#39;#45386B&#39;</span>
+
+<span class="n">config</span><span class="o">.</span><span class="n">background_color</span><span class="o">=</span> <span class="n">bg_color</span>
+
+<span class="c1">#Definition of Tex defaults. This will change font and its color.</span>
+<span class="c1">#Carefull! It seems that there exist some FontTemplates which do not</span>
+<span class="c1">#automatically scale the parenthesis. This drove me crazy for some hours.</span>
+<span class="c1">#Be aware of what font you choose.</span>
+
+<span class="n">Tex</span><span class="o">.</span><span class="n">set_default</span><span class="p">(</span><span class="n">tex_template</span><span class="o">=</span> <span class="n">tex_temp</span><span class="p">)</span>
+<span class="n">MathTex</span><span class="o">.</span><span class="n">set_default</span><span class="p">(</span><span class="n">tex_template</span><span class="o">=</span> <span class="n">tex_temp</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 <section id="fancy-mint">
 <h2>fancy_mint<a class="headerlink" href="#fancy-mint" title="Link to this heading">¶</a></h2>
+<a class="reference internal image-reference" href="_images/fancy_mint_tit.png"><img alt="fancy_mint" src="_images/fancy_mint_tit.png" style="width: 49%;" />
+</a>
+<a class="reference internal image-reference" href="_images/fancy_mint_gen.png"><img alt="fancy_mint" src="_images/fancy_mint_gen.png" style="width: 49%;" />
+</a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here you can modify almost all parameters of objects used in these libraries.</span>
+<span class="c1">#In this way you can generate new homogenous templates for your presentations.</span>
+<span class="c1">#First you have all the variables.</span>
+<span class="c1">#You can find each of the classes attributes these variables modify down in the file.</span>
+
+<span class="c1">##### ---- FANCY MINT TEMPLATE ---- #####</span>
+
+<span class="c1">#Color of the background</span>
+<span class="n">bg_color</span><span class="o">=</span> <span class="s1">&#39;#EBFFF9&#39;</span>
+
+<span class="c1">#Font color and text size for any text and MathTex</span>
+<span class="n">tex_temp</span><span class="o">=</span> <span class="n">TexFontTemplates</span><span class="o">.</span><span class="n">latin_modern_tw</span>
+<span class="n">t_size</span><span class="o">=</span> <span class="mi">30</span>
+<span class="n">t_color</span><span class="o">=</span> <span class="s1">&#39;#1C1018&#39;</span>
+
+<span class="c1">#Design of all the surrounding boxes (titles, refs, bullet points, vacua and similar)</span>
+<span class="c1">#and general opacities</span>
+
+<span class="c1">#What type of decorator surrounding the main title and section titles</span>
+<span class="n">d_presence_1</span><span class="o">=</span> <span class="s2">&quot;box_long_right&quot;</span>
+
+<span class="c1">#What type of decorator surrounding bulleted lists</span>
+<span class="n">d_presence_2</span><span class="o">=</span> <span class="s2">&quot;box&quot;</span>
+
+<span class="c1">#What type of decorator surrounding references.</span>
+<span class="c1">#Notice that refs that do not go to the UR corner</span>
+<span class="c1">#should be individually modified to have a box. Refs have the color of the decorator.</span>
+<span class="n">d_ref</span><span class="o">=</span> <span class="s2">&quot;none&quot;</span>
+<span class="n">d_color</span><span class="o">=</span> <span class="s1">&#39;#006661&#39;</span> <span class="c1">#Color of all decorators</span>
+<span class="n">d_s_w</span><span class="o">=</span> <span class="mf">0.1</span> <span class="c1">#Stroke width of all decorator and surrounding boxes</span>
+<span class="n">c_rad</span><span class="o">=</span> <span class="mf">0.2</span> <span class="c1">#Curvature of the corners of such objects</span>
+<span class="n">c_rad_dir_title</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="c1">#Which corners get curved for titles</span>
+<span class="n">c_rad_dir_boxes</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1">#Same, but for boxes</span>
+<span class="n">f_opa</span><span class="o">=</span> <span class="mf">0.1</span> <span class="c1">#Opacity of background of things</span>
+<span class="n">tight</span><span class="o">=</span> <span class="mf">0.3</span> <span class="c1">#How tight is the decorator with respect to the object it contains.</span>
+<span class="n">s_opa</span><span class="o">=</span> <span class="mf">0.2</span> <span class="c1">#Stroke opacity of the border</span>
+<span class="n">dot_size</span><span class="o">=</span> <span class="mi">2</span> <span class="c1">#How big the bullet points are</span>
+
+<span class="c1">#Color homogenisation</span>
+<span class="n">h_1</span><span class="o">=</span> <span class="s1">&#39;#9E4770&#39;</span>
+<span class="n">h_2</span><span class="o">=</span> <span class="s1">&#39;#C49E85&#39;</span>
+<span class="n">h_3</span><span class="o">=</span> <span class="s1">&#39;#EF8354&#39;</span>
+<span class="n">b_color</span><span class="o">=</span> <span class="s1">&#39;#006661&#39;</span>
+<span class="n">v_color</span><span class="o">=</span> <span class="s1">&#39;#006661&#39;</span>
+
+<span class="n">config</span><span class="o">.</span><span class="n">background_color</span><span class="o">=</span> <span class="n">bg_color</span>
+
+<span class="c1">#Definition of Tex defaults. This will change font and its color.</span>
+<span class="c1">#Carefull! It seems that there exist some FontTemplates</span>
+<span class="c1">#which do not automatically scale the parenthesis.</span>
+<span class="c1">#This drove me crazy for some hours. Be aware of what font you choose.</span>
+
+<span class="n">Tex</span><span class="o">.</span><span class="n">set_default</span><span class="p">(</span><span class="n">tex_template</span><span class="o">=</span> <span class="n">tex_temp</span><span class="p">)</span>
+<span class="n">MathTex</span><span class="o">.</span><span class="n">set_default</span><span class="p">(</span><span class="n">tex_template</span><span class="o">=</span> <span class="n">tex_temp</span><span class="p">)</span>
+
+<span class="c1">#Titles #Note that the corner_rad can be negative!</span>
+<span class="c1">#It seems that back_frame fits good both with box in text and nothing as decorator.</span>
+</pre></div>
+</div>
 </section>
 </section>
 

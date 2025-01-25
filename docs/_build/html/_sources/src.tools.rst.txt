@@ -1,9 +1,12 @@
 tools
 =================
 
-Here you can find sexy stuff.
+The following tools are under construction and in constant improvement.
 
-Use sphinx-apidoc -o docs mtheoretical/src when refreshing new stuff added to documents
+- The idea is to develop some code snipets to open a given .tex file and extract all equations into a dictionary. Each key of the equation will correspond to its label.
+- Same principle for .bib files and references. The key will correspond to the arxiv number or similar.
+
+
 
 extract\_eq\_from\_tex
 ---------------------------------------

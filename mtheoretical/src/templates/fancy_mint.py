@@ -21,12 +21,12 @@ t_size= 30
 t_color= '#1C1018'
 
 #Design of all the surrounding boxes (titles, refs, bullet points, vacua and similar) and general opacities
-d_presence_1= "box_long_left" #What type of decorator surrounding the main title and section titles
+d_presence_1= "box_long_right" #What type of decorator surrounding the main title and section titles
 d_presence_2= "box" #What type of decorator surrounding bulleted lists
 d_ref= "none" #What type of decorator surrounding references. Notice that refs that do not go to the UR corner should be individually modified to have a box. Refs have the color of the decorator
 d_color= '#006661' #Color of all decorators
 d_s_w= 0.1 #Stroke width of all decorator and surrounding boxes
-c_rad= 0.3 #Curvature of the corners of such objects
+c_rad= 0.2 #Curvature of the corners of such objects
 c_rad_dir_title= [1, 1, 0, 0] #Which corners get curved for titles
 c_rad_dir_boxes= [1, 1, 1, 1] #Same, but for boxes
 f_opa= 0.1 #Opacity of background of things

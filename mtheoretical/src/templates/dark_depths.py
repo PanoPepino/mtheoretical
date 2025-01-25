@@ -7,6 +7,7 @@ from mtheoretical.src.objects import *
 from mtheoretical.src.tables_and_plots import *
 from mtheoretical.src.text_and_organisation import *
 
+
 #Here you can modify almost all parameters of objects used in these libraries. In this way you can generate new homogenous templates for your presentations.
 #First you have all the variables. You can find each of the classes attributes these variables modify down in the file.
 
