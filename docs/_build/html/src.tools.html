@@ -261,14 +261,15 @@
 <dt class="sig sig-object py" id="src.tools.extract_eq_from_tex.read_tex_file">
 <span class="sig-name descname"><span class="pre">read_tex_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/tools/extract_eq_from_tex.html#read_tex_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tools.extract_eq_from_tex.read_tex_file" title="Link to this definition">¶</a></dt>
 <dd><p>Function to read the input .tex file.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>file_path to the file you would like to read to extract the equations from.</p></li>
-</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>from.</strong> (<em>- file_path to the file you would like to read to extract the equations</em>)</p>
 </dd>
-<dt>Returns:</dt><dd><ul class="simple">
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
 <li><p>the content, loaded to be manipulated by the rest of the functions.</p></li>
 </ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -277,14 +278,18 @@
 <dt class="sig sig-object py" id="src.tools.extract_eq_from_tex.extract_equations">
 <span class="sig-name descname"><span class="pre">extract_equations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tex_content</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/tools/extract_eq_from_tex.html#extract_equations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tools.extract_eq_from_tex.extract_equations" title="Link to this definition">¶</a></dt>
 <dd><p>Main function to extract equations and their labels from the chosen .tex file.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>tex_content: The .tex file to read.</p></li>
-</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tex_content</strong> (<em>-</em>) – The .tex file to read.</p>
 </dd>
-<dt>Returns:</dt><dd><ul class="simple">
-<li><p>dictionary: The set of equations with their keys (the labels of each equation in the .tex file)</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The set of equations with their keys (the labels of each equation in the .tex file)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>dictionary</p></li>
 </ul>
+</p>
 </dd>
 </dl>
 <ul>
@@ -310,10 +315,11 @@
 <dt class="sig sig-object py" id="src.tools.extract_eq_from_tex.write_dict_to_file">
 <span class="sig-name descname"><span class="pre">write_dict_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dictionary</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_file_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/tools/extract_eq_from_tex.html#write_dict_to_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tools.extract_eq_from_tex.write_dict_to_file" title="Link to this definition">¶</a></dt>
 <dd><p>This function takes the extracted dictionary and pours it down in .txt file.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>dictionary: it eats equations, the dictionary of the previous function.</p></li>
-<li><p>output_file_name: it spits out a .txt file with the dictionary written in the right way.</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dictionary</strong> (<em>-</em>) – it eats equations, the dictionary of the previous function.</p></li>
+<li><p><strong>output_file_name</strong> (<em>-</em>) – it spits out a .txt file with the dictionary written in the right way.</p></li>
 </ul>
 </dd>
 </dl>

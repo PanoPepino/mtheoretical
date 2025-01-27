@@ -261,8 +261,8 @@
 <li><p><strong>Parameters</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">brane_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">filling</span> <span class="ow">in</span> <span class="n">color</span> <span class="n">of</span> <span class="n">the</span> <span class="n">brane</span><span class="o">.</span>
 <span class="n">Defaults</span> <span class="n">to</span> <span class="n">RED</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">brane_fill_opa</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Recall</span> <span class="n">that</span> <span class="n">fill</span> <span class="n">opacity</span> <span class="n">will</span> <span class="n">become</span> <span class="n">slightly</span> 
-<span class="n">when</span> <span class="n">we</span> <span class="n">go</span> <span class="n">lower</span> <span class="ow">in</span> <span class="n">AdS</span> <span class="n">scale</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.1</span><span class="o">.</span> 
+<span class="o">-</span> <span class="n">brane_fill_opa</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Recall</span> <span class="n">that</span> <span class="n">fill</span> <span class="n">opacity</span> <span class="n">will</span> <span class="n">become</span> <span class="n">slightly</span>
+<span class="n">when</span> <span class="n">we</span> <span class="n">go</span> <span class="n">lower</span> <span class="ow">in</span> <span class="n">AdS</span> <span class="n">scale</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.1</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">brane_radius</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Initial</span> <span class="n">size</span> <span class="n">of</span> <span class="n">brane</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">1.</span>
 <span class="o">-</span> <span class="n">brane_text_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">WHITE</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">brane_stroke_w</span><span class="p">:</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">)</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.2</span><span class="o">.</span>
@@ -346,15 +346,21 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="src.objects.ads_jc.AdS_Jc.fade_in">
 <span class="sig-name descname"><span class="pre">fade_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Animation</span></span></span><a class="reference internal" href="_modules/src/objects/ads_jc.html#AdS_Jc.fade_in"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.objects.ads_jc.AdS_Jc.fade_in" title="Link to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rt (float, optional): run_time animation. Defaults to 1.</p></li>
-<li><p>rf (float, optioanl): rate function. Defaults to linear.</p></li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rt</strong> (<em>-</em>) – run_time animation. Defaults to 1.</p></li>
+<li><p><strong>rf</strong> (<em>-</em>) – rate function. Defaults to linear.</p></li>
 </ul>
 </dd>
-<dt>Returns:</dt><dd><ul class="simple">
-<li><p>Animation: FadeIn animation of the group without the arrow.</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>FadeIn animation of the group without the arrow.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Animation</p></li>
 </ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -362,15 +368,21 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="src.objects.ads_jc.AdS_Jc.fade_in_arrow">
 <span class="sig-name descname"><span class="pre">fade_in_arrow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Animation</span></span></span><a class="reference internal" href="_modules/src/objects/ads_jc.html#AdS_Jc.fade_in_arrow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.objects.ads_jc.AdS_Jc.fade_in_arrow" title="Link to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rt (float, optional): run_time animation. Defaults to 1.</p></li>
-<li><p>rf (float, optioanl): rate function. Defaults to linear.</p></li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rt</strong> (<em>-</em>) – run_time animation. Defaults to 1.</p></li>
+<li><p><strong>rf</strong> (<em>-</em>) – rate function. Defaults to linear.</p></li>
 </ul>
 </dd>
-<dt>Returns:</dt><dd><ul class="simple">
-<li><p>Animation: FadeIn the arrow of the group.</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>FadeIn the arrow of the group.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Animation</p></li>
 </ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -378,15 +390,21 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="src.objects.ads_jc.AdS_Jc.show_symmetry">
 <span class="sig-name descname"><span class="pre">show_symmetry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf=&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Succession</span></span></span><a class="reference internal" href="_modules/src/objects/ads_jc.html#AdS_Jc.show_symmetry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.objects.ads_jc.AdS_Jc.show_symmetry" title="Link to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rt (float, optional): run_time animation. Defaults to 1.</p></li>
-<li><p>rf (float, optioanl): rate function. Defaults to linear.</p></li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rt</strong> (<em>-</em>) – run_time animation. Defaults to 1.</p></li>
+<li><p><strong>rf</strong> (<em>-</em>) – rate function. Defaults to linear.</p></li>
 </ul>
 </dd>
-<dt>Returns:</dt><dd><ul class="simple">
-<li><p>Animation: Removes outside vacuum and bend over the Z2 sym to simulate the action of the self.symmetry.</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Removes outside vacuum and bend over the Z2 sym to simulate the action of the self.symmetry.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Animation</p></li>
 </ul>
+</p>
 </dd>
 </dl>
 <div class="admonition note">
@@ -403,15 +421,21 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="src.objects.ads_jc.AdS_Jc.restore_symmetry">
 <span class="sig-name descname"><span class="pre">restore_symmetry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf=&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Succession</span></span></span><a class="reference internal" href="_modules/src/objects/ads_jc.html#AdS_Jc.restore_symmetry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.objects.ads_jc.AdS_Jc.restore_symmetry" title="Link to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rt (float, optional): Defaults to 1.</p></li>
-<li><p>rf (_vacua_type_, optional): Defaults to linear.</p></li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rt</strong> (<em>-</em>) – Defaults to 1.</p></li>
+<li><p><strong>rf</strong> (<em>-</em>) – Defaults to linear.</p></li>
 </ul>
 </dd>
-<dt>Returns:</dt><dd><ul class="simple">
-<li><p>Animation: Restores previous symmetry.</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Restores previous symmetry.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Animation</p></li>
 </ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -419,15 +443,21 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="src.objects.ads_jc.AdS_Jc.show_n_vector_rs">
 <span class="sig-name descname"><span class="pre">show_n_vector_rs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf=&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Succession</span></span></span><a class="reference internal" href="_modules/src/objects/ads_jc.html#AdS_Jc.show_n_vector_rs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.objects.ads_jc.AdS_Jc.show_n_vector_rs" title="Link to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rt (float, optional): Defaults to 1.</p></li>
-<li><p>rf (_type_, optional): Defaults to linear.</p></li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rt</strong> (<em>-</em>) – Defaults to 1.</p></li>
+<li><p><strong>rf</strong> (<em>-</em>) – Defaults to linear.</p></li>
 </ul>
 </dd>
-<dt>Returns:</dt><dd><ul class="simple">
-<li><p>Animation: Shows the behaviour of the normal vector across the vacua in the RS model.</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Shows the behaviour of the normal vector across the vacua in the RS model.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Animation</p></li>
 </ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -435,15 +465,21 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="src.objects.ads_jc.AdS_Jc.show_n_vector_db">
 <span class="sig-name descname"><span class="pre">show_n_vector_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf=&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Succession</span></span></span><a class="reference internal" href="_modules/src/objects/ads_jc.html#AdS_Jc.show_n_vector_db"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.objects.ads_jc.AdS_Jc.show_n_vector_db" title="Link to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rt (float, optional): Defaults to 1.</p></li>
-<li><p>rf (_type_, optional): Defaults to linear.</p></li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rt</strong> (<em>-</em>) – Defaults to 1.</p></li>
+<li><p><strong>rf</strong> (<em>-</em>) – Defaults to linear.</p></li>
 </ul>
 </dd>
-<dt>Returns:</dt><dd><ul class="simple">
-<li><p>Animation: Shows the behaviour of the normal vector across the vacua in the DB model.</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Shows the behaviour of the normal vector across the vacua in the DB model.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Animation</p></li>
 </ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -468,8 +504,8 @@
 <span class="o">-</span> <span class="n">bh_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">Black</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">bh_fill_opa</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.8</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">bh_type</span><span class="p">:</span>
-    <span class="o">-</span> <span class="s2">&quot;fragmentation&quot;</span><span class="p">:</span> <span class="n">the</span> <span class="n">written</span> <span class="n">elements</span> <span class="n">will</span> <span class="n">be</span> <span class="n">Q</span> <span class="o">&gt;</span> <span class="n">T</span><span class="p">,</span> <span class="n">corresponding</span> <span class="n">to</span> 
-    <span class="n">the</span> <span class="n">nucleation</span> <span class="n">of</span> <span class="n">a</span> <span class="n">brane</span> <span class="n">a</span> <span class="n">la</span> <span class="n">AdS</span> <span class="n">fragmentation</span> <span class="n">by</span> <span class="n">Maldacena</span><span class="o">.</span> 
+    <span class="o">-</span> <span class="s2">&quot;fragmentation&quot;</span><span class="p">:</span> <span class="n">the</span> <span class="n">written</span> <span class="n">elements</span> <span class="n">will</span> <span class="n">be</span> <span class="n">Q</span> <span class="o">&gt;</span> <span class="n">T</span><span class="p">,</span> <span class="n">corresponding</span> <span class="n">to</span>
+    <span class="n">the</span> <span class="n">nucleation</span> <span class="n">of</span> <span class="n">a</span> <span class="n">brane</span> <span class="n">a</span> <span class="n">la</span> <span class="n">AdS</span> <span class="n">fragmentation</span> <span class="n">by</span> <span class="n">Maldacena</span><span class="o">.</span>
     <span class="o">-</span> <span class="s2">&quot;spinning&quot;</span><span class="p">:</span> <span class="n">written</span> <span class="n">elements</span> <span class="n">will</span> <span class="n">be</span> <span class="n">theta</span> <span class="ow">and</span> <span class="n">mu</span><span class="p">,</span> <span class="k">as</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">rotating</span> <span class="n">black</span>
     <span class="n">hole</span><span class="o">.</span>
     <span class="o">-</span> <span class="n">none</span><span class="p">:</span> <span class="n">empty</span> <span class="n">black</span> <span class="n">hole</span><span class="o">.</span> <span class="n">No</span> <span class="n">text</span><span class="o">.</span>
@@ -498,16 +534,22 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="src.objects.black_hole.Black_Hole.nucleate">
 <span class="sig-name descname"><span class="pre">nucleate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1.1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Animation</span></span></span><a class="reference internal" href="_modules/src/objects/black_hole.html#Black_Hole.nucleate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.objects.black_hole.Black_Hole.nucleate" title="Link to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rt (float, optional): Run time animation. Defaults to 3.</p></li>
-<li><p>rf (float, optional): Rate funciton. Defaults to linear.</p></li>
-<li><p>scaling (float, optional): How much it scales. Defaults to 1.1.</p></li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rt</strong> (<em>-</em>) – Run time animation. Defaults to 3.</p></li>
+<li><p><strong>rf</strong> (<em>-</em>) – Rate funciton. Defaults to linear.</p></li>
+<li><p><strong>scaling</strong> (<em>-</em>) – How much it scales. Defaults to 1.1.</p></li>
 </ul>
 </dd>
-<dt>Returns:</dt><dd><ul class="simple">
-<li><p>Animation: Nucleation of the brane through the horizon of the black hole.</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Nucleation of the brane through the horizon of the black hole.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Animation</p></li>
 </ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -520,16 +562,22 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="src.objects.black_hole.Black_Hole.expand">
 <span class="sig-name descname"><span class="pre">expand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaling:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">2.5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Animation</span></span></span><a class="reference internal" href="_modules/src/objects/black_hole.html#Black_Hole.expand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.objects.black_hole.Black_Hole.expand" title="Link to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rt (float, optional): Defaults to 3.</p></li>
-<li><p>rf (float, optional): Defaults to linear.</p></li>
-<li><p>scaling (float, optional): Defaults to 2.5.</p></li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rt</strong> (<em>-</em>) – Defaults to 3.</p></li>
+<li><p><strong>rf</strong> (<em>-</em>) – Defaults to linear.</p></li>
+<li><p><strong>scaling</strong> (<em>-</em>) – Defaults to 2.5.</p></li>
 </ul>
 </dd>
-<dt>Returns:</dt><dd><ul class="simple">
-<li><p>Animation: Expansion of the brane.</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Expansion of the brane.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Animation</p></li>
 </ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -554,17 +602,17 @@
     <span class="o">-</span> <span class="n">strings</span><span class="p">:</span> <span class="n">Add</span> <span class="n">radially</span> <span class="n">stretching</span> <span class="n">strings</span> <span class="n">to</span> <span class="n">the</span> <span class="n">bulk</span><span class="o">.</span>
     <span class="o">-</span> <span class="n">GW</span><span class="p">:</span> <span class="n">Add</span> <span class="n">gravitational</span> <span class="n">waves</span> <span class="n">to</span> <span class="n">the</span> <span class="n">bulk</span><span class="o">.</span>
     <span class="o">-</span> <span class="n">em</span><span class="p">:</span> <span class="n">Add</span> <span class="n">background</span> <span class="n">B</span><span class="o">-</span><span class="n">field</span> <span class="n">to</span> <span class="n">bulk</span> <span class="ow">and</span> <span class="n">on</span> <span class="n">the</span> <span class="n">brane</span><span class="o">.</span>
-    <span class="o">-</span> <span class="n">energy_discussion</span><span class="p">:</span> <span class="n">An</span> <span class="s2">&quot;energy bar&quot;</span> <span class="n">appears</span> <span class="n">below</span> <span class="n">the</span> <span class="n">box</span><span class="p">,</span> <span class="n">to</span> <span class="n">discuss</span> 
+    <span class="o">-</span> <span class="n">energy_discussion</span><span class="p">:</span> <span class="n">An</span> <span class="s2">&quot;energy bar&quot;</span> <span class="n">appears</span> <span class="n">below</span> <span class="n">the</span> <span class="n">box</span><span class="p">,</span> <span class="n">to</span> <span class="n">discuss</span>
     <span class="n">energy</span> <span class="n">conservation</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">box_height</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span><span class="n">Height</span> <span class="n">of</span> <span class="n">vacuum</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">6.</span>
 <span class="o">-</span> <span class="n">box_width</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Length</span> <span class="n">of</span> <span class="n">vacuum</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">8.</span>
 <span class="o">-</span> <span class="n">string_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Colors</span> <span class="n">of</span> <span class="n">strings</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">BLUE</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">string_stroke_w</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">1.5</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">field_gradient</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Represents</span> <span class="n">how</span> <span class="n">good</span> <span class="n">the</span> <span class="n">gradient</span> <span class="n">of</span> <span class="n">the</span> <span class="n">source</span> 
+<span class="o">-</span> <span class="n">field_gradient</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Represents</span> <span class="n">how</span> <span class="n">good</span> <span class="n">the</span> <span class="n">gradient</span> <span class="n">of</span> <span class="n">the</span> <span class="n">source</span>
 <span class="n">field</span> <span class="n">ON</span> <span class="n">the</span> <span class="n">brane</span> <span class="ow">is</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">50.</span>
 <span class="o">-</span> <span class="n">field_top_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Color</span> <span class="n">of</span> <span class="n">field</span> <span class="n">on</span> <span class="n">top</span> <span class="n">of</span> <span class="n">the</span> <span class="n">brane</span><span class="o">.</span>
 <span class="n">Defaults</span> <span class="n">to</span> <span class="n">BLUE</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">field_bulk_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="p">(</span><span class="n">To</span> <span class="n">be</span> <span class="n">constructed</span><span class="p">)</span><span class="o">.</span> 
+<span class="o">-</span> <span class="n">field_bulk_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="p">(</span><span class="n">To</span> <span class="n">be</span> <span class="n">constructed</span><span class="p">)</span><span class="o">.</span>
 <span class="n">Defaults</span> <span class="n">to</span> <span class="n">PINK</span><span class="o">.</span>
 </pre></div>
 </div>
@@ -614,15 +662,21 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="src.objects.bubble.Bubble.fade_in_bulk">
 <span class="sig-name descname"><span class="pre">fade_in_bulk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Animation</span></span></span><a class="reference internal" href="_modules/src/objects/bubble.html#Bubble.fade_in_bulk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.objects.bubble.Bubble.fade_in_bulk" title="Link to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rt (float, optional): run_time animation. Defaults to 1.</p></li>
-<li><p>rf (float, optioanl): rate function. Defaults to linear.</p></li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rt</strong> (<em>-</em>) – run_time animation. Defaults to 1.</p></li>
+<li><p><strong>rf</strong> (<em>-</em>) – rate function. Defaults to linear.</p></li>
 </ul>
 </dd>
-<dt>Returns:</dt><dd><ul class="simple">
-<li><p>Animation: Returns the creation of the bulk box and the value of the cosmological constant outside.</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the creation of the bulk box and the value of the cosmological constant outside.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Animation</p></li>
 </ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -634,15 +688,21 @@
 <p class="admonition-title">Note</p>
 <p>This method only works with energy_discussion.</p>
 </div>
-<dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rt (float, optional): Defaults to 2.</p></li>
-<li><p>rf (float, optional): Defaults to linear.</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rt</strong> (<em>-</em>) – Defaults to 2.</p></li>
+<li><p><strong>rf</strong> (<em>-</em>) – Defaults to linear.</p></li>
 </ul>
 </dd>
-<dt>Returns:</dt><dd><ul class="simple">
-<li><p>Animation: The creation of the bubble fails due to lack of energy.</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The creation of the bubble fails due to lack of energy.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Animation</p></li>
 </ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -650,15 +710,21 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="src.objects.bubble.Bubble.create_bubble">
 <span class="sig-name descname"><span class="pre">create_bubble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Succession</span></span></span><a class="reference internal" href="_modules/src/objects/bubble.html#Bubble.create_bubble"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.objects.bubble.Bubble.create_bubble" title="Link to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rt (float, optional): run_time animation. Defaults to 1.</p></li>
-<li><p>rf (float, optioanl): rate function. Defaults to linear.</p></li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rt</strong> (<em>-</em>) – run_time animation. Defaults to 1.</p></li>
+<li><p><strong>rf</strong> (<em>-</em>) – rate function. Defaults to linear.</p></li>
 </ul>
 </dd>
-<dt>Returns:</dt><dd><ul class="simple">
-<li><p>Animation: Shows the creation of the bubble and its inside value of the scale curvature.</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Shows the creation of the bubble and its inside value of the scale curvature.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Animation</p></li>
 </ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -666,17 +732,23 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="src.objects.bubble.Bubble.expand_bubble">
 <span class="sig-name descname"><span class="pre">expand_bubble</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sca:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">2.5</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AnimationGroup</span></span></span><a class="reference internal" href="_modules/src/objects/bubble.html#Bubble.expand_bubble"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.objects.bubble.Bubble.expand_bubble" title="Link to this definition">¶</a></dt>
-<dd><dl>
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rt (float, optional): run_time animation. Defaults to 6.</p></li>
-<li><p>rf (float, optional): rate function. Defaults to linear.</p></li>
-<li><p>sca (float, optional): size for the scaling of the brane.</p></li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rt</strong> (<em>-</em>) – run_time animation. Defaults to 6.</p></li>
+<li><p><strong>rf</strong> (<em>-</em>) – rate function. Defaults to linear.</p></li>
+<li><p><strong>sca</strong> (<em>-</em>) – size for the scaling of the brane.</p></li>
 </ul>
 </dd>
-<dt>Returns:</dt><dd><ul class="simple">
-<li><p>Animation: Returns the expansion of the bubble. Denpeding on the type of bubble,</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the expansion of the bubble. Denpeding on the type of bubble,
+it automatically shows the evolution of energy densities in the bulk.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Animation</p></li>
 </ul>
-<p>it automatically shows the evolution of energy densities in the bulk.</p>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -684,15 +756,21 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="src.objects.bubble.Bubble.show_radius">
 <span class="sig-name descname"><span class="pre">show_radius</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Succession</span></span></span><a class="reference internal" href="_modules/src/objects/bubble.html#Bubble.show_radius"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.objects.bubble.Bubble.show_radius" title="Link to this definition">¶</a></dt>
-<dd><dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rt (float, optional): run_time animation. Defaults to 1.</p></li>
-<li><p>rf (float, optional): rate function. Defaults to linear.</p></li>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rt</strong> (<em>-</em>) – run_time animation. Defaults to 1.</p></li>
+<li><p><strong>rf</strong> (<em>-</em>) – rate function. Defaults to linear.</p></li>
 </ul>
 </dd>
-<dt>Returns:</dt><dd><ul class="simple">
-<li><p>Succession: Shows the time dependence of the radius of the bubble.</p></li>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Shows the time dependence of the radius of the bubble.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p>Succession</p></li>
 </ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -709,7 +787,7 @@
 <p>Class to represent a Photography. Find and example in Post_It Class.</p>
 <ul>
 <li><p><strong>Parameters</strong>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">photo</span> <span class="p">(</span><span class="nb">str</span><span class="p">):</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">desired</span> <span class="n">photo</span><span class="o">.</span> <span class="n">It</span> <span class="n">assumes</span> <span class="n">your</span> <span class="n">photo</span> <span class="ow">is</span> <span class="n">located</span> <span class="ow">in</span> <span class="n">a</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">photo</span> <span class="p">(</span><span class="nb">str</span><span class="p">):</span> <span class="n">path</span> <span class="n">to</span> <span class="n">the</span> <span class="n">desired</span> <span class="n">photo</span><span class="o">.</span> <span class="n">It</span> <span class="n">assumes</span> <span class="n">your</span> <span class="n">photo</span> <span class="ow">is</span> <span class="n">located</span> <span class="ow">in</span> <span class="n">a</span>
 <span class="n">folder</span> <span class="n">called</span> <span class="n">figures</span><span class="p">,</span> <span class="n">at</span> <span class="n">the</span> <span class="n">same</span> <span class="n">level</span> <span class="n">of</span> <span class="n">the</span> <span class="n">main</span> <span class="n">script</span> <span class="n">where</span> <span class="n">you</span> <span class="n">call</span> <span class="n">this</span> <span class="n">class</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">decorator_style</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="s2">&quot;techno&quot;</span><span class="o">.</span>
     <span class="o">-</span> <span class="n">polaroid</span><span class="p">:</span> <span class="n">It</span> <span class="n">resembles</span> <span class="n">a</span> <span class="n">polaroid</span> <span class="n">photo</span><span class="p">,</span> <span class="k">with</span> <span class="n">a</span> <span class="n">pin</span> <span class="n">on</span> <span class="n">top</span><span class="o">.</span>
@@ -719,10 +797,10 @@
 <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">5.</span>
 <span class="o">-</span> <span class="n">caption</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">The</span> <span class="n">text</span> <span class="n">to</span> <span class="n">add</span> <span class="n">under</span> <span class="n">the</span> <span class="n">polaroid</span> <span class="n">picture</span><span class="o">.</span>
 <span class="n">Defaults</span> <span class="n">to</span> <span class="s2">&quot;&quot;</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">text_size</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">text_size</span> <span class="n">of</span> <span class="n">font</span> <span class="k">for</span> <span class="n">the</span> <span class="n">text</span> <span class="n">mentioned</span> <span class="n">above</span><span class="o">.</span> 
+<span class="o">-</span> <span class="n">text_size</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">text_size</span> <span class="n">of</span> <span class="n">font</span> <span class="k">for</span> <span class="n">the</span> <span class="n">text</span> <span class="n">mentioned</span> <span class="n">above</span><span class="o">.</span>
 <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">30.</span>
 <span class="o">-</span> <span class="n">text_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">BLACK</span><span class="o">.</span>
-<span class="o">-</span> <span class="n">pin_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Color</span> <span class="n">of</span> <span class="n">the</span> <span class="n">pin</span> <span class="n">on</span> <span class="n">top</span> <span class="n">of</span> <span class="n">the</span> <span class="n">polaroid</span><span class="o">.</span> 
+<span class="o">-</span> <span class="n">pin_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Color</span> <span class="n">of</span> <span class="n">the</span> <span class="n">pin</span> <span class="n">on</span> <span class="n">top</span> <span class="n">of</span> <span class="n">the</span> <span class="n">polaroid</span><span class="o">.</span>
 <span class="n">Defaults</span> <span class="n">to</span> <span class="n">RED</span><span class="o">.</span>
 </pre></div>
 </div>

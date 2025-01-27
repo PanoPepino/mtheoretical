@@ -266,7 +266,7 @@
     <span class="o">-</span> <span class="s2">&quot;box_long_left&quot;</span><span class="o">/</span><span class="s2">&quot;box_long_right&quot;</span><span class="p">:</span> <span class="n">A</span> <span class="n">surrounding</span> <span class="n">rectangle</span> <span class="n">that</span> <span class="n">stretches</span>
       <span class="n">to</span> <span class="n">the</span> <span class="n">chosen</span> <span class="n">corner</span><span class="o">.</span>
     <span class="o">-</span> <span class="s2">&quot;back_frame&quot;</span><span class="p">:</span> <span class="n">A</span> <span class="n">whole</span> <span class="n">back</span> <span class="n">frame</span> <span class="n">behind</span> <span class="n">the</span> <span class="n">text</span><span class="p">,</span> <span class="n">spanning</span> <span class="kn">from</span> <span class="nn">side</span> <span class="n">to</span> <span class="n">side</span><span class="o">.</span>
-    <span class="o">-</span> <span class="s2">&quot;no&quot;</span><span class="p">:</span> <span class="n">Nothing</span><span class="o">.</span> <span class="n">Plain</span> <span class="n">text</span><span class="o">.</span> 
+    <span class="o">-</span> <span class="s2">&quot;no&quot;</span><span class="p">:</span> <span class="n">Nothing</span><span class="o">.</span> <span class="n">Plain</span> <span class="n">text</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">decorator_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">WHITE</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">decorator_stroke_width</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">1.</span>
 <span class="o">-</span> <span class="n">corner_rad</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Corner</span> <span class="n">radious</span> <span class="n">of</span> <span class="n">surrounding</span> <span class="n">box</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.</span>
@@ -300,7 +300,7 @@
 <span class="o">-</span> <span class="n">text_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">WHITE</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">decorator_presence</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">This</span> <span class="n">has</span> <span class="n">several</span> <span class="n">options</span> <span class="p">(</span><span class="n">Defaults</span> <span class="n">to</span> <span class="n">no</span><span class="p">)</span>
     <span class="o">-</span> <span class="s2">&quot;box&quot;</span><span class="p">:</span> <span class="n">A</span> <span class="n">simple</span> <span class="n">surrounding</span> <span class="n">rectangle</span> <span class="n">around</span> <span class="n">the</span> <span class="n">title</span><span class="o">.</span>
-    <span class="o">-</span> <span class="s2">&quot;no&quot;</span><span class="p">:</span> <span class="n">Nothing</span><span class="o">.</span> <span class="n">Plain</span> <span class="n">text</span><span class="o">.</span> 
+    <span class="o">-</span> <span class="s2">&quot;no&quot;</span><span class="p">:</span> <span class="n">Nothing</span><span class="o">.</span> <span class="n">Plain</span> <span class="n">text</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">decorator_color</span> <span class="p">(</span><span class="n">ParsableManimColor</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="n">WHITE</span><span class="o">.</span>
 <span class="o">-</span> <span class="n">decorator_stroke_width</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">1.</span>
 <span class="o">-</span> <span class="n">corner_rad</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="n">optional</span><span class="p">):</span> <span class="n">Corner</span> <span class="n">radious</span> <span class="n">of</span> <span class="n">surrounding</span> <span class="n">box</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">0.</span>
@@ -397,8 +397,8 @@
 
 <span class="k">class</span> <span class="nc">Title_Slide</span><span class="p">(</span><span class="n">Scene</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Title_Presentation</span><span class="p">(</span><span class="n">title</span><span class="o">=</span> <span class="s2">&quot;An Useless Title to Show&quot;</span><span class="p">,</span> 
-                                    <span class="n">affiliation</span><span class="o">=</span> <span class="s2">&quot;Your Mama University&quot;</span><span class="p">,</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Title_Presentation</span><span class="p">(</span><span class="n">title</span><span class="o">=</span> <span class="s2">&quot;An Useless Title to Show&quot;</span><span class="p">,</span>
+                                    <span class="n">affiliation</span><span class="o">=</span> <span class="s2">&quot;Your Mama University&quot;</span><span class="p">,</span>
                                     <span class="n">author</span><span class="o">=</span> <span class="s2">&quot;A Dashing Monkey&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -431,10 +431,11 @@
 <dt class="sig sig-object py" id="src.text_and_organisation.title_section.Title_Section.show_title">
 <span class="sig-name descname"><span class="pre">show_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">AnimationGroup</span></span></span><a class="reference internal" href="_modules/src/text_and_organisation/title_section.html#Title_Section.show_title"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.text_and_organisation.title_section.Title_Section.show_title" title="Link to this definition">¶</a></dt>
 <dd><p>Simple animation to show the title of the slide. Depending of the decorator choice, the animation will be different.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rf (float, optional): rate_function of the animation. Defaults to linear.</p></li>
-<li><p>rt (float, optional): run_time of the animation. Defaults to 1.</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rf</strong> (<em>-</em>) – rate_function of the animation. Defaults to linear.</p></li>
+<li><p><strong>rt</strong> (<em>-</em>) – run_time of the animation. Defaults to 1.</p></li>
 </ul>
 </dd>
 </dl>
@@ -466,10 +467,11 @@
 <dt class="sig sig-object py" id="src.text_and_organisation.blb.BlB.next_point">
 <span class="sig-name descname"><span class="pre">next_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rf:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">linear&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rt:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Succession</span></span></span><a class="reference internal" href="_modules/src/text_and_organisation/blb.html#BlB.next_point"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.text_and_organisation.blb.BlB.next_point" title="Link to this definition">¶</a></dt>
 <dd><p>Method to iterate over each of the points of the bullets points. For each iteration, makes the n-th bullet point completely black and greys out the rest.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><ul class="simple">
-<li><p>rf (float, optional): rate_function of the animation. Defaults to linear.</p></li>
-<li><p>rt (float, optional): run_time of the animation. Defaults to 1.</p></li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rf</strong> (<em>-</em>) – rate_function of the animation. Defaults to linear.</p></li>
+<li><p><strong>rt</strong> (<em>-</em>) – run_time of the animation. Defaults to 1.</p></li>
 </ul>
 </dd>
 </dl>
