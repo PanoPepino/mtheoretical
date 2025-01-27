@@ -41,6 +41,9 @@ jobs:
         run: | 
           cd docs/
           make html
+      - name: Install gh
+        run: | 
+          pip install gh
       - name: Run ghp-import
         run: | 
           ghp-import -n -p -f docs/_build/html
