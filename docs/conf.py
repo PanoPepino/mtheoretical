@@ -19,6 +19,7 @@ release = '2.0'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
+    'sphinx.ext.napoleon'
 ]
 add_module_names = False
 add_submodule_names = False
