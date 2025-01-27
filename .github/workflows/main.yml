@@ -24,9 +24,6 @@ jobs:
       run: |
         cd docs
         make html
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs/_build/html
+     - name: Run ghp-import
+        run: | 
+          ghp-import -n -p -f docs/_build/html
