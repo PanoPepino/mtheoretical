@@ -37,7 +37,7 @@ class Text_General(VGroup):
                 for point in range(len(important_points)):
                     self.play(important_points.next_point()+2)
 
-              
+    MIERDA              
     """ 
      
     def __init__(self,
