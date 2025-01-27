@@ -32,6 +32,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+      - name: Install manim
+        run: | 
+          pip install manim
         
       - name: Install dependencies
         run: | 
