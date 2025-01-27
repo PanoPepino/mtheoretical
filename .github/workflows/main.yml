@@ -43,7 +43,7 @@ jobs:
           make html
       - name: Install gh
         run: | 
-          pip pip install ghp-import
+          pip install ghp-import
       - name: Run ghp-import
         run: | 
           ghp-import -n -p -f docs/_build/html
