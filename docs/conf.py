@@ -8,8 +8,7 @@
 
 import os
 import sys
-import manim
-import manim_slides
+
 
 sys.path.insert(0, os.path.abspath("../mtheoretical"))
 
