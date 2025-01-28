@@ -1,4 +1,3 @@
 sphinx>=1.3
 furo
-libpango>1.0
 manim>=0.17
