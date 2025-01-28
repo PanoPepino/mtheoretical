@@ -7,7 +7,7 @@ build:
 
  apt_packages:
     - libpango1.0-dev
-    - pangocairo
+    - manimpango
     - ffmpeg
     - graphviz
 
