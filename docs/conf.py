@@ -22,8 +22,6 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',
     'autodocsumm',
-    'sphinx_autodoc_typehints',
-    'myst_parser',
 ]
 add_module_names = False
 add_submodule_names = False
