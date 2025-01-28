@@ -1,4 +1,4 @@
-from manim import *
+#from manim import *
 
 class Text_General(VGroup):
     """Class to load all inputs for the subsequent classes with Text (no equations, no tables. Just bullet points and refs). In this way the template becomes homogenous.
