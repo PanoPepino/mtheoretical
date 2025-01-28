@@ -5,5 +5,10 @@ build:
   tools:
     python: "3.12"
 
+ apt_packages:
+    - libpango1.0-dev
+    - ffmpeg
+    - graphviz
+
 sphinx:
   configuration: docs/conf.py
