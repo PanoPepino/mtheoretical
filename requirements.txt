@@ -1,4 +1,3 @@
 sphinx>=1.3
 furo
-pangocairo>1.2
 manim>=0.17
