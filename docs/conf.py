@@ -1,28 +1,19 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
-
-# -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
 import os
 import sys
 
+sys.path.insert(0, os.path.abspath("../src"))
 
-sys.path.insert(0, os.path.abspath("../mtheoretical"))
-
-project = 'mtheoretical'
+project = 'beanim'
 copyright = '2025, Pano'
 author = 'Pano'
 release = '2.0'
 
 extensions = [
-     'sphinx.ext.autodoc',
+    'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',
-    'autodocsumm',
 ]
+
 add_module_names = False
 add_submodule_names = False
 add_package_names = False

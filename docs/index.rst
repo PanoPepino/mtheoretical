@@ -1,12 +1,12 @@
-.. mtheoretical documentation master file, created by
-   sphinx-quickstart on Thu Jan  9 17:40:31 2025.
+.. beanim documentation master file, created by
+   sphinx-quickstart on Fri Jan 31 17:25:38 2025.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-mtheoretical documentation
-==========================
+beanim documentation
+====================
 
-This webpage contains the documentation for mtheoretical, a (personal) library based in `Manim <https://docs.manim.community/en/stable/>`_ and `Manim-Slides <https://manim-slides.eertmans.be/latest/>`_, with the main focus of providing a straightforward way to craft presentations. Close to the totality of the contents of this library contains objects, its animations and equations related to `String Cosmology Presentations <https://panopepino.github.io/web_page/main_page/slides.html>`_. But the underlying idea is to offer a collection of elements to easily craft new slides with all previous creations gathered in the same libraries. 
+This webpage contains the documentation for beanim (beamer + manim), a (personal) library based in `Manim <https://docs.manim.community/en/stable/>`_ and `Manim-Slides <https://manim-slides.eertmans.be/latest/>`_, with the main focus of providing a straightforward way to craft presentations. Close to the totality of the contents of this library contains objects, its animations and equations related to `String Cosmology Presentations <https://panopepino.github.io/web_page/main_page/slides.html>`_. But the underlying idea is to offer a collection of elements to easily craft new slides with all previous creations gathered in the same libraries. 
 
 These are divided into several sub-packages as:
    - **text_and_organisation**, which contains things like titles, bulleted lists and references. 
@@ -22,21 +22,22 @@ The main idea is to generalise the sub-packages for **refs** and **equations**, 
 .. attention::
 
    - Class Bubble lacks a B-field in the background to be added. Animation of the B-field surfing the brane will be changed.
-   - Equations sub-package will probably become part of [text_and_organisation]. Ideally, a python code will be created such that it reads a .tex file and creates a dictionary, where keys are the equation labels of the .tex. Then, the class reads the dictionary and writes the desired equations given the input.
-   - Same for Ref Class. 
+   - Tools still require some work to avoid issues with \begin{align} and stuff. 
+   - Extract references tool is still required.
    - Think of a way to remove the animation_overrides{} thing. 
    
+
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents of the package:
 
-   src
+   beanim
 
    .. 
       Whenever you add a new class or sub-package, it seems that one has to rewite the corresponding .rst file to add that info.
 
 .. note::
 
-   Thanks to Uwezi, Abulafia, Jeertmans and the Manim Discord for all the help provided during these years. This humble library would not be possible without them. 
+   Thanks to Uwezi, Abulafia, Jeertmans and the Manim Discord for all the help provided during these years. This humble library would not be possible without them.
 

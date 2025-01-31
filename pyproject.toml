@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "beanim"
+version = "1.0"
+dependencies = [
+    "numpy>=1.21.0",
+    "manim>=0.17"
+]
