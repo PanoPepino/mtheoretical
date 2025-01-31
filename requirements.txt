@@ -1,0 +1,4 @@
+manim>= 0.17
+numpy>= 1.21
+furo
+sphinx>= 4.2
