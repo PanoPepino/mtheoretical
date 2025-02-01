@@ -1,6 +1,8 @@
 from manim import *
 from beanim import *
 
+import_template('fancy_mint')
+
 class Example_AdS_Jc(Scene):
     def construct(self):
         show_db= AdS_Jc(vacua_type= "DB")
@@ -17,8 +19,8 @@ class Example_AdS_Jc(Scene):
 
 class Example_Photo_Post_it(Scene):
     def construct(self):
-        photo_1= Photo("pedro.png", decorator_style= "polaroid", caption= "Perro Xanxe")
-        photo_2= Photo("pedro.png", decorator_style= "techno", caption= "Perro Xanxe" )
+        photo_1= Photo("figures/pedro.png", dst= "polaroid", caption= "Perro Xanxe")
+        photo_2= Photo("figures/pedro.png", dst= "techno", caption= "Perro Xanxe" )
         p_it= Post_It(to_dos= ["Random example", "Just Do It!"]).scale(0.9)
         self.add(Group(photo_1, photo_2, p_it).arrange(RIGHT, buff= 0.2).scale_to_fit_width(config.frame_width-1))
 
@@ -35,7 +37,7 @@ class Example_Black_Hole(Scene):
 class Example_Bubble(Scene):
     def construct(self):
         bubble_types= ["empty", "radiation", "em", "strings", "GW"]
-        bubble_group= Group(*[Bubble(bubble_type= style).scale(0.4) for style in bubble_types]).arrange_in_grid(2,3)
+        bubble_group= Group(*[Bubble(bubble_type= my_type).scale(0.4) for my_type in bubble_types]).arrange_in_grid(2,3)
         
         #self.add(bubble_group)
         self.play(AnimationGroup(map(lambda x: x.fade_in_bulk(), bubble_group)))

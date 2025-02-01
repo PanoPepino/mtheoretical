@@ -8,9 +8,8 @@ class Photo(Group):
     
     - **Parameters**::
 
-        - photo (str): path to the desired photo. It assumes your photo is located in a 
-        folder called figures, at the same level of the main script where you call this class.
-        - decorator_style (str, optional): Defaults to "techno".
+        - photo (str): Relative path (with respect to the file where you call this Class) to the desired photo.
+        - dst (str, optional): Defaults to "techno".
             - polaroid: It resembles a polaroid photo, with a pin on top.
             - techno: It is just a frame of the decorator_color.
         - decorator_color (ParsableManimColor, optional): Defaults to RED.
@@ -26,13 +25,13 @@ class Photo(Group):
        
     .. note::
 
-        Captions are only allowed in decorator_style= "polaroid" 
+        Captions are only allowed in dst= "polaroid" 
 
     """
     
     def __init__(self,
                  photo, 
-                 decorator_style: str= "techno", 
+                 dst: str= "techno", 
                  caption: str= "",
                  text_size: float= 30,
                  text_color: ParsableManimColor= BLACK,
@@ -51,13 +50,12 @@ class Photo(Group):
         get_svg_path= path.join(path.dirname(__file__), '../figures/pin.svg')
         
         # Polaroid
-        if decorator_style== "polaroid":
+        if dst== "polaroid":
             r1= Rectangle(width= 2, height= 2.9)
             r2= Rectangle(width= 1.8, height= 2.1).move_to(r1.get_center()).shift(0.3*UP)
             polaroid= Cutout(r1, r2, fill_opacity= 1, color= WHITE, stroke_color= GRAY_A).scale(1.5)
 
-            image= ImageMobject("figures/" + photo).set(z_index= -1).scale_to_fit_width(polaroid.get_width()).move_to(polaroid.get_center() + [0,0.5,0])
-    
+            image= ImageMobject(photo).set(z_index= -1).scale_to_fit_width(polaroid.get_width()).move_to(polaroid.get_center() + [0,0.5,0])
             pin= SVGMobject(get_svg_path).scale(0.2).next_to(polaroid,UP, buff=-0.1).shift(0.2*RIGHT)
             pin.set_color(pin_color)
         
@@ -68,8 +66,8 @@ class Photo(Group):
             self.add(self.chosen_photo)
          
         # Technophoto   
-        if decorator_style== "techno":
-            image= ImageMobject("figures/" + photo).set(z_index= -1)
+        if dst== "techno":
+            image= ImageMobject(photo).set(z_index= -1)
             frame= SurroundingRectangle(image, corner_radius= corner_rad, color= decorator_color, stroke_width= 2*decorator_stroke_w, buff= 0.03)
             self.chosen_photo= Group(frame.set_z_index(3), image)
             self.add(self.chosen_photo)

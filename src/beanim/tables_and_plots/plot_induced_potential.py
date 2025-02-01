@@ -1,7 +1,7 @@
 from .plot_general import *
 from ..my_imports import *
 
-__all__=['Plot_Induced_Potential']
+__all__= ['Plot_Induced_Potential']
 
 
 class Plot_Induced_Potential(Plot_General, Group):

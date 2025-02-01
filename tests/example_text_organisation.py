@@ -1,6 +1,8 @@
 from manim import *
 from beanim import *
 
+import_template('fancy_mint')
+
 class Title_Slide(Scene):
     def construct(self):
         self.add(Title_Presentation("An Useless Title to Show", "Your Mama University", author= "A Dashing Monkey"))
