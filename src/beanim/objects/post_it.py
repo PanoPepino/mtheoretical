@@ -16,8 +16,8 @@ class Post_It(Group):
     
     - **Example**::
 
-        from ..my_imports import *
-        from mtheoretical import *
+        from manim  import *
+        from beanim import *
 
         class Example_Photo_Post_it(Scene):
         def construct(self):

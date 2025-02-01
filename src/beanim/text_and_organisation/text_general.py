@@ -24,8 +24,8 @@ class Text_General(VGroup):
 
     - An **Example** of how text and organisation elements look like is::
 
-        from ..my_imports import *
-        from mtheoretical import *
+        from manim  import *
+        from beanim import *
 
         class Generic_Slide(Scene):
             def construct(self):

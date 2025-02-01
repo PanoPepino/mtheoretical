@@ -98,11 +98,13 @@ class Plot_Induced_Potential(Plot_General, Group):
                   rf: float= linear)-> Animation:
         """
 
-        Args:
+        Args::
+
             - rt (float, optional): Defaults to 2.
             - rf (float, optional): Defaults to linear.
 
-        Returns:
+        Returns::
+        
             Animation: Writes the original potential.
         """
         
@@ -113,11 +115,13 @@ class Plot_Induced_Potential(Plot_General, Group):
                   rf: float= linear)-> Animation:
         """
 
-        Args:
+        Args::
+
             - rt (float, optional): Defaults to 2.
             - rf (float, optional): Defaults to linear.
 
-        Returns:
+        Returns::
+        
             Animation: Shows the potential with extra barrier of the angular momentum.
         """
         
@@ -130,11 +134,13 @@ class Plot_Induced_Potential(Plot_General, Group):
                   rf: float= linear)-> Succession:
         """
 
-        Args:
+        Args::
+
             - rt (float, optional): Defaults to 0.5.
             - rf (float, optional): Defaults to linear.
 
-        Returns:
+        Returns::
+        
             Animation: Moves the position in the potential to the outer horizon.
         """
         
@@ -146,11 +152,13 @@ class Plot_Induced_Potential(Plot_General, Group):
                   rf: float= linear)-> Animation:
         """
 
-        Args:
+        Args::
+
             - rt (float, optional): Defaults to 0.5.
             - rf (float, optional): Defaults to linear.
 
-        Returns:
+        Returns::
+        
             Animation: Takes the brane to the minimum of the potential.
         """
         return self.pos_track.animate(run_time= rt, rate_func= rf).set_value(2.4)
@@ -160,11 +168,13 @@ class Plot_Induced_Potential(Plot_General, Group):
                rf: float= linear)-> Succession:
         """
 
-        Args:
+        Args::
+
             - rt (float, optional): Defaults to 4.
             - rf (float, optional): Defaults to linear.
 
-        Returns:
+        Returns::
+        
             Succession: Makes the system bounce in the potential.
         """
         
@@ -177,11 +187,13 @@ class Plot_Induced_Potential(Plot_General, Group):
                           rf: float= linear)-> Succession:
         """
 
-        Args:
+        Args::
+
             - rt (float, optional): Defaults to 6.
             - rf (float, optional): Defaults to linear.
 
-        Returns:
+        Returns::
+        
             Succession: Shows the modified potential to add the presence of the cosmological constant and then expand the bubble forever.
         """
         

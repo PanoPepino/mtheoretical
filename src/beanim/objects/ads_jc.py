@@ -14,8 +14,8 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
     
     - An **Example** of how this class works::
 
-        from ..my_imports import *
-        from mtheoretical import *
+        from manim  import *
+        from beanim import *
 
         class Example_AdS_Jc(Scene):
             def construct(self):
@@ -90,10 +90,12 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
 
         Args::
 
+
             - rt (float, optional): run_time animation. Defaults to 1.
             - rf (float, optioanl): rate function. Defaults to linear.
 
         Returns::
+
 
             - Animation: FadeIn animation of the group without the arrow.
 
@@ -105,12 +107,14 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
                rt: float= 2,
                rf: float= linear)-> Animation: #The arrow associates this method with a class animation.
         """
-        Args:
+        Args::
+
 
             - rt (float, optional): run_time animation. Defaults to 1.
             - rf (float, optioanl): rate function. Defaults to linear.
 
-        Returns:
+        Returns::
+
 
             - Animation: FadeIn the arrow of the group.
 
@@ -122,11 +126,13 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
                rt: float= 2,
                rf= linear)-> Succession: # The arrow associated this method with a class animation.
         """
-        Args:
+        Args::
+
             - rt (float, optional): run_time animation. Defaults to 1.
             - rf (float, optioanl): rate function. Defaults to linear.
 
-        Returns:
+        Returns::
+
             - Animation: Removes outside vacuum and bend over the Z2 sym to simulate the action of the self.symmetry.
 
         .. note::
@@ -144,11 +150,13 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
                 rt: float= 2,
                 rf= linear)-> Succession:
         """
-        Args:
+        Args::
+
             - rt (float, optional): Defaults to 1.
             - rf (_vacua_type_, optional): Defaults to linear.
 
-        Returns:
+        Returns::
+
             - Animation: Restores previous symmetry.
 
         """
@@ -162,11 +170,13 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
                      rt: float= 2,
                      rf= linear)-> Succession:
         """
-        Args:
+        Args::
+
             - rt (float, optional): Defaults to 1.
             - rf (_type_, optional): Defaults to linear.
 
-        Returns:
+        Returns::
+
            - Animation: Shows the behaviour of the normal vector across the vacua in the RS model.
 
         """
@@ -181,11 +191,13 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
                      rt: float= 2,
                      rf= linear)-> Succession:
         """
-        Args:
+        Args::
+
             - rt (float, optional): Defaults to 1.
             - rf (_type_, optional): Defaults to linear.
 
-        Returns:
+        Returns::
+
             - Animation: Shows the behaviour of the normal vector across the vacua in the DB model.
         """
         

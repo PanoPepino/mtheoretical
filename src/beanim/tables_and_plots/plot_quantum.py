@@ -12,8 +12,8 @@ class Plot_Quantum(Plot_General, VGroup):
 
     - **Example**::
 
-        from ..my_imports import *
-        from mtheoretical import *
+        from manim  import *
+        from beanim import *
 
         class Example_Plot_Q(Scene):
             def construct(self):
@@ -87,11 +87,13 @@ class Plot_Quantum(Plot_General, VGroup):
                               rf: float= linear)-> Succession:
         """
 
-        Args:
+        Args::
+
             - rt (float, optional): Defaults to 2.
             - rf (float, optional): Defaults to linear.
 
-        Returns:
+        Returns::
+
             Succession: Write both wavefunctions for the discussion and its legend.
         """
         

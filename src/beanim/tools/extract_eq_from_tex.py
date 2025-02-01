@@ -8,10 +8,12 @@ __all__= ['read_tex_file', 'extract_equations','write_dict_to_file']
 def read_tex_file(file_path): #This reads the desired .tex file. I guess it cannot read inputs in the texfile.
     """Function to read the input .tex file.
 
-    Args:
+    Args::
+
         - file_path to the file you would like to read to extract the equations from.
 
-    Returns:
+    Returns::
+    
        - the content, loaded to be manipulated by the rest of the functions.
     """
 
@@ -23,9 +25,11 @@ def read_tex_file(file_path): #This reads the desired .tex file. I guess it cann
 def extract_equations(tex_content): # The patterns to look for.
     """Main function to extract equations and their labels from the chosen .tex file.
 
-    Args:
+    Args::
+
         - tex_content: The .tex file to read. 
-    Returns:
+    Returns::
+    
         - dictionary: The set of equations with their keys (the labels of each equation in the .tex file)
     
     - An **Example **::
@@ -61,7 +65,8 @@ def extract_equations(tex_content): # The patterns to look for.
 def write_dict_to_file(dictionary, output_file_name):
     """This function takes the extracted dictionary and pours it down in .txt file.
 
-    Args:
+    Args::
+
         - dictionary: it eats equations, the dictionary of the previous function.
         - output_file_name: it spits out a .txt file with the dictionary written in the right way.
     """

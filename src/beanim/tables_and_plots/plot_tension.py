@@ -12,8 +12,8 @@ class Plot_Lambda_Tension(Plot_General, VGroup):
 
     - **Example**::
 
-        from ..my_imports import *
-        from mtheoretical import *
+        from manim import *
+        from beanim import *
 
         class Example_Plot_Tension(Scene):
             def construct(self):
@@ -85,11 +85,13 @@ class Plot_Lambda_Tension(Plot_General, VGroup):
                         rt: float= 1,
                         rf: float= linear)-> Succession:
         """
-        Args:
+        Args::
+
             - rt (float, optional): Defaults to 1.
             - rf (float, optional): Defaults to linear.
 
-        Returns:
+        Returns::
+
             Succession: Write the function for the tension of the brane as a function of the AdS scale.
         """
         

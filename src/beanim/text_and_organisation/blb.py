@@ -36,7 +36,8 @@ class BlB(Text_General, Group):
                     rt: float= 1)-> Succession:
         """Method to iterate over each of the points of the bullets points. For each iteration, makes the n-th bullet point completely black and greys out the rest.
 
-        Args:
+        Args::
+        
             - rf (float, optional): rate_function of the animation. Defaults to linear.
             - rt (float, optional): run_time of the animation. Defaults to 1.
 

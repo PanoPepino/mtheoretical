@@ -18,8 +18,8 @@ class Table_Bh_Embedding(Table_General, Group):
 
     - **Example**::
 
-        from manim import*
-        from mtheoretical import *
+        from manim import *
+        from beanim import *
 
         class Example_Table_Bh_Embedding(Scene):
             def construct(self):
@@ -153,11 +153,14 @@ class Table_Bh_Embedding(Table_General, Group):
                          rf: float= rate_functions.linear)-> Animation:
         """
 
-        Args:
+        Args::
+        
             - rt (float, optional): Defaults to 3.
             - rf (float, optional): Defaults to rate_functions.linear.
 
-        Returns: Animation to move the brane through the AdS throat.
+        Returns::
+            
+            Animation to move the brane through the AdS throat.
 
         """
         
@@ -168,11 +171,14 @@ class Table_Bh_Embedding(Table_General, Group):
                      rf: float= rate_functions.linear)-> AnimationGroup:
         """
 
-        Args:
+        Args::
+        
             - rt (float, optional): Defaults to 3.
             - rf (float, optional): Defaults to rate_functions.linear.
 
-        Returns: To move the brane through the compact dimensions.
+        Returns::
+            
+            To move the brane through the compact dimensions.
         """
         
         return AnimationGroup(*[MoveAlongPath(self.compact_dim[-i][-1], self.compact_dim[-i][0], rate_functions= rf, run_time= rt) for i in range(1,4)])
@@ -182,11 +188,14 @@ class Table_Bh_Embedding(Table_General, Group):
                  rf: float= rate_functions.linear)-> AnimationGroup:
         """
 
-        Args:
+        Args::
+        
             - rt (float, optional): Defaults to 3.
             - rf (float, optional): Defaults to rate_functions.linear.
 
-        Returns: To move the brane through all coordinates.
+        Returns::
+            
+            To move the brane through all coordinates.
 
         """
         

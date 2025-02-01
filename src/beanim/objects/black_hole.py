@@ -24,8 +24,8 @@ class Black_Hole(Brane_General, VGroup):
 
     - **Example**::
 
-        from ..my_imports import *
-        from mtheoretical import *
+        from manim  import *
+        from beanim import *
 
         class Example_Black_Hole(Scene):
             def construct(self):
@@ -75,13 +75,13 @@ class Black_Hole(Brane_General, VGroup):
                   scaling: float= 1.1)-> Animation:
         """
 
-        Args:
+        Args::
 
             - rt (float, optional): Run time animation. Defaults to 3.
             - rf (float, optional): Rate funciton. Defaults to linear.
             - scaling (float, optional): How much it scales. Defaults to 1.1.
 
-        Returns:
+        Returns::
 
             - Animation: Nucleation of the brane through the horizon of the black hole.
         """
@@ -93,13 +93,13 @@ class Black_Hole(Brane_General, VGroup):
                   rf: float= linear,
                   scaling: float= 2.5)-> Animation:
         """
-        Args:
+        Args::
 
             - rt (float, optional): Defaults to 3.
             - rf (float, optional): Defaults to linear.
             - scaling (float, optional): Defaults to 2.5.
 
-        Returns:
+        Returns::
         
             - Animation: Expansion of the brane.
         """

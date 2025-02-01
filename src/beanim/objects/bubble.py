@@ -42,8 +42,8 @@ class Bubble(Brane_General, Vacuum_General, Group):
 
     - **Examples**::
 
-        from ..my_imports import *
-        from mtheoretical import *
+        from manim  import *
+        from beanim import *
 
         class Example_Bubble(Scene):
             def construct(self):
@@ -183,11 +183,13 @@ class Bubble(Brane_General, Vacuum_General, Group):
             rt: float= 1,
             rf: float=  linear)-> Animation: # The arrow associates this method with a class animation.
         """
-        Args:
+        Args::
+
             - rt (float, optional): run_time animation. Defaults to 1.
             - rf (float, optioanl): rate function. Defaults to linear.
 
-        Returns:
+        Returns::
+
             - Animation: Returns the creation of the bulk box and the value of the cosmological constant outside.
         """
         if self.bubble_type== "energy_discussion":
@@ -207,11 +209,13 @@ class Bubble(Brane_General, Vacuum_General, Group):
 
             This method only works with energy_discussion.
 
-        Args:
+        Args::
+
             - rt (float, optional): Defaults to 2.
             - rf (float, optional): Defaults to linear.
 
-        Returns:
+        Returns::
+
             - Animation: The creation of the bubble fails due to lack of energy.
         """
         return AnimationGroup(
@@ -222,11 +226,13 @@ class Bubble(Brane_General, Vacuum_General, Group):
             rt: float= 0.2,
             rf: float= linear)-> Succession: #The arrow associates this method with a class succession.
         """
-        Args:
+        Args::
+
             - rt (float, optional): run_time animation. Defaults to 1.
             - rf (float, optioanl): rate function. Defaults to linear.
 
-        Returns:
+        Returns::
+
             - Animation: Shows the creation of the bubble and its inside value of the scale curvature.
         """
         if self.bubble_type== "energy_discussion":
@@ -265,12 +271,14 @@ class Bubble(Brane_General, Vacuum_General, Group):
             rf: float= linear,
             sca: float= 2.5)-> AnimationGroup: #The arrow associates this method with a class animation.
         """
-        Args:
+        Args::
+
             - rt (float, optional): run_time animation. Defaults to 6.
             - rf (float, optional): rate function. Defaults to linear.
             - sca (float, optional): size for the scaling of the brane.
 
-        Returns:
+        Returns::
+
             - Animation: Returns the expansion of the bubble. Denpeding on the type of bubble, 
             it automatically shows the evolution of energy densities in the bulk.
         """
@@ -296,11 +304,13 @@ class Bubble(Brane_General, Vacuum_General, Group):
             rt: float= 1,
             rf: float= linear)-> Succession:
         """
-        Args:
+        Args::
+
             - rt (float, optional): run_time animation. Defaults to 1.
             - rf (float, optional): rate function. Defaults to linear.
 
-        Returns:
+        Returns::
+
             - Succession: Shows the time dependence of the radius of the bubble.
         """
         

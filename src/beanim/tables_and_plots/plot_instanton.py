@@ -12,8 +12,8 @@ class Plot_Instanton(Plot_General, Group):
   
     - **Example**::
 
-        from ..my_imports import *
-        from mtheoretical import *
+        from manim  import *
+        from beanim import *
 
         class Example_Plot_Instanton(Scene):
             def construct(self):
@@ -78,11 +78,13 @@ class Plot_Instanton(Plot_General, Group):
                         rf: float= linear)-> Animation:
         """
 
-        Args:
+        Args::
+
             - rt (float, optional): Defaults to 0.5.
             - rf (float, optional): Defaults to linear.
 
-        Returns:
+        Returns::
+
             Animation: Fades the field position in.
         """
         return FadeIn(self.field_position, run_time= rt, rate_func= rf)
@@ -92,11 +94,13 @@ class Plot_Instanton(Plot_General, Group):
               rf: float= linear)-> Animation:
         """
 
-        Args:
+        Args::
+
             - rt (float, optional): Defaults to 0.5.
             - rf (float, optional): Defaults to linear.
 
-        Returns:
+        Returns::
+
             Animation: Describes the tunneling process in the potential.
         """
         

@@ -4,13 +4,13 @@ __all__= ['import_template']
 
 #The following lines allow you to choose between different templates for each of the objects of the presentation.
 #If you choose no template from the list, manim will render the default configuration (B/N).
-#If you would like to create a new template, go to mtheoretical/src/templates and create a new template.
+#If you would like to create a new template, go to beanim/src/templates and create a new template.
 #Modify such template at your will and add it allowed_modules in this script and to the print list.
 
 def import_template(module_name):
     """This function will be called everytime you run manim. It allows you to choose between, so far, two different templates, plus a default one in B/W.
 
-    Returns:
+    Returns::
         - The chosen template homogenised over all your objects.
     """
 

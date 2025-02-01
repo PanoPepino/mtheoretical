@@ -58,7 +58,8 @@ class Title_Section(Title_General, VGroup):
         """Simple animation to show the title of the slide. Depending of the decorator choice, the animation will be different.
 
 
-        Args:
+        Args::
+        
             - rf (float, optional): rate_function of the animation. Defaults to linear.
             - rt (float, optional): run_time of the animation. Defaults to 1.
         

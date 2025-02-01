@@ -15,8 +15,8 @@ class Title_Presentation(Title_General, VGroup):
 
     - An **Example** of this is::
 
-        from ..my_imports import *
-        from mtheoretical import *
+        from manim  import *
+        from beanim import *
 
         class Title_Slide(Scene):
             def construct(self):

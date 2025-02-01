@@ -43,10 +43,12 @@ class Eq_General(VGroup):
         def split_dictionary_path(input_string):
             """This method splits a given string only in the last "/" symbol.
 
-            Args:
+            Args::
+
                 - input_string (str)
 
-            Returns:
+            Returns::
+            
                 list: ["everything up to the last "/" symbol, "the remaining"]
 
             - An **Example**::
@@ -63,11 +65,13 @@ class Eq_General(VGroup):
         def check_file_exists(directory, filename):
             """This methods checks if a given file exists in a given directory.
 
-            Args:
+            Args::
+
                 - directory
                 - filename
 
-            Returns:
+            Returns::
+            
                 True or False
             """
 
