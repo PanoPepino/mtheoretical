@@ -1,4 +1,4 @@
-ABOUT THIS REPOSITORY
+**ABOUT THIS REPOSITORY**
 
 - This repository contains v1.0 of beanim (Beamer + Manim) libraries. It is an improved version, with more straightforward commands and a better folder and files organisation, with more optional parameters and the cleanest documentation I am able to achieve.
 
@@ -20,13 +20,13 @@ You can find examples of the overall results [here](https://panopepino.github.io
 
 -----------------------------------------------------------------------
 
-In order to install this library, do the following:
+In order to **install** this library, do the following:
 
 - clone this repository in your desired folder.
 - in your terminal, navigate to that folder and pip install .
 
 
-- TO DO:
+**TO DO**:
 
 - Include old animations:
     - Diagrams (gravity and EM)
@@ -41,6 +41,8 @@ In order to install this library, do the following:
     - Rewrite code to extract all the equations of a .tex file in the form of a dictionary {eq_label: 'equation'}, but taking into account
     things like \begin{split}, \begin{aligned} and so on. At the moment it only works with regular \begin{equation} enviroment.
     - Think how to choose among equations in the package and equations from outside.
+    - More general optimisation of the pathing within the package.
+    - A cleaner main.yml file to deploy the documentation.
 
 - Changes to make in webpage:
 
