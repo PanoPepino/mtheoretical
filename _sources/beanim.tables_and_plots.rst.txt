@@ -1,10 +1,9 @@
-beanim.tables\_and\_plots package
+tables and plots
 =================================
 
-Submodules
-----------
 
-beanim.tables\_and\_plots.plot\_general module
+
+plot\_general
 ----------------------------------------------
 
 .. automodule:: beanim.tables_and_plots.plot_general
@@ -12,55 +11,7 @@ beanim.tables\_and\_plots.plot\_general module
    :undoc-members:
    :show-inheritance:
 
-beanim.tables\_and\_plots.plot\_induced\_potential module
----------------------------------------------------------
-
-.. automodule:: beanim.tables_and_plots.plot_induced_potential
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-beanim.tables\_and\_plots.plot\_instanton module
-------------------------------------------------
-
-.. automodule:: beanim.tables_and_plots.plot_instanton
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-beanim.tables\_and\_plots.plot\_quantum module
-----------------------------------------------
-
-.. automodule:: beanim.tables_and_plots.plot_quantum
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-beanim.tables\_and\_plots.plot\_tension module
-----------------------------------------------
-
-.. automodule:: beanim.tables_and_plots.plot_tension
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-beanim.tables\_and\_plots.table\_bh\_embedding module
------------------------------------------------------
-
-.. automodule:: beanim.tables_and_plots.table_bh_embedding
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-beanim.tables\_and\_plots.table\_energy\_scales module
-------------------------------------------------------
-
-.. automodule:: beanim.tables_and_plots.table_energy_scales
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-beanim.tables\_and\_plots.table\_general module
+table\_general
 -----------------------------------------------
 
 .. automodule:: beanim.tables_and_plots.table_general
@@ -68,18 +19,60 @@ beanim.tables\_and\_plots.table\_general module
    :undoc-members:
    :show-inheritance:
 
-beanim.tables\_and\_plots.table\_summary module
------------------------------------------------
+plot\_induced\_potential
+---------------------------------------------------------
 
-.. automodule:: beanim.tables_and_plots.table_summary
+.. automodule:: beanim.tables_and_plots.plot_induced_potential
    :members:
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
+plot\_instanton
+------------------------------------------------
 
-.. automodule:: beanim.tables_and_plots
+.. automodule:: beanim.tables_and_plots.plot_instanton
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+plot\_quantum
+----------------------------------------------
+
+.. automodule:: beanim.tables_and_plots.plot_quantum
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+plot\_tension
+----------------------------------------------
+
+.. automodule:: beanim.tables_and_plots.plot_tension
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+table\_bh\_embedding
+-----------------------------------------------------
+
+.. automodule:: beanim.tables_and_plots.table_bh_embedding
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+table\_energy\_scales
+------------------------------------------------------
+
+.. automodule:: beanim.tables_and_plots.table_energy_scales
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+
+table\_summary
+-----------------------------------------------
+
+.. automodule:: beanim.tables_and_plots.table_summary
    :members:
    :undoc-members:
    :show-inheritance:

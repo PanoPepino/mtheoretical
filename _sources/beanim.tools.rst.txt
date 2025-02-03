@@ -1,10 +1,9 @@
-beanim.tools package
+tools
 ====================
 
-Submodules
-----------
 
-beanim.tools.extract\_eq\_from\_tex module
+
+extract\_eq\_from\_tex
 ------------------------------------------
 
 .. automodule:: beanim.tools.extract_eq_from_tex
@@ -12,7 +11,7 @@ beanim.tools.extract\_eq\_from\_tex module
    :undoc-members:
    :show-inheritance:
 
-beanim.tools.extract\_refs\_from\_bib module
+extract\_refs\_from\_bib
 --------------------------------------------
 
 .. automodule:: beanim.tools.extract_refs_from_bib
@@ -20,10 +19,4 @@ beanim.tools.extract\_refs\_from\_bib module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
 
-.. automodule:: beanim.tools
-   :members:
-   :undoc-members:
-   :show-inheritance:

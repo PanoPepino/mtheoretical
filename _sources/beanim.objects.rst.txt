@@ -1,26 +1,7 @@
-beanim.objects package
+objects
 ======================
 
-Submodules
-----------
-
-beanim.objects.ads\_jc module
------------------------------
-
-.. automodule:: beanim.objects.ads_jc
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-beanim.objects.black\_hole module
----------------------------------
-
-.. automodule:: beanim.objects.black_hole
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-beanim.objects.brane\_general module
+brane\_general
 ------------------------------------
 
 .. automodule:: beanim.objects.brane_general
@@ -28,31 +9,7 @@ beanim.objects.brane\_general module
    :undoc-members:
    :show-inheritance:
 
-beanim.objects.bubble module
-----------------------------
-
-.. automodule:: beanim.objects.bubble
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-beanim.objects.photo module
----------------------------
-
-.. automodule:: beanim.objects.photo
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-beanim.objects.post\_it module
-------------------------------
-
-.. automodule:: beanim.objects.post_it
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-beanim.objects.vacuum\_general module
+vacuum\_general
 -------------------------------------
 
 .. automodule:: beanim.objects.vacuum_general
@@ -60,10 +17,49 @@ beanim.objects.vacuum\_general module
    :undoc-members:
    :show-inheritance:
 
-Module contents
----------------
 
-.. automodule:: beanim.objects
+
+bubble
+----------------------------
+
+.. automodule:: beanim.objects.bubble
    :members:
    :undoc-members:
    :show-inheritance:
+
+
+ads\_jc
+-----------------------------
+
+.. automodule:: beanim.objects.ads_jc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+black\_hole
+---------------------------------
+
+.. automodule:: beanim.objects.black_hole
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+
+photo
+---------------------------
+
+.. automodule:: beanim.objects.photo
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+post\_it
+------------------------------
+
+.. automodule:: beanim.objects.post_it
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
