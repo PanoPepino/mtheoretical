@@ -19,8 +19,8 @@ class Example_AdS_Jc(Scene):
 
 class Example_Photo_Post_it(Scene):
     def construct(self):
-        photo_1= Photo("figures/pedro.png", dst= "polaroid", caption= "Perro Xanxe")
-        photo_2= Photo("figures/pedro.png", dst= "techno", caption= "Perro Xanxe" )
+        photo_1= Photo("figures/pedro.png", decorator_style= "polaroid", caption= "Perro Xanxe")
+        photo_2= Photo("figures/pedro.png", decorator_style= "techno", caption= "Perro Xanxe" )
         p_it= Post_It(to_dos= ["Random example", "Just Do It!"]).scale(0.9)
         self.add(Group(photo_1, photo_2, p_it).arrange(RIGHT, buff= 0.2).scale_to_fit_width(config.frame_width-1))
 

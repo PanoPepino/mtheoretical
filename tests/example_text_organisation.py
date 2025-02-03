@@ -1,7 +1,8 @@
 from manim import *
 from beanim import *
 
-import_template('fancy_mint')
+#import_template('fancy_mint')
+#import_template('dark_depths')
 
 class Title_Slide(Scene):
     def construct(self):

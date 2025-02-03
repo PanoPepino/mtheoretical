@@ -9,7 +9,7 @@ class Photo(Group):
     - **Parameters**::
 
         - photo (str): Relative path (with respect to the file where you call this Class) to the desired photo.
-        - dst (str, optional): Defaults to "techno".
+        - decorator_style (str, optional): Defaults to "techno".
             - polaroid: It resembles a polaroid photo, with a pin on top.
             - techno: It is just a frame of the decorator_color.
         - decorator_color (ParsableManimColor, optional): Defaults to RED.
@@ -25,7 +25,7 @@ class Photo(Group):
        
     .. note::
 
-        Captions are only allowed in dst= "polaroid"
+        Captions are only allowed in decorator_style= "polaroid"
 
     .. attention:
 
@@ -35,7 +35,7 @@ class Photo(Group):
     
     def __init__(self,
                  photo, 
-                 dst: str= "techno", 
+                 decorator_style: str= "techno", 
                  caption: str= "",
                  text_size: float= 30,
                  text_color: ParsableManimColor= BLACK,
@@ -54,7 +54,7 @@ class Photo(Group):
         get_svg_path= path.join(path.dirname(__file__), '../figures/pin.svg')
         
         # Polaroid
-        if dst== "polaroid":
+        if decorator_style== "polaroid":
             r1= Rectangle(width= 2, height= 2.9)
             r2= Rectangle(width= 1.8, height= 2.1).move_to(r1.get_center()).shift(0.3*UP)
             polaroid= Cutout(r1, r2, fill_opacity= 1, color= WHITE, stroke_color= GRAY_A).scale(1.5)
@@ -70,7 +70,7 @@ class Photo(Group):
             self.add(self.chosen_photo)
          
         # Technophoto   
-        if dst== "techno":
+        if decorator_style== "techno":
             image= ImageMobject(photo).set(z_index= -1)
             frame= SurroundingRectangle(image, corner_radius= corner_rad, color= decorator_color, stroke_width= 2*decorator_stroke_w, buff= 0.03)
             self.chosen_photo= Group(frame.set_z_index(3), image)

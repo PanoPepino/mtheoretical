@@ -20,6 +20,10 @@ class Eq_General(VGroup):
         - fill_opa (float, optional): Fill opacity of the surrounding box. Defaults to 0.1.
         - tightness (float, optional): How tight the box around the title is. Defaults to 0.3.
 
+    .. note::
+
+        In case you want to first extract all the equations of a given .tex file in the form of a dictionary, please, check the "tools" package.
+        
     .. attention::
 
         This class requires to think of special methods if the loaded dictionary is load_the_dic. There are several equations there that go in a group.

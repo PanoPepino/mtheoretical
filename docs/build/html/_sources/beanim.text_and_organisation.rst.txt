@@ -1,34 +1,7 @@
-beanim.text\_and\_organisation package
+text and organisation
 ======================================
 
-Submodules
-----------
-
-beanim.text\_and\_organisation.blb module
------------------------------------------
-
-.. automodule:: beanim.text_and_organisation.blb
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-beanim.text\_and\_organisation.eq\_general module
--------------------------------------------------
-
-.. automodule:: beanim.text_and_organisation.eq_general
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-beanim.text\_and\_organisation.refs module
-------------------------------------------
-
-.. automodule:: beanim.text_and_organisation.refs
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-beanim.text\_and\_organisation.text\_general module
+text\_general
 ---------------------------------------------------
 
 .. automodule:: beanim.text_and_organisation.text_general
@@ -36,7 +9,7 @@ beanim.text\_and\_organisation.text\_general module
    :undoc-members:
    :show-inheritance:
 
-beanim.text\_and\_organisation.title\_general module
+title\_general
 ----------------------------------------------------
 
 .. automodule:: beanim.text_and_organisation.title_general
@@ -44,7 +17,33 @@ beanim.text\_and\_organisation.title\_general module
    :undoc-members:
    :show-inheritance:
 
-beanim.text\_and\_organisation.title\_presentation module
+eq\_general
+-------------------------------------------------
+
+.. automodule:: beanim.text_and_organisation.eq_general
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+blb
+-----------------------------------------
+
+.. automodule:: beanim.text_and_organisation.blb
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+refs
+------------------------------------------
+
+.. automodule:: beanim.text_and_organisation.refs
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+
+title\_presentation
 ---------------------------------------------------------
 
 .. automodule:: beanim.text_and_organisation.title_presentation
@@ -52,18 +51,10 @@ beanim.text\_and\_organisation.title\_presentation module
    :undoc-members:
    :show-inheritance:
 
-beanim.text\_and\_organisation.title\_section module
+title\_section
 ----------------------------------------------------
 
 .. automodule:: beanim.text_and_organisation.title_section
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: beanim.text_and_organisation
    :members:
    :undoc-members:
    :show-inheritance:

@@ -16,7 +16,15 @@ ABOUT THIS REPOSITORY
     
 You can find examples of the overall results [here](https://panopepino.github.io/web_page/main_page/slides.html).
 
-- The documentation webpage (ADD HYPERLINK) includes information about the characteristics and examples of each of the classes and their methods included in these libraries. The main reason of its existence is to easily access all objects of these libraries when crafting slides.
+- The [documentation webpage](https://panopepino.github.io/beanim/) includes information about the characteristics and examples of each of the classes and their methods included in these libraries. The main reason of its existence is to easily access all objects of these libraries when crafting slides.
+
+-----------------------------------------------------------------------
+
+In order to install this library, do the following:
+
+- clone this repository in your desired folder.
+- in your terminal, navigate to that folder and pip install .
+
 
 - TO DO:
 
@@ -33,3 +41,7 @@ You can find examples of the overall results [here](https://panopepino.github.io
     - Rewrite code to extract all the equations of a .tex file in the form of a dictionary {eq_label: 'equation'}, but taking into account
     things like \begin{split}, \begin{aligned} and so on. At the moment it only works with regular \begin{equation} enviroment.
     - Think how to choose among equations in the package and equations from outside.
+
+- Changes to make in webpage:
+
+    - Add required configuration in the conf.py file to automatically remove Submodule headings, Module contents at the end of the page, and any name displayed as pkg.sub_pkg.module.

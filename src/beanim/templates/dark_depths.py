@@ -150,7 +150,7 @@ Black_Hole.set_default(
 
 #Random Photo Frame
 Photo.set_default(
-    style= "techno", 
+    decorator_style= "techno", 
     text_size= t_size,
     text_color= t_color,
     decorator_color= h_1,

@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="beanim package" href="beanim.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="text and organisation" href="beanim.text_and_organisation.html" />
 
     <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>Beanim documentation</title>
@@ -200,14 +200,11 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents of the package:</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="beanim.html">beanim package</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of beanim package</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="beanim.objects.html">beanim.objects package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="beanim.tables_and_plots.html">beanim.tables_and_plots package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="beanim.templates.html">beanim.templates package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="beanim.text_and_organisation.html">beanim.text_and_organisation package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="beanim.tools.html">beanim.tools package</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="beanim.text_and_organisation.html">text and organisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beanim.objects.html">objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beanim.tables_and_plots.html">tables and plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beanim.templates.html">templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beanim.tools.html">tools</a></li>
 </ul>
 
 </div>
@@ -253,14 +250,14 @@
 <p>This webpage contains the documentation for beanim (beamer + manim), a (personal) library based in <a class="reference external" href="https://docs.manim.community/en/stable/">Manim</a> and <a class="reference external" href="https://manim-slides.eertmans.be/latest/">Manim-Slides</a>, with the main focus of providing a straightforward way to craft presentations. Close to the totality of the contents of this library contains objects, its animations and equations related to <a class="reference external" href="https://panopepino.github.io/web_page/main_page/slides.html">String Cosmology Presentations</a>. But the underlying idea is to offer a collection of elements to easily craft new slides with all previous creations gathered in the same libraries.</p>
 <dl class="simple">
 <dt>These are divided into several sub-packages as:</dt><dd><ul class="simple">
-<li><p><strong>text_and_organisation</strong>, which contains things like titles, bulleted lists and references.</p></li>
-<li><p><strong>equations</strong>, where you can find, I do not know, perhaps some fancy chocolate(?)</p></li>
-<li><p><strong>tables_and_plots</strong>, containing any plots and tables required.</p></li>
+<li><p><strong>text_and_organisation</strong>, which contains things like titles, bulleted lists, equations and references.</p></li>
+<li><p><strong>tables_and_plots</strong>, containing plots and tables related to string cosmology research.</p></li>
 <li><p><strong>objects</strong>, which mainly contains 2D mobjects to be animated and discussed in the slides.</p></li>
+<li><p><strong>templates</strong>, which includes a method to include different slide templates depending on the input.</p></li>
+<li><p><strong>tools</strong>, where you will find useful code to extract equations from .tex files and references from .bib files.</p></li>
 </ul>
 </dd>
 </dl>
-<p>The main idea is to generalise the sub-packages for <strong>refs</strong> and <strong>equations</strong>, so any .bib and .tex file can be feed to some lines of code to spit out dictionaries to directly use in the slides.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>These libraries will become updated as new objects and set of equations are required for presentations of the future. It can also be that some of the structure and notation gets modified.</p>
@@ -269,18 +266,19 @@
 <p class="admonition-title">Attention</p>
 <ul class="simple">
 <li><p>Class Bubble lacks a B-field in the background to be added. Animation of the B-field surfing the brane will be changed.</p></li>
-<li><p>Tools still require some work to avoid issues with begin{align} and stuff.</p></li>
-<li><p>Extract references tool is still required.</p></li>
-<li><p>Think of a way to remove the animation_overrides{} thing.</p></li>
+<li><p>Extract equation requires work to avoid issues with \begin{align} and stuff.</p></li>
+<li><p>Extract references tool not developed yet.</p></li>
+<li><p>Think of a way to remove the animation_overrides{} method in each class.</p></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents of the package:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="beanim.html">beanim package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="beanim.html#subpackages">Subpackages</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="beanim.text_and_organisation.html">text and organisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beanim.objects.html">objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beanim.tables_and_plots.html">tables and plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beanim.templates.html">templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="beanim.tools.html">tools</a></li>
 </ul>
 </div>
 <div class="admonition note">
@@ -294,12 +292,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="beanim.html">
+          <a class="next-page" href="beanim.text_and_organisation.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">beanim package</div>
+                <div class="title">text and organisation</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
