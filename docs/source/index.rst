@@ -20,7 +20,6 @@ These are divided into several sub-packages as:
 
    - Class Bubble lacks a B-field in the background to be added. Animation of the B-field surfing the brane will be changed.
    - Extract equation requires work to avoid issues with \\begin{align} and stuff. 
-   - Extract references tool not developed yet.
    
 
 
@@ -34,6 +33,7 @@ These are divided into several sub-packages as:
    beanim.tables_and_plots
    beanim.templates
    beanim.tools
+   
 
   
 

@@ -1,6 +1,9 @@
 tools
 ====================
 
+.. note::
+
+   It could be recommendable to run these two function as python scripts from the terminal. The .txt files will be created. Then, run manim render with the desired equations and citations.
 
 
 extract\_eq\_from\_tex
