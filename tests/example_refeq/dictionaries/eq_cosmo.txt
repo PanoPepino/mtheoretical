@@ -1,5 +1,5 @@
 {
-            
+
             'fried ind': '\\left(\\frac{\\dot{a}}{a}\\right)^{2}= -\\frac{1}{a^{2}} + \\frac{8 \\pi}{3} 2  \\left(\\frac{1}{k_{-}}-\\frac{1}{k_{+}}\\right)^{-1} G_{5} \\left(\\sigma_{cr}- \\sigma\\right) + \\mathcal{O}(\\epsilon^{2})',
             'fried ind usual': '\\left(\\frac{\\dot{a}}{a}\\right)^{2}= -\\frac{1}{a^{2}} + \\frac{8 \\pi}{3} G_{4} \\rho_{\\Lambda} + \\mathcal{O}(\\epsilon^{2})',
             'fried ind matter': '\\left(\\frac{\\dot{a}}{a}\\right)^{2}= -\\frac{1}{a^{2}} + \\frac{8 \\pi}{3} G_{4} \\left(\\Lambda_{4} + \\frac{1}{2 \\pi^{2}}\\left(\\tfrac{M_{+}}{k_{+}}- \\tfrac{M_{-}}{k_{-}}\\right)\\frac{1}{a^{4}}\\right)',

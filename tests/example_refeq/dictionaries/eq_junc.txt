@@ -1,6 +1,6 @@
 {
-            
-            'junc generic 1': 'h_{ab}^{(+)}= h_{ab}^{(-)}', 
+
+            'junc generic 1': 'h_{ab}^{(+)}= h_{ab}^{(-)}',
             'junc generic 2': 'S_{ab}= \\kappa_{5}^{-1}\\left([\\Delta K_{ab}]^{+}_{-} -[\\Delta K]^{+}_{-}h_{ab}\\right)',
             'junc db':  'S_{ab}= \\kappa_{5}^{-1}\\left([K_{ab}^{(+)} - K_{ab}^{(-)}]-[K^{(+)} - K^{(-)}]h_{ab}\\right)',
             'crit tension rs': '\\sigma= \\frac{3 \\left(k + k \\right)}{\\kappa_{5}}',
