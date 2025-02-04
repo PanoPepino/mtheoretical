@@ -1,11 +1,13 @@
-__all__= ['extract_citation']
-
 #The following code has been crafted with help of AI. Modifications introduced by not so intelligent human.
 
 from pybtex.database import parse_file #libraries to manipulate references
 
+__all__= ['extract_citation']
+
 def extract_citation(bib_file, your_family_name, initials, output_file_name):
-    """Extract family name of authors from a given .bib file into a dictionary.
+    """
+    
+    Extract family name of authors from a given .bib file into a dictionary.
     
     Args::
 
