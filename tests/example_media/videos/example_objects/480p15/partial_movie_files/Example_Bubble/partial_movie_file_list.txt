@@ -1,4 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:/Users/pano/Library/Mobile Documents/com~apple~CloudDocs/coding/manim_stuff/beanim_pkg/tests/example_media/videos/example_objects/480p15/partial_movie_files/Example_Bubble/uncached_00000.mp4'
-file 'file:/Users/pano/Library/Mobile Documents/com~apple~CloudDocs/coding/manim_stuff/beanim_pkg/tests/example_media/videos/example_objects/480p15/partial_movie_files/Example_Bubble/uncached_00001.mp4'
-file 'file:/Users/pano/Library/Mobile Documents/com~apple~CloudDocs/coding/manim_stuff/beanim_pkg/tests/example_media/videos/example_objects/480p15/partial_movie_files/Example_Bubble/uncached_00002.mp4'

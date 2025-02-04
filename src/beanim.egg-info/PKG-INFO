@@ -1,0 +1,5 @@
+Metadata-Version: 2.2
+Name: beanim
+Version: 1.0
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: manim>=0.17
