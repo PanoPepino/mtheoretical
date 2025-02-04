@@ -4,8 +4,6 @@ import re #Some fancy libraries to find patterns. It seems so.
 
 __all__= ['extract_equations']
 
-import re
-
 def extract_equations(tex_file, output_file):
     """
 
@@ -25,7 +23,6 @@ def extract_equations(tex_file, output_file):
         from beanim import *
         extract_equation('path/to/file', 'output_file_name')
 
-    This is a test.
 
     """
     with open(tex_file, 'r', encoding='utf-8') as f:
