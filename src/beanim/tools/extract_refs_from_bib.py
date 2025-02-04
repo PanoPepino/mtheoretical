@@ -1,4 +1,4 @@
-__all__=['extract_citation']
+__all__= ['extract_citation']
 
 #The following code has been crafted with help of AI. Modifications introduced by not so intelligent human.
 
