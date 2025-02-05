@@ -61,5 +61,3 @@ post\_it
    :members:
    :undoc-members:
    :show-inheritance:
-
-
