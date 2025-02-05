@@ -12,8 +12,8 @@
         - To extract equations and references from .tex and .bib files.
         - Simple structures to organise your slides with Titles, bulleted lists, general equations, etc.
 
-    - And then my personal libraries to generate animations to present my scientific research. 
-    
+    - And then my personal libraries to generate animations to present my scientific research.
+
 You can find examples of the overall results [here](https://panopepino.github.io/web_page/main_page/slides.html).
 
 - The [documentation webpage](https://panopepino.github.io/beanim/) includes information about the characteristics and examples of each of the classes and their methods included in these libraries. The main reason of its existence is to easily access all objects of these libraries when crafting slides.

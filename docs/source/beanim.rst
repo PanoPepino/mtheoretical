@@ -12,4 +12,3 @@ Subpackages
    beanim.tables_and_plots
    beanim.templates
    beanim.tools
-

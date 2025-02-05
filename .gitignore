@@ -1,0 +1,15 @@
+# Python files
+__pycache__/
+/env
+/build
+/dist
+*.egg-info/
+
+# Docs
+docs/build/
+
+# Manim
+tests/example_media/
+
+# Others
+.DS_Store

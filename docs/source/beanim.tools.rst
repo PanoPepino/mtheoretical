@@ -21,5 +21,3 @@ extract\_refs\_from\_bib
    :members:
    :undoc-members:
    :show-inheritance:
-
-
