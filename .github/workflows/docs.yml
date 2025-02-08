@@ -31,10 +31,11 @@ jobs:
       run: |
         pip install -e .
 
-    - name: Check special package instalation installation
+    - name: Check special package instalation
       run: |
         pip list | grep pybtex
-        
+        pip list | grep sphinxcontrib-video
+
 
 
     - name: Build docs
