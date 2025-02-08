@@ -12,7 +12,7 @@ author = "Pano"
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
-    "sphinxcontrib-video"
+    "sphinxcontrib.video"
 ]
 
 autodoc_default_options = {

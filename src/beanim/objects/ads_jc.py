@@ -38,6 +38,7 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
     Testting video!!!
 
     .. video:: media/videos/ads_jc.mp4
+        :loop:
 
     - **Methods**::
 
