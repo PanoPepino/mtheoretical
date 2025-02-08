@@ -1,3 +1,8 @@
+import os
+import sys
+sys.path.insert(0, os.path.abspath('../..'))  # Adjust path to match project structure
+
+
 # Project information
 project = "Beanim"
 copyright = "2025, Pano"
