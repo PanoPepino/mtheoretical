@@ -6,6 +6,7 @@ build:
  apt_packages:
     - libpango1.0-dev
     - python3-pybtex
+    - sphinxcontrib-video
 sphinx:
   builder: html
   configuration: docs/source/conf.py
