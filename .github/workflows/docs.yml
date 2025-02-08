@@ -26,7 +26,7 @@ jobs:
       run: |
         pip install pybtex
 
-      - name: Install this package
+    - name: Install this package
       run: |
         pip install -e .
 
