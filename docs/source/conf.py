@@ -12,7 +12,7 @@ author = "Pano"
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
-    "sphinxcontrib.video"
+    "sphinxcontrib.video",
 ]
 
 autodoc_default_options = {
@@ -22,7 +22,7 @@ autodoc_default_options = {
     "exclude-members": "__init__",
 }
 
-autodoc_mock_imports = ["pybtex"]
+autodoc_mock_imports = ["pybtex", "sphinxcontrib.video"]
 
 # Exclude module contents at the end of each page
 toc_object_entries_show_parents = "hide"
