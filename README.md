@@ -1,5 +1,4 @@
-**ABOUT THIS REPOSITORY**
-
+## ABOUT BEANIM
 - This repository contains v1.0 of beanim (Beamer + Manim) libraries. It is an improved version of the old mtheoretical, with more straightforward commands and a better folder and files organisation, with more optional parameters and the cleanest documentation I am able to achieve.
 
 - These libraries are supposed to be used with [manim-slides](https://manim-slides.eertmans.be/latest/) and [manim](https://www.manim.community).
@@ -47,14 +46,18 @@ from beanim import *
 - Code new animations:
     - (Non)-Normalisable modes and the bubble expanding.
     - Smooth transition between global and Poincaré coordinates for the bubble.
+    - Method in title_section to display title at center, shrink and place UR.
 
 - General Python code to write:
     - Rewrite code to extract all the equations of a .tex file in the form of a dictionary {eq_label: 'equation'}, but taking into account
     things like \begin{split}, \begin{aligned} and so on. At the moment it only works with regular \begin{equation} enviroment.
     - Think how to choose among equations in the package and equations from outside.
-
+    - Two more templates
+    - Allow choosing upper title for bulleted lists.
+    
 - Changes to make for webpage deploy:
 
     - Add required configuration in the conf.py file to automatically remove Submodule headings, Module contents at the end of the page, and any name displayed as pkg.sub_pkg.module.
     - Fix issue with sphinxcontrib.video, so that videos can be deploy in sphinx.
+        - Add videos for each big class, specifying the commands.
     - Think how to add miniature slides as Manimslides webpage.

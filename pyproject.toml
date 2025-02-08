@@ -3,7 +3,7 @@ build-backend = "hatchling.build"
 requires = ["hatchling", "hatch-fancy-pypi-readme"]
 
 [project]
-authors = [{name = "Daniel Panizo", email = "panizofisico@gmai.com"}]
+authors = [{name = "Daniel Panizo", email = "panizofisico@gmail.com"}]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python :: 3.9",
@@ -12,7 +12,7 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Topic :: Multimedia :: Graphics",
   "Operating System :: OS Independent",
-]  
+] 
 
 # In case new packages are required in the future, add them here
 
@@ -24,7 +24,8 @@ dependencies = [
 description = "Set of libraries to obtain a similar beamer-like experience while using manim and manim-slides"
 dynamic = ["readme", "version"]
 keywords = ["manim", "slides", "presentations", "beamer"]
-license = "MIT"  # TODO: choose a LICENSE (e.g., MIT) and create LICENSE.md
+license = "MIT"  
+license-files = ["LICENSE*"]  # Glob pattern for license files
 name = "beanim" 
 requires-python = ">=3.9"
 

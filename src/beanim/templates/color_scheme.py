@@ -26,23 +26,23 @@ def import_template(module_name):
 
     **B/W**
 
-    .. image:: media/images/bw_1.png
+    .. image:: media/images/t_slide_bw.png
         :width: 49%
-    .. image:: media/images/bw_2.png
+    .. image:: media/images/g_slide_bw.png
         :width: 49%
 
     **fancy_mint**
 
-    .. image:: media/images/fm_1.png
+    .. image:: media/images/t_slide_fm.png
         :width: 49%
-    .. image:: media/images/fm_2.png
+    .. image:: media/images/g_slide_fm.png
         :width: 49%
 
     **dark_depths**
 
-    .. image:: media/images/dd_1.png
+    .. image:: media/images/t_slide_dd.png
         :width: 49%
-    .. image:: media/images/dd_2.png
+    .. image:: media/images/g_slide_dd.png
         :width: 49%
 
     """
