@@ -12,7 +12,6 @@ author = "Pano"
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
-    "sphinxcontrib.bibtex"
 ]
 
 autodoc_default_options = {
