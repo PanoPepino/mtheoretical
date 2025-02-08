@@ -34,6 +34,8 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
                 self.play(show.animate.shift(2*UP))
                 self.play(FadeOut(show))
 
+    .. video :: media/videos/ads_jc.mp4
+    
     - **Methods**::
 
     """
