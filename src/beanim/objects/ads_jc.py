@@ -33,9 +33,12 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
                                          show[1].show_n_vector_rs(rt= 5)))
                 self.play(show.animate.shift(2*UP))
                 self.play(FadeOut(show))
-
-    .. video :: media/videos/ads_jc.mp4
     
+                
+    Testting video!!!
+
+    .. video:: media/videos/ads_jc.mp4
+
     - **Methods**::
 
     """
