@@ -1,6 +1,7 @@
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../..'))  # Adjust path to match project structure
+
+sys.path.insert(0, os.path.abspath("../.."))  # Adjust path to match project structure
 
 
 # Project information
@@ -12,7 +13,7 @@ author = "Pano"
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
-    #"sphinxcontrib.video", This requires to be fixed
+    # "sphinxcontrib.video", This requires to be fixed
 ]
 
 autodoc_default_options = {

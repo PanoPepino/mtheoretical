@@ -12,21 +12,18 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Topic :: Multimedia :: Graphics",
   "Operating System :: OS Independent",
-] 
-
-# In case new packages are required in the future, add them here
-
-dependencies = [ 
+]
+dependencies = [
   "manim>=0.17",
   "numpy>=2.0.2",
-  "pybtex>=0.23.0"
+  "pybtex>=0.23.0",
 ]
 description = "Set of libraries to obtain a similar beamer-like experience while using manim and manim-slides"
 dynamic = ["readme", "version"]
 keywords = ["manim", "slides", "presentations", "beamer"]
-license = "MIT"  
+license = "MIT"
 license-files = ["LICENSE*"]  # Glob pattern for license files
-name = "beanim" 
+name = "beanim"
 requires-python = ">=3.9"
 
 [project.optional-dependencies]

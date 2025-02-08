@@ -116,7 +116,7 @@ L3 programming layer <2024-02-20>
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
- ) 
+ )
 Here is how much of TeX's memory you used:
  1412 strings out of 474116
  23166 string characters out of 5743681
@@ -132,4 +132,3 @@ PDF statistics:
  31 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
-

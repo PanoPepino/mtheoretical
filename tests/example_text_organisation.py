@@ -2,8 +2,8 @@ from manim import *
 
 from beanim import *
 
-#import_template('fancy_mint')
-#import_template("dark_depths")
+# import_template('fancy_mint')
+# import_template("dark_depths")
 
 
 class Title_Slide(Scene):
@@ -12,9 +12,10 @@ class Title_Slide(Scene):
             Title_Presentation(
                 "This is a Title\_Presentation",
                 "Your institution",
-                author= "Your name",
+                author="Your name",
             )
         )
+
 
 class Generic_Slide(Scene):
     def construct(self):
@@ -38,7 +39,6 @@ class Generic_Slide(Scene):
         for point in range(len(important_points) + 3):
             self.play(important_points.next_point())
         self.play(FadeIn(eq_show))
-        
 
 
 class Example_Equation(Scene):

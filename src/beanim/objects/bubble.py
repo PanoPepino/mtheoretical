@@ -330,15 +330,13 @@ class Bubble(Brane_General, Vacuum_General, Group):
     def fade_in_bulk(
         self, rt: float = 1, rf: float = linear
     ) -> Animation:  # The arrow associates this method with a class animation.
-        """
-        
-        Args::
+        """Args::
 
             - rt (float, optional): run_time animation. Defaults to 1.
             - rf (float, optional): rate function. Defaults to linear.
 
         Returns::
-            
+
             - Animation: Returns the creation of the bulk box and the value of the cosmological constant outside.
         """
         if self.bubble_type == "energy_discussion":

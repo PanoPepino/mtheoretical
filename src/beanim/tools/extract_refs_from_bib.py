@@ -6,9 +6,7 @@ __all__ = ["extract_citation"]
 
 
 def extract_citation(bib_file, your_family_name, initials, output_file_name):
-    """
-
-    Extract family name of authors from a given .bib file into a dictionary.
+    """Extract family name of authors from a given .bib file into a dictionary.
 
     - Args::
 
