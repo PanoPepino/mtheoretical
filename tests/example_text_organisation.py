@@ -2,30 +2,29 @@ from manim import *
 
 from beanim import *
 
-# import_template('fancy_mint')
-import_template("dark_depths")
+#import_template('fancy_mint')
+#import_template("dark_depths")
 
 
 class Title_Slide(Scene):
     def construct(self):
         self.add(
             Title_Presentation(
-                "An Useless Title to Show",
-                "Your Mama University",
-                author="A Dashing Monkey",
+                "This is a Title\_Presentation",
+                "Your institution",
+                author= "Your name",
             )
         )
 
-
 class Generic_Slide(Scene):
     def construct(self):
-        slide_title = Title_Section("This is a really long title to check capabilities")
+        slide_title = Title_Section("This a Title\_Section")
         ref1 = Ref(
             the_dictionary="example_refeq/dictionaries/test_ref.txt", the_ref="RS1"
         ).to_corner(UR)
         important_points = BlB(
             [
-                "This is extremely important",
+                "This is Bulleted list boxed (BlB)",
                 "Use .next\\_point() to iterate over points",
                 "... And for the last point you can recover all points in the initial color",
             ]
@@ -36,7 +35,7 @@ class Generic_Slide(Scene):
         ).to_corner(DOWN)
         self.play(slide_title.show_title())
         self.play(FadeIn(ref1, important_points))
-        for point in range(len(important_points) + 2):
+        for point in range(len(important_points) + 3):
             self.play(important_points.next_point())
         self.play(FadeIn(eq_show))
         

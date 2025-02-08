@@ -1,18 +1,15 @@
 **ABOUT THIS REPOSITORY**
 
-- This repository contains v1.0 of beanim (Beamer + Manim) libraries. It is an improved version, with more straightforward commands and a better folder and files organisation, with more optional parameters and the cleanest documentation I am able to achieve.
+- This repository contains v1.0 of beanim (Beamer + Manim) libraries. It is an improved version of the old mtheoretical, with more straightforward commands and a better folder and files organisation, with more optional parameters and the cleanest documentation I am able to achieve.
 
 - These libraries are supposed to be used with [manim-slides](https://manim-slides.eertmans.be/latest/) and [manim](https://www.manim.community).
 
 - The main idea of this package is to offer a beamer-like experience. Are you tired of beamer stiffness? Experience its wonders when used with Manim and Manim Slides.
 
-- These files contains to different, but useful approaches:
-
-    - A small, yet practical set of tools:
-        - To extract equations and references from .tex and .bib files.
-        - Simple structures to organise your slides with Titles, bulleted lists, general equations, etc.
-
-    - And then my personal libraries to generate animations to present my scientific research.
+- These files contain a set of tools:
+    - To extract equations and references from .tex and .bib files.
+    - To organise your slides with Titles, bulleted lists, general equations, etc in a similar fashion than beamer one.
+    - My personal animations to generate slides to present my scientific research.
 
 You can find examples of the overall results [here](https://panopepino.github.io/web_page/main_page/slides.html).
 
@@ -20,13 +17,28 @@ You can find examples of the overall results [here](https://panopepino.github.io
 
 -----------------------------------------------------------------------
 
+## Installation
+
 In order to **install** this library, do the following:
 
-- clone this repository in your desired folder.
-- in your terminal, navigate to that folder and pip install .
+```bash
+git clone https://github.com/PanoPepino
 
+pip install .
 
-**TO DO**:
+```
+
+## Usage
+
+To **use** it in your manim files, call it with:
+
+```python
+from beanim import *
+```
+
+-----------------------------------------------------------------------
+
+## TO DO
 
 - Include old animations:
     - Diagrams (gravity and EM)
@@ -37,13 +49,12 @@ In order to **install** this library, do the following:
     - Smooth transition between global and Poincaré coordinates for the bubble.
 
 - General Python code to write:
-    - Code to extract refs in the form of a dictionary {hep.th: '[names, hep.number]'}
     - Rewrite code to extract all the equations of a .tex file in the form of a dictionary {eq_label: 'equation'}, but taking into account
     things like \begin{split}, \begin{aligned} and so on. At the moment it only works with regular \begin{equation} enviroment.
     - Think how to choose among equations in the package and equations from outside.
-    - More general optimisation of the pathing within the package.
-    - A cleaner main.yml file to deploy the documentation.
 
-- Changes to make in webpage:
+- Changes to make for webpage deploy:
 
     - Add required configuration in the conf.py file to automatically remove Submodule headings, Module contents at the end of the page, and any name displayed as pkg.sub_pkg.module.
+    - Fix issue with sphinxcontrib.video, so that videos can be deploy in sphinx.
+    - Think how to add miniature slides as Manimslides webpage.
