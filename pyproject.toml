@@ -3,25 +3,38 @@ build-backend = "hatchling.build"
 requires = ["hatchling", "hatch-fancy-pypi-readme"]
 
 [project]
-classifiers = []  # TODO: add some classifiers for PyPI
-dependencies = [
+authors = [{name = "Daniel Panizo", email = "panizofisico@gmai.com"}]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Multimedia :: Graphics",
+  "Operating System :: OS Independent",
+]  
+
+# In case new packages are required in the future, add them here
+
+dependencies = [ 
   "manim>=0.17",
   "numpy>=2.0.2",
+  "pybtex>=0.23.0"
 ]
-description = "Add your description here"  # TODO: change
+description = "Set of libraries to obtain a similar beamer-like experience while using manim and manim-slides"
 dynamic = ["readme", "version"]
-keywords = []  # TODO: add some keywords for PyPI
+keywords = ["manim", "slides", "presentations", "beamer"]
 license = "MIT"  # TODO: choose a LICENSE (e.g., MIT) and create LICENSE.md
-name = "beanim"
+name = "beanim" 
 requires-python = ">=3.9"
 
 [project.optional-dependencies]
 docs = [
-  "furo>=2024.8.6",
-  "sphinx>=7.4.7",
+  "furo>= 2024.8.6",
+  "sphinx>= 7.4.7",
 ]
 tests = [
-  "pytest>=8.3.4",
+  "pytest>= 8.3.4",
 ]
 
 [project.urls]

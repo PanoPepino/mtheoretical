@@ -150,8 +150,7 @@ class AdS_Jc(Vacuum_General, Brane_General, VGroup):
             - rf (float, optioanl): rate function. Defaults to linear.
 
         Returns::
-
-
+        
             - Animation: FadeIn animation of the group without the arrow.
 
         """
