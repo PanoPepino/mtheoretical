@@ -21,6 +21,15 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install build-essential python3-dev libcairo2-dev libpango1.0-dev pybtex python-pybtex-doc python3-pybtex
+      
+    - name: Install pybtex
+      run: |
+        pip install pybtex
+
+    - name: Check pybtex installation
+      run: |
+        pip list | grep pybtex
+
 
     - name: Build docs
       run: |
