@@ -12,6 +12,7 @@ author = "Pano"
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
+    "sphinxcontrib.bibtex"
 ]
 
 autodoc_default_options = {
@@ -21,6 +22,7 @@ autodoc_default_options = {
     "exclude-members": "__init__",
 }
 
+autodoc_mock_imports = ["pybtex"]
 
 # Exclude module contents at the end of each page
 toc_object_entries_show_parents = "hide"
