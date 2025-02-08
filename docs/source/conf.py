@@ -22,7 +22,7 @@ autodoc_default_options = {
     "exclude-members": "__init__",
 }
 
-autodoc_mock_imports = ["pybtex", "sphinxcontrib.video"]
+autodoc_mock_imports = ["pybtex"]
 
 # Exclude module contents at the end of each page
 toc_object_entries_show_parents = "hide"

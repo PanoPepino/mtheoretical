@@ -30,10 +30,16 @@ class Generic_Slide(Scene):
                 "... And for the last point you can recover all points in the initial color",
             ]
         ).to_corner(LEFT)
+        eq_show = Eq_General(
+            the_dictionary="example_refeq/dictionaries/eq_test_file.txt",
+            the_equation="my_other_eq_2",
+        ).to_corner(DOWN)
         self.play(slide_title.show_title())
         self.play(FadeIn(ref1, important_points))
         for point in range(len(important_points) + 2):
             self.play(important_points.next_point())
+        self.play(FadeIn(eq_show))
+        
 
 
 class Example_Equation(Scene):
