@@ -1,23 +1,23 @@
 # The following code has been crafted with help of AI. Modifications introduced by not so intelligent human.
 
-from pybtex.database import parse_file  # libraries to manipulate references
+from pybtex.database import *  # libraries to manipulate references
 
 __all__ = ["extract_citation"]
 
 
 def extract_citation(bib_file, your_family_name, initials, output_file_name):
-    """Why does not work!?
+    """
 
     Extract family name of authors from a given .bib file into a dictionary.
 
-    Args::
+    - Args::
 
         - bib_file: Path to .bib file.
         - your_name: To be substituted by the initials.
         - initials: As custom, your initials in the form of string.
         - output_file_name: the .txt file name where you want the dictionary.
 
-    Returns::
+    - Returns::
 
         Dictionary with entry arxiv numbers as keys and lists of
         author names as values.
