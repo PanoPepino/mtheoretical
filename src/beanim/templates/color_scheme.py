@@ -11,6 +11,8 @@ __all__ = ["import_template"]
 def import_template(module_name):
     """This function, at the beginning of your main.py file, allows you to call one template among different ones. If this function is not called, beanim will provide a default B/W template.
 
+    This does not change. Why!??
+
     Returns::
 
         - The chosen template homogenised over all your objects.
